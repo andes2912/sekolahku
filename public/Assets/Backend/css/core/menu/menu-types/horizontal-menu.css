@@ -1,0 +1,457 @@
+/*=========================================================================================
+	File Name: horizontal-menu.scss
+	Description: A classic horizontal menu for easy navigation & support all devices.
+	It support light & dark version, flipped layout, right side icons, borders menu for
+	item separation.
+	----------------------------------------------------------------------------------------
+	Item Name: Vuexy - Vuejs, React, Angular, HTML & Laravel Admin Dashboard TemplateTheme
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+.horizontal-menu .content {
+  margin-left: 0; }
+
+.horizontal-menu .content.show-overlay .content-overlay {
+  z-index: 998 !important; }
+
+.horizontal-menu .navbar.header-navbar .navbar-container {
+  padding: 0.8rem 2rem; }
+
+.horizontal-menu .horizontal-menu-wrapper .header-navbar {
+  min-height: 4.45rem; }
+
+.horizontal-menu footer {
+  position: static; }
+
+.horizontal-menu .horizontal-menu-wrapper {
+  position: fixed;
+  top: 62px;
+  z-index: 990;
+  width: 100%; }
+
+.horizontal-menu .horizontal-menu-wrapper .header-navbar .navbar-container {
+  padding: 0 1rem;
+  width: 100%; }
+
+.horizontal-menu .horizontal-menu-wrapper .header-navbar .navbar-header {
+  display: none; }
+
+.horizontal-menu .header-navbar {
+  background: #fff;
+  z-index: 999 !important;
+  line-height: 1;
+  min-height: auto; }
+
+.horizontal-menu .header-navbar.navbar-light {
+  background: #fff; }
+
+.horizontal-menu .header-navbar.navbar-horizontal.floating-nav {
+  left: 0;
+  top: 62px;
+  width: calc(100vw - (100vw - 100%) - calc(2rem * 2));
+  background: #fff; }
+
+.horizontal-menu .header-navbar .navbar-container {
+  border-radius: 0.357rem; }
+
+.horizontal-menu .header-navbar.navbar-fixed {
+  position: fixed;
+  width: 100%; }
+
+.horizontal-menu .header-navbar.navbar-brand-center .navbar-header {
+  position: absolute;
+  left: calc(50% - 56px);
+  padding: 0;
+  z-index: 1000; }
+
+.horizontal-menu .header-navbar.navbar-brand-center .navbar-header .navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+  font-size: inherit; }
+
+.horizontal-menu .header-navbar.navbar-brand-center .navbar-header .navbar-brand .brand-logo img {
+  max-width: 36px; }
+
+.horizontal-menu .header-navbar.navbar-brand-center .navbar-header .navbar-brand .brand-text {
+  color: #7367f0;
+  padding-left: 1rem;
+  margin-bottom: 0;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+  font-size: 1.45rem; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .nav-link.dropdown-toggle::after {
+  left: 0.4rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236e6b7b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); }
+
+.horizontal-menu .header-navbar.navbar-horizontal .sidebar-group-active .dropdown-toggle::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu::before {
+  display: none; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu {
+  min-width: 215px;
+  border: none;
+  margin-top: 0;
+  min-height: 52px; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .disabled {
+  pointer-events: none !important; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .disabled a {
+  color: #b8c2cc; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .dropdown-toggle::after {
+  left: auto;
+  position: absolute;
+  top: 50%;
+  margin-top: -7px;
+  right: 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236e6b7b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-right'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E"); }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .dropdown-item {
+  font-size: 1rem;
+  padding-top: 0.68rem;
+  padding-bottom: 0.68rem;
+  display: flex;
+  align-items: center; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .dropdown-submenu {
+  position: relative; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .dropdown-submenu.openLeft .dropdown-menu {
+  left: auto !important;
+  right: 100% !important; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .dropdown-submenu.sidebar-group-active {
+  background: #f8f8f8; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .dropdown-submenu > .dropdown-menu {
+  position: absolute;
+  top: 0 !important;
+  left: 100% !important; }
+
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .dropdown-submenu > .dropdown-menu i,
+.horizontal-menu .header-navbar.navbar-horizontal .dropdown-menu .dropdown-submenu > .dropdown-menu svg {
+  height: 11px !important;
+  width: 11px !important;
+  font-size: 11px !important; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li {
+  padding-top: 0.857rem;
+  padding-bottom: 0.857rem; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li > .dropdown-menu a > * {
+  transition: all 0.2s ease; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li > .dropdown-menu a:hover {
+  background-color: transparent;
+  color: #6e6b7b; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li > .dropdown-menu a:hover > * {
+  transform: translateX(5px);
+  transition: transform 0.2s ease; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li > .dropdown-menu .active > a {
+  background: #f8f8f8;
+  color: #7367f0;
+  font-weight: 500; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li > .dropdown-menu .open.active > a {
+  color: #6e6b7b;
+  font-weight: normal; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li i,
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li svg {
+  margin-right: 0.5rem;
+  height: 17px;
+  width: 17px;
+  font-size: 1.2rem; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li > a {
+  padding: 0.715rem 1.25rem;
+  display: flex;
+  margin-right: 0.715rem; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li:hover > a {
+  background: #f8f8f8;
+  border-radius: 4px; }
+
+.horizontal-menu .header-navbar.navbar-horizontal ul#main-menu-navigation > li.active > a {
+  background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
+  box-shadow: 0px 0px 6px 1px rgba(115, 103, 240, 0.6);
+  color: #fff;
+  border-radius: 4px; }
+
+.horizontal-menu .navigation-header {
+  font-family: inherit;
+  color: #929292;
+  padding: 8px 20px;
+  font-size: 1rem;
+  text-transform: uppercase; }
+
+.horizontal-menu .navbar-dark .nav-item.active > a {
+  border-bottom: 2px solid #7367f0;
+  background-color: #313c50; }
+
+.horizontal-layout.navbar-floating .header-navbar-shadow {
+  height: 80px; }
+
+@media (min-width: 1200px) {
+  .horizontal-layout.navbar-floating .header-navbar-shadow {
+    top: 45px; } }
+
+.horizontal-layout.navbar-floating:not(.blank-page) .app-content {
+  padding: calc(2rem + 4.45rem* 2 + 1.3rem) 2rem 0 2rem; }
+
+.horizontal-layout.navbar-floating .horizontal-menu-wrapper {
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0.95) 44%, rgba(248, 248, 248, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
+  background-repeat: repeat-x; }
+
+.horizontal-layout.navbar-floating.footer-static .app-content .content-area-wrapper,
+.horizontal-layout.navbar-floating.footer-static .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 1.3rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 1.3rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-floating.footer-static .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-floating.footer-static .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 1) + 4.45rem + 3.35rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 1) + 4.45rem + 3.35rem)); } }
+
+.horizontal-layout.navbar-floating.footer-hidden .app-content .content-area-wrapper,
+.horizontal-layout.navbar-floating.footer-hidden .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 0rem + 1.3rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 0rem + 1.3rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-floating.footer-hidden .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-floating.footer-hidden .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 0rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 0rem)); } }
+
+.horizontal-layout.navbar-floating.footer-fixed .app-content .content-area-wrapper,
+.horizontal-layout.navbar-floating.footer-fixed .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 1.3rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 1.3rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-floating.footer-fixed .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-floating.footer-fixed .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 3.35rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 3.35rem)); } }
+
+.horizontal-layout.navbar-sticky .app-content {
+  padding: calc(2rem + 4.45rem* 2) 2rem 0 2rem; }
+
+.horizontal-layout.navbar-sticky .header-navbar {
+  background-color: #f8f8f8;
+  box-shadow: none; }
+
+.horizontal-layout.navbar-sticky .horizontal-menu-wrapper .navbar-horizontal.header-navbar.fixed-top {
+  left: 0;
+  top: 62px;
+  background-color: #fff;
+  box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1); }
+
+.horizontal-layout.navbar-sticky.footer-static .app-content .content-area-wrapper,
+.horizontal-layout.navbar-sticky.footer-static .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-sticky.footer-static .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-sticky.footer-static .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 1) + 4.45rem + 3.35rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 1) + 4.45rem + 3.35rem)); } }
+
+.horizontal-layout.navbar-sticky.footer-hidden .app-content .content-area-wrapper,
+.horizontal-layout.navbar-sticky.footer-hidden .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 0rem + 0rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 0rem + 0rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-sticky.footer-hidden .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-sticky.footer-hidden .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 0rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 0rem)); } }
+
+.horizontal-layout.navbar-sticky.footer-fixed .app-content .content-area-wrapper,
+.horizontal-layout.navbar-sticky.footer-fixed .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-sticky.footer-fixed .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-sticky.footer-fixed .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 3.35rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 3.35rem)); } }
+
+.horizontal-layout.navbar-static .app-content {
+  padding: calc(2rem + 4.45rem) 2rem 0 2rem; }
+
+.horizontal-layout.navbar-static .content {
+  min-height: calc(100% - calc(4.45rem + calc(3.35rem + 0.2rem))); }
+
+.horizontal-layout.navbar-static .header-navbar {
+  background-color: #f8f8f8;
+  box-shadow: none; }
+
+.horizontal-layout.navbar-static .horizontal-menu-wrapper {
+  position: relative; }
+
+.horizontal-layout.navbar-static .horizontal-menu-wrapper .navbar-horizontal.header-navbar {
+  background: #fff; }
+
+.horizontal-layout.navbar-static .horizontal-menu-wrapper .navbar-horizontal.header-navbar.navbar-static-top {
+  left: 0;
+  width: 100%; }
+
+.horizontal-layout.navbar-static.footer-static .app-content .content-area-wrapper,
+.horizontal-layout.navbar-static.footer-static .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 1) + 4.45rem + calc(3.35rem + 0.2rem) + 0rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 1) + 4.45rem + calc(3.35rem + 0.2rem) + 0rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-static.footer-static .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-static.footer-static .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 1) + 4.45rem + calc(3.35rem + 0.2rem)));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 1) + 4.45rem + calc(3.35rem + 0.2rem))); } }
+
+.horizontal-layout.navbar-static.footer-hidden .app-content .content-area-wrapper,
+.horizontal-layout.navbar-static.footer-hidden .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 0rem + 0rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 0rem + 0rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-static.footer-hidden .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-static.footer-hidden .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 0rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 0rem)); } }
+
+.horizontal-layout.navbar-static.footer-fixed .app-content .content-area-wrapper,
+.horizontal-layout.navbar-static.footer-fixed .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-static.footer-fixed .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-static.footer-fixed .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 3.35rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 2) + 4.45rem + 3.35rem)); } }
+
+.horizontal-layout.navbar-hidden.footer-static .app-content .content-area-wrapper,
+.horizontal-layout.navbar-hidden.footer-static .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 1) + 0rem + 3.35rem + 0rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 1) + 0rem + 3.35rem + 0rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-hidden.footer-static .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-hidden.footer-static .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 1) + 0rem + 3.35rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 1) + 0rem + 3.35rem)); } }
+
+.horizontal-layout.navbar-hidden.footer-hidden .app-content .content-area-wrapper,
+.horizontal-layout.navbar-hidden.footer-hidden .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 2) + 0rem + 0rem + 0rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 0rem + 0rem + 0rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-hidden.footer-hidden .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-hidden.footer-hidden .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 2) + 0rem + 0rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 2) + 0rem + 0rem)); } }
+
+.horizontal-layout.navbar-hidden.footer-fixed .app-content .content-area-wrapper,
+.horizontal-layout.navbar-hidden.footer-fixed .app-content .kanban-wrapper {
+  height: calc( 100vh - calc( calc(2rem * 2) + 0rem + 3.35rem + 0rem + 4.45rem ));
+  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 0rem + 3.35rem + 0rem + 4.45rem )); }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.navbar-hidden.footer-fixed .app-content .content-area-wrapper,
+  .horizontal-layout.navbar-hidden.footer-fixed .app-content .kanban-wrapper {
+    height: calc( 100vh - calc(calc(calc(2rem - 0.8rem) * 2) + 0rem + 3.35rem));
+    height: calc( var(--vh, 1vh) * 100 - calc(calc(calc(2rem - 0.8rem) * 2) + 0rem + 3.35rem)); } }
+
+.horizontal-layout.vertical-overlay-menu #main-menu-navigation > li > ul > li > a i,
+.horizontal-layout.vertical-overlay-menu #main-menu-navigation > li > ul > li > a svg {
+  height: 1rem;
+  width: 1rem;
+  font-size: 1rem; }
+
+@media (max-width: 1199.98px) {
+  .horizontal-layout.horizontal-menu .horizontal-menu-wrapper .header-navbar {
+    display: none; }
+  .horizontal-layout .header-navbar {
+    background: #fff; }
+  .horizontal-layout .app-content {
+    padding: calc(4.45rem + calc(2rem - 0.8rem)) calc(2rem - 0.8rem) 0 calc(2rem - 0.8rem) !important; } }
+
+@media (max-width: 575.98px) {
+  html body.horizontal-layout.navbar-static .app-content {
+    padding: calc(2rem - 0.8rem + 4.45rem) calc(2rem - 0.8rem) 0 calc(2rem - 0.8rem) !important; } }
+
+/*=========================================================================================
+    File Name: vertical-overlay-menu.scss
+    Description: A overlay style vertical menu with show and hide support. It support
+    light & dark version, filpped layout, right side icons, native scroll and borders menu
+    item seperation.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, React, Angular, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+.vertical-overlay-menu .content {
+  margin-left: 0; }
+
+.vertical-overlay-menu .navbar .navbar-header {
+  float: left;
+  width: 260px; }
+
+.vertical-overlay-menu .main-menu, .vertical-overlay-menu.menu-hide .main-menu {
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition: width 0.25s, opacity 0.25s, transform 0.25s;
+  width: 260px;
+  left: -260px; }
+
+.vertical-overlay-menu .main-menu .navigation > li > a > svg,
+.vertical-overlay-menu .main-menu .navigation > li > a > i {
+  margin-right: 14px;
+  float: left;
+  transition: 200ms ease all;
+  height: 20px;
+  width: 20px; }
+
+.vertical-overlay-menu .main-menu .navigation > li > a > svg:before,
+.vertical-overlay-menu .main-menu .navigation > li > a > i:before {
+  transition: 200ms ease all;
+  font-size: 1.429rem; }
+
+.vertical-overlay-menu .main-menu .navigation li.has-sub > a:after {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236e6b7b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-right'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-out; }
+
+.vertical-overlay-menu .main-menu .navigation li.has-sub.open:not(.menu-item-closing) > a:after {
+  transform: rotate(90deg); }
+
+.vertical-overlay-menu .main-menu .navigation .navigation-header .feather-more-horizontal {
+  display: none; }
+
+.vertical-overlay-menu.menu-open .main-menu {
+  opacity: 1;
+  transform: translate3d(260px, 0, 0);
+  transition: width 0.25s, opacity 0.25s, transform 0.25s; }

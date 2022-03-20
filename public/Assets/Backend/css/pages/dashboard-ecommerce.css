@@ -1,0 +1,30 @@
+.card-statistics .statistics-body {
+  padding: 2rem 2.4rem !important; }
+
+@media (max-width: 991.98px) {
+  .card-statistics .card-header,
+  .card-statistics .statistics-body {
+    padding: 1.5rem !important; } }
+
+.card-company-table thead th {
+  border: 0; }
+
+.card-company-table td {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem; }
+
+.card-company-table td .avatar {
+  background-color: #f8f8f8;
+  margin-right: 2rem; }
+
+.card-company-table td .avatar img {
+  border-radius: 0; }
+
+.card-browser-states .browser-states:first-child {
+  margin-top: 0; }
+
+.card-browser-states .browser-states:not(:first-child) {
+  margin-top: 1.7rem; }
+
+.card-transaction .transaction-item:not(:last-child) {
+  margin-bottom: 1.5rem; }

@@ -1,0 +1,1 @@
+!function(o,d,n){"use strict";n(".dropdown-icon-wrapper .dropdown-item").on("click",(function(){n(".dropdown-icon-wrapper .dropdown-toggle svg").remove(),n(this).find("svg").clone().appendTo(".dropdown-icon-wrapper .dropdown-toggle"),n(".dropdown-icon-wrapper .dropdown-toggle .dropdown-item").removeClass("dropdown-item")}))}(window,document,jQuery);

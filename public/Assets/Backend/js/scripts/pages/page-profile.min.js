@@ -1,0 +1,1 @@
+$((function(){"use strict";var e=$(".block-element");e.length&&e.on("click",(function(){var e=$(this);$(e).block({message:'<div class="spinner-border text-primary font-medium-3"></div>',timeout:2e3,overlayCSS:{backgroundColor:"#fff",opacity:.8,cursor:"wait"},css:{border:0,padding:0,backgroundColor:"transparent",display:"flex",justifyContent:"center",alignItems:"center"}})}))}));
