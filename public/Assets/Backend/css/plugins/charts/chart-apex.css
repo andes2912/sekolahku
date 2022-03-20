@@ -1,0 +1,168 @@
+.apexcharts-canvas line[stroke='transparent'] {
+  display: none; }
+
+.apexcharts-canvas .apexcharts-tooltip {
+  background: #fff;
+  border-color: #ebe9f1; }
+
+.apexcharts-canvas .apexcharts-tooltip .apexcharts-tooltip-title {
+  background: #fff !important;
+  border-color: #ebe9f1 !important;
+  font-weight: 600; }
+
+.apexcharts-canvas .apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-text-label,
+.apexcharts-canvas .apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-text-value {
+  color: #fff; }
+
+.apexcharts-canvas .apexcharts-xaxistooltip,
+.apexcharts-canvas .apexcharts-yaxistooltip {
+  background: #f8f8f8;
+  border-color: #ebe9f1; }
+
+.apexcharts-canvas .apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #ebe9f1; }
+
+.apexcharts-canvas .apexcharts-xaxistooltip-bottom::after {
+  border-bottom-color: #f8f8f8; }
+
+.apexcharts-canvas .apexcharts-xaxistooltip-top:before {
+  border-top-color: #ebe9f1; }
+
+.apexcharts-canvas .apexcharts-xaxistooltip-top::after {
+  border-top-color: #f8f8f8; }
+
+.apexcharts-canvas .apexcharts-yaxistooltip-left:before {
+  border-left-color: #ebe9f1; }
+
+.apexcharts-canvas .apexcharts-yaxistooltip-left:after {
+  border-left-color: #f8f8f8; }
+
+.apexcharts-canvas .apexcharts-yaxistooltip-right:before {
+  border-right-color: #ebe9f1; }
+
+.apexcharts-canvas .apexcharts-yaxistooltip-right:after {
+  border-right-color: #f8f8f8; }
+
+.apexcharts-canvas .apexcharts-text,
+.apexcharts-canvas .apexcharts-tooltip-text,
+.apexcharts-canvas .apexcharts-datalabel-label,
+.apexcharts-canvas .apexcharts-datalabel {
+  font-family: "Montserrat", Helvetica, Arial, serif !important;
+  fill: #6e6b7b;
+  font-weight: 400;
+  filter: none; }
+
+.apexcharts-canvas .apexcharts-pie-label {
+  fill: white;
+  filter: none; }
+
+.apexcharts-canvas .apexcharts-pie .apexcharts-pie-series .apexcharts-pie-area {
+  stroke-width: 0; }
+
+.apexcharts-canvas .apexcharts-pie .apexcharts-datalabel-label,
+.apexcharts-canvas .apexcharts-pie .apexcharts-datalabel-value {
+  font-size: 1.5rem; }
+
+.apexcharts-canvas .apexcharts-marker {
+  box-shadow: none; }
+
+.apexcharts-canvas .apexcharts-legend-series + .apexcharts-legend-series {
+  margin-top: 0.625rem; }
+
+.apexcharts-canvas .apexcharts-legend-series .apexcharts-legend-text {
+  margin-left: 0.5rem;
+  color: #6e6b7b !important;
+  font-size: 1rem !important; }
+
+.apexcharts-canvas .apexcharts-xcrosshairs,
+.apexcharts-canvas .apexcharts-ycrosshairs,
+.apexcharts-canvas .apexcharts-gridline {
+  stroke: #ebe9f1; }
+
+.apexcharts-legend.position-bottom {
+  bottom: 3rem; }
+
+.dark-layout .apexcharts-canvas .apexcharts-xaxis-tick,
+.dark-layout .apexcharts-canvas line {
+  stroke: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-heatmap .apexcharts-heatmap-rect {
+  stroke: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-radialbar .apexcharts-radialbar-track .apexcharts-radialbar-area {
+  stroke: #161d31; }
+
+.dark-layout .apexcharts-canvas .apexcharts-radar-series polygon {
+  fill: #161d31;
+  stroke: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-datalabels-group .apexcharts-datalabel-value {
+  fill: #fff; }
+
+.dark-layout .apexcharts-canvas .apexcharts-tooltip {
+  background: #283046;
+  border-color: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-tooltip .apexcharts-tooltip-title {
+  background: #283046 !important;
+  border-color: #3b4253 !important;
+  color: #fff; }
+
+.dark-layout .apexcharts-canvas .apexcharts-tooltip .apexcharts-tooltip-text-label,
+.dark-layout .apexcharts-canvas .apexcharts-tooltip .apexcharts-tooltip-text-value {
+  color: #fff; }
+
+.dark-layout .apexcharts-canvas .apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-xaxistooltip-bottom::after {
+  border-bottom-color: #161d31; }
+
+.dark-layout .apexcharts-canvas .apexcharts-xaxistooltip-top:before {
+  border-top-color: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-xaxistooltip-top::after {
+  border-top-color: #161d31; }
+
+.dark-layout .apexcharts-canvas .apexcharts-yaxistooltip-left:before {
+  border-left-color: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-yaxistooltip-left:after {
+  border-left-color: #161d31; }
+
+.dark-layout .apexcharts-canvas .apexcharts-yaxistooltip-right:before {
+  border-right-color: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-yaxistooltip-right:after {
+  border-right-color: #161d31; }
+
+.dark-layout .apexcharts-canvas .apexcharts-xaxistooltip,
+.dark-layout .apexcharts-canvas .apexcharts-yaxistooltip {
+  background: #161d31;
+  border-color: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-xaxistooltip .apexcharts-xaxistooltip-text,
+.dark-layout .apexcharts-canvas .apexcharts-xaxistooltip .apexcharts-yaxistooltip-text,
+.dark-layout .apexcharts-canvas .apexcharts-yaxistooltip .apexcharts-xaxistooltip-text,
+.dark-layout .apexcharts-canvas .apexcharts-yaxistooltip .apexcharts-yaxistooltip-text {
+  color: #fff; }
+
+.dark-layout .apexcharts-canvas .apexcharts-xaxistooltip .apexcharts-xaxistooltip-text {
+  color: #fff; }
+
+.dark-layout .apexcharts-canvas .apexcharts-yaxis-label,
+.dark-layout .apexcharts-canvas .apexcharts-xaxis-label,
+.dark-layout .apexcharts-canvas .apexcharts-tooltip-text,
+.dark-layout .apexcharts-canvas .apexcharts-datalabel-label {
+  fill: #b4b7bd; }
+
+.dark-layout .apexcharts-canvas .apexcharts-marker {
+  stroke: #3b4253; }
+
+.dark-layout .apexcharts-canvas .apexcharts-legend-series .apexcharts-legend-text {
+  color: #b4b7bd !important; }
+
+.dark-layout .apexcharts-canvas .apexcharts-xcrosshairs,
+.dark-layout .apexcharts-canvas .apexcharts-ycrosshairs,
+.dark-layout .apexcharts-canvas .apexcharts-gridline {
+  stroke: #3b4253; }

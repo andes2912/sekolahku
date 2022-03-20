@@ -1,0 +1,10 @@
+.colors-list li {
+  padding: 0.4rem; }
+
+.colors-list li i,
+.colors-list li svg {
+  height: 1.2rem;
+  width: 1.2rem;
+  top: 0;
+  position: relative;
+  margin-right: 0.25rem; }

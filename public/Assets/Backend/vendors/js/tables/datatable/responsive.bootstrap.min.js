@@ -1,0 +1,6 @@
+/*!  2.2.8
+ Bootstrap integration for DataTables' Responsive
+ ©2015-2016 SpryMedia Ltd - datatables.net/license
+*/
+(function(c){"function"===typeof define&&define.amd?define(["jquery","datatables.net-bs","datatables.net-responsive"],function(a){return c(a,window,document)}):"object"===typeof exports?module.exports=function(a,b){a||(a=window);b&&b.fn.dataTable||(b=require("datatables.net-bs")(a,b).$);b.fn.dataTable.Responsive||require("datatables.net-responsive")(a,b);return c(b,a,a.document)}:c(jQuery,window,document)})(function(c,a,b,m){a=c.fn.dataTable;b=a.Responsive.display;var k=b.modal,e=c('<div class="modal fade dtr-bs-modal" role="dialog"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"/></div></div></div>');
+b.modal=function(f){return function(g,d,h){if(!c.fn.modal)k(g,d,h);else if(!d){if(f&&f.header){d=e.find("div.modal-header");var l=d.find("button").detach();d.empty().append('<h4 class="modal-title">'+f.header(g)+"</h4>").prepend(l)}e.find("div.modal-body").empty().append(h());e.appendTo("body").modal()}}};return a.Responsive});

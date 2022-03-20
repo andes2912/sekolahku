@@ -1,0 +1,201 @@
+.bg-gradient-dark,
+.btn-gradient-dark {
+  color: #fff;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(47deg, #4b4b4b, #1e1e1e);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.dark-layout .bg-gradient-dark, .dark-layout
+.btn-gradient-dark {
+  background-image: linear-gradient(47deg, #1e1e1e, #4b4b4b);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-dark:hover, .bg-gradient-dark:active,
+.btn-gradient-dark:hover,
+.btn-gradient-dark:active {
+  color: #fff; }
+
+.bg-gradient-dark:hover:not(.disabled):not(:disabled),
+.btn-gradient-dark:hover:not(.disabled):not(:disabled) {
+  transform: translateY(-2px); }
+
+.bg-gradient-dark:active,
+.btn-gradient-dark:active {
+  transform: translateY(0); }
+
+.bg-gradient-dark:active, .bg-gradient-dark:focus,
+.btn-gradient-dark:active,
+.btn-gradient-dark:focus {
+  background-image: linear-gradient(47deg, #1e1e1e, #4b4b4b);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-primary,
+.btn-gradient-primary {
+  color: #fff;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(47deg, #7367f0, #9e95f5);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-primary:hover, .bg-gradient-primary:active,
+.btn-gradient-primary:hover,
+.btn-gradient-primary:active {
+  color: #fff; }
+
+.bg-gradient-primary:hover:not(.disabled):not(:disabled),
+.btn-gradient-primary:hover:not(.disabled):not(:disabled) {
+  transform: translateY(-2px); }
+
+.bg-gradient-primary:active,
+.btn-gradient-primary:active {
+  transform: translateY(0); }
+
+.bg-gradient-primary:active, .bg-gradient-primary:focus,
+.btn-gradient-primary:active,
+.btn-gradient-primary:focus {
+  background-image: linear-gradient(47deg, #4839eb, #7367f0);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-secondary,
+.btn-gradient-secondary {
+  color: #fff;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(47deg, #82868b, #9ca0a4);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-secondary:hover, .bg-gradient-secondary:active,
+.btn-gradient-secondary:hover,
+.btn-gradient-secondary:active {
+  color: #fff; }
+
+.bg-gradient-secondary:hover:not(.disabled):not(:disabled),
+.btn-gradient-secondary:hover:not(.disabled):not(:disabled) {
+  transform: translateY(-2px); }
+
+.bg-gradient-secondary:active,
+.btn-gradient-secondary:active {
+  transform: translateY(0); }
+
+.bg-gradient-secondary:active, .bg-gradient-secondary:focus,
+.btn-gradient-secondary:active,
+.btn-gradient-secondary:focus {
+  background-image: linear-gradient(47deg, #696d71, #82868b);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-success,
+.btn-gradient-success {
+  color: #fff;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(47deg, #28c76f, #48da89);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-success:hover, .bg-gradient-success:active,
+.btn-gradient-success:hover,
+.btn-gradient-success:active {
+  color: #fff; }
+
+.bg-gradient-success:hover:not(.disabled):not(:disabled),
+.btn-gradient-success:hover:not(.disabled):not(:disabled) {
+  transform: translateY(-2px); }
+
+.bg-gradient-success:active,
+.btn-gradient-success:active {
+  transform: translateY(0); }
+
+.bg-gradient-success:active, .bg-gradient-success:focus,
+.btn-gradient-success:active,
+.btn-gradient-success:focus {
+  background-image: linear-gradient(47deg, #1f9d57, #28c76f);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-info,
+.btn-gradient-info {
+  color: #fff;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(47deg, #00cfe8, #1ce7ff);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-info:hover, .bg-gradient-info:active,
+.btn-gradient-info:hover,
+.btn-gradient-info:active {
+  color: #fff; }
+
+.bg-gradient-info:hover:not(.disabled):not(:disabled),
+.btn-gradient-info:hover:not(.disabled):not(:disabled) {
+  transform: translateY(-2px); }
+
+.bg-gradient-info:active,
+.btn-gradient-info:active {
+  transform: translateY(0); }
+
+.bg-gradient-info:active, .bg-gradient-info:focus,
+.btn-gradient-info:active,
+.btn-gradient-info:focus {
+  background-image: linear-gradient(47deg, #00a1b5, #00cfe8);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-warning,
+.btn-gradient-warning {
+  color: #fff;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(47deg, #ff9f43, #ffb976);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-warning:hover, .bg-gradient-warning:active,
+.btn-gradient-warning:hover,
+.btn-gradient-warning:active {
+  color: #fff; }
+
+.bg-gradient-warning:hover:not(.disabled):not(:disabled),
+.btn-gradient-warning:hover:not(.disabled):not(:disabled) {
+  transform: translateY(-2px); }
+
+.bg-gradient-warning:active,
+.btn-gradient-warning:active {
+  transform: translateY(0); }
+
+.bg-gradient-warning:active, .bg-gradient-warning:focus,
+.btn-gradient-warning:active,
+.btn-gradient-warning:focus {
+  background-image: linear-gradient(47deg, #ff8510, #ff9f43);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-danger,
+.btn-gradient-danger {
+  color: #fff;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(47deg, #ea5455, #f08182);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }
+
+.bg-gradient-danger:hover, .bg-gradient-danger:active,
+.btn-gradient-danger:hover,
+.btn-gradient-danger:active {
+  color: #fff; }
+
+.bg-gradient-danger:hover:not(.disabled):not(:disabled),
+.btn-gradient-danger:hover:not(.disabled):not(:disabled) {
+  transform: translateY(-2px); }
+
+.bg-gradient-danger:active,
+.btn-gradient-danger:active {
+  transform: translateY(0); }
+
+.bg-gradient-danger:active, .bg-gradient-danger:focus,
+.btn-gradient-danger:active,
+.btn-gradient-danger:focus {
+  background-image: linear-gradient(47deg, #e42728, #ea5455);
+  background-repeat: repeat-x;
+  background-repeat: repeat; }

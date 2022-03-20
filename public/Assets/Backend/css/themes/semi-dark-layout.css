@@ -1,0 +1,59 @@
+.semi-dark-layout {
+  /************ Main Menu **************/ }
+
+.semi-dark-layout .main-menu {
+  background-color: #283046; }
+
+.semi-dark-layout .main-menu .shadow-bottom {
+  background: linear-gradient(180deg, #283046 44%, rgba(40, 48, 70, 0.51) 73%, rgba(40, 48, 70, 0)); }
+
+.semi-dark-layout .main-menu:not(.expanded) .navigation .sidebar-group-active > a {
+  background-color: #161d31 !important; }
+
+.semi-dark-layout .main-menu-content .navigation-main {
+  background-color: #283046; }
+
+.semi-dark-layout .main-menu-content .navigation-main .navigation-header {
+  color: #676d7d; }
+
+.semi-dark-layout .main-menu-content .navigation-main .nav-item a {
+  color: #b4b7bd; }
+
+.semi-dark-layout .main-menu-content .navigation-main .nav-item.open:not(.sidebar-group-active) > a {
+  background-color: #161d31; }
+
+.semi-dark-layout .main-menu-content .navigation-main .nav-item a:after,
+.semi-dark-layout .main-menu-content .navigation-main .nav-item a {
+  color: #b4b7bd !important; }
+
+.semi-dark-layout .main-menu-content .navigation-main .nav-item .menu-content {
+  background-color: #283046; }
+
+.semi-dark-layout .main-menu-content .navigation-main .nav-item .menu-content .active .menu-item {
+  color: #fff; }
+
+.semi-dark-layout .main-menu-content .navigation-main .nav-item .menu-content li:not(.active) a {
+  background-color: #283046; }
+
+.semi-dark-layout .main-menu-content .navigation-main .active > a {
+  color: #fff !important; }
+
+.semi-dark-layout .main-menu-content .navigation-main .active .menu-title,
+.semi-dark-layout .main-menu-content .navigation-main .active i {
+  color: #fff; }
+
+.semi-dark-layout .main-menu-content .navigation-main .sidebar-group-active a {
+  border-radius: 4px; }
+
+.semi-dark-layout .main-menu-content .navigation-main .menu-content {
+  background-color: #283046; }
+
+.semi-dark-layout .main-menu-content .navigation-main .menu-content .active {
+  z-index: 1; }
+
+.semi-dark-layout .main-menu-content .navigation-main .menu-content .active a {
+  background-color: transparent; }
+
+.semi-dark-layout .menu-collapsed .main-menu:not(.expanded) .navigation-main li.active > a {
+  background: #161d31 !important;
+  color: #fff !important; }

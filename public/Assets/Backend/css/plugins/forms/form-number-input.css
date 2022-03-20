@@ -1,0 +1,107 @@
+/* Bootstrap Touchspin */
+.bootstrap-touchspin.input-group {
+  width: 8.4rem;
+  align-items: center; }
+
+.bootstrap-touchspin.input-group .form-control {
+  padding: 5px;
+  height: auto;
+  border: 0;
+  background-color: #f8f8f8;
+  border-radius: 0.357rem !important;
+  text-align: center;
+  font-weight: 500; }
+
+.bootstrap-touchspin.input-group .form-control:focus {
+  z-index: 1;
+  box-shadow: none; }
+
+.bootstrap-touchspin .bootstrap-touchspin-injected {
+  margin: 0 !important; }
+
+.bootstrap-touchspin .bootstrap-touchspin-injected.input-group-prepend {
+  left: 12px;
+  position: relative; }
+
+.bootstrap-touchspin .bootstrap-touchspin-injected.input-group-append {
+  right: 12px;
+  position: relative; }
+
+.bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-down,
+.bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-up {
+  padding: 0;
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 0.357rem !important; }
+
+.bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-down i,
+.bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-down svg,
+.bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-up i,
+.bootstrap-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-up svg {
+  height: 0.8rem;
+  width: 0.8rem;
+  font-size: 0.8rem;
+  position: relative;
+  top: -1px; }
+
+.bootstrap-touchspin.disabled-touchspin .bootstrap-touchspin-down,
+.bootstrap-touchspin.disabled-touchspin .bootstrap-touchspin-up {
+  background-color: rgba(34, 41, 47, 0.5) !important;
+  cursor: default;
+  opacity: 0.5; }
+
+.bootstrap-touchspin.input-group-lg {
+  width: 9.375rem; }
+
+.bootstrap-touchspin.input-group-lg .touchspin.form-control {
+  height: auto !important; }
+
+.bootstrap-touchspin.input-group-lg .bootstrap-touchspin-down,
+.bootstrap-touchspin.input-group-lg .bootstrap-touchspin-up {
+  min-width: 24px;
+  min-height: 24px; }
+
+.bootstrap-touchspin.input-group-lg .bootstrap-touchspin-down i,
+.bootstrap-touchspin.input-group-lg .bootstrap-touchspin-down svg,
+.bootstrap-touchspin.input-group-lg .bootstrap-touchspin-up i,
+.bootstrap-touchspin.input-group-lg .bootstrap-touchspin-up svg {
+  height: 1rem;
+  width: 1rem;
+  font-size: 1rem;
+  top: -3px; }
+
+.bootstrap-touchspin.input-group-sm {
+  width: 6.25rem; }
+
+.bootstrap-touchspin.input-group-sm .touchspin.form-control {
+  height: auto !important; }
+
+.bootstrap-touchspin.input-group-sm .bootstrap-touchspin-injected .bootstrap-touchspin-down,
+.bootstrap-touchspin.input-group-sm .bootstrap-touchspin-injected .bootstrap-touchspin-up {
+  min-width: 16px;
+  min-height: 16px; }
+
+.bootstrap-touchspin.input-group-sm .bootstrap-touchspin-injected .bootstrap-touchspin-down i,
+.bootstrap-touchspin.input-group-sm .bootstrap-touchspin-injected .bootstrap-touchspin-down svg,
+.bootstrap-touchspin.input-group-sm .bootstrap-touchspin-injected .bootstrap-touchspin-up i,
+.bootstrap-touchspin.input-group-sm .bootstrap-touchspin-injected .bootstrap-touchspin-up svg {
+  height: 0.6rem;
+  width: 0.6rem;
+  font-size: 0.6rem; }
+
+/* Number Type Input Box Scss for Touchspin - Remove arrow for firefox */
+.bootstrap-touchspin.input-group input[type='number'] {
+  -moz-appearance: textfield; }
+
+.dark-layout .bootstrap-touchspin.input-group .form-control {
+  background-color: #161d31; }
+
+.dark-layout .bootstrap-touchspin.disabled-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-down,
+.dark-layout .bootstrap-touchspin.disabled-touchspin .bootstrap-touchspin-injected .bootstrap-touchspin-up,
+.dark-layout .bootstrap-touchspin.disabled-touchspin .bootstrap-touchspin-injected .disabled-max-min {
+  background-color: #b8c2cc !important;
+  opacity: 1; }
+
+.dark-layout .bootstrap-touchspin .bootstrap-touchspin-injected .disabled-max-min {
+  background-color: #b8c2cc !important;
+  opacity: 1; }

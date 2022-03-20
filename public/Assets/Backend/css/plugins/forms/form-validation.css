@@ -1,0 +1,35 @@
+form span.error {
+  width: 100%;
+  font-size: 0.857rem; }
+
+form .error:not(input) {
+  color: #ea5455; }
+
+form input.error,
+form input.error:focus {
+  border-color: #ea5455 !important; }
+
+form input.error ~ .custom-control-label::before,
+form input.error ~ .custom-file-label,
+form input.error:focus ~ .custom-control-label::before,
+form input.error:focus ~ .custom-file-label {
+  border-color: #ea5455 !important; }
+
+form input.error ~ .custom-control-label,
+form input.error:focus ~ .custom-control-label {
+  color: #ea5455; }
+
+form .form-group .custom-control-input.error {
+  cursor: pointer; }
+
+form .form-group .custom-control-input.error ~ .custom-control-label:before {
+  border-color: #ea5455 !important; }
+
+form textarea.error {
+  border-color: #ea5455 !important; }
+
+form .select2.error + .select2-container--classic .select2-selection--single,
+form .select2.error + .select2-container--default .select2-selection--single,
+form .select2.error + .select2-container--classic .select2-selection--multiple,
+form .select2.error + .select2-container--default .select2-selection--multiple {
+  border-color: #ea5455 !important; }
