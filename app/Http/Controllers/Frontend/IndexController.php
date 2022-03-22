@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Jurusan;
+use App\Models\Kegiatan;
 
 class IndexController extends Controller
 {
@@ -13,6 +14,8 @@ class IndexController extends Controller
     {
         // Menu
         $jurusanM = Jurusan::where('is_active','0')->get();
-        return view('frontend.welcome', compact('jurusanM'));
+        $kegiatanM = Kegiatan::where('is_active','0')->get();
+
+        return view('frontend.welcome', compact('jurusanM','kegiatanM'));
     }
 }

@@ -19,7 +19,9 @@ Route::get('/','Frontend\IndexController@index');
 
     ///// MENU \\\\\
     //// PROGRAM STUDI \\\\
-    Route::get('program/{slug}', [App\Http\Controllers\Frontend\ProgamController::class, 'programStudi']);
+    Route::get('program/{slug}', [App\Http\Controllers\Frontend\MenuController::class, 'programStudi']);
+    //// PROGRAM STUDI \\\\
+    Route::get('kegiatan/{slug}', [App\Http\Controllers\Frontend\MenuController::class, 'kegiatan']);
 
 Auth::routes();
 
