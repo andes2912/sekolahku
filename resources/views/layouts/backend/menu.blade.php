@@ -42,6 +42,25 @@
 
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i>
+                    <span class="menu-title text-truncate" data-i18n="Card">Website</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="nav-item {{ (request()->is('program-studi')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('program-studi.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Program</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex align-items-center" href=""><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Informasi</span>
+                        </a>
+                    </li>
+                   
+                </ul>
+            </li>
+
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i>
                     <span class="menu-title text-truncate" data-i18n="Card">Data Murid</span>
                 </a>
                 <ul class="menu-content">

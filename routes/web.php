@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +17,15 @@ Route::get('/','Frontend\IndexController@index');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    ///// WEBSITE \\\\\
+        Route::prefix('/')->group( function (){
+            Route::resources([
+                //// PROGRAM STUDI \\\\
+                'program-studi' =>  Backend\Website\ProgramController::class
+            ]);
+               
+        });
+});

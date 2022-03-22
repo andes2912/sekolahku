@@ -224,19 +224,7 @@ $(function () {
 
   if (dt_responsive_table.length) {
     var dt_responsive = dt_responsive_table.DataTable({
-      ajax: assetPath + 'data/table-datatable.json',
-      columns: [
-        { data: 'responsive_id' },
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'post' },
-        { data: 'city' },
-        { data: 'start_date' },
-        { data: 'salary' },
-        { data: 'age' },
-        { data: 'experience' },
-        { data: 'status' }
-      ],
+     
       columnDefs: [
         {
           className: 'control',
