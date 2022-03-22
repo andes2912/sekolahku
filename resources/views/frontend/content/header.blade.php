@@ -49,7 +49,7 @@
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                     <nav id="desktop-nav">
                         <ul>
-                            <li class="active"><a href="#">Beranda</a></li>
+                            <li class="active"><a href="/">Beranda</a></li>
                             <li><a href="#">Tentang Kami</a>
                                 <ul>
                                     <li><a href="">Profile Sekolah</a></li>
@@ -65,9 +65,9 @@
                                 <ul>
                                     <li class="has-child-menu"><a href="#">Program Studi</a>
                                         <ul class="thired-level">
-                                            <li><a href="">Teknik Komputer Jariangan</a></li>
-                                            <li><a href="">Akuntansi</a></li>
-                                            <li><a href="">Teknik Kendarangan Ringan</a></li>
+                                            @foreach ($jurusanM as $jurusans)
+                                                <li><a href=" {{ url('program', $jurusans->slug)}} "> {{$jurusans->nama}} </a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="has-child-menu"><a href="#">Kegiatan</a>
