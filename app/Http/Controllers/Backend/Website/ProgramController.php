@@ -63,7 +63,7 @@ class ProgramController extends Controller
 
             DB::commit();
             Session::flash('success','Program Studi Berhasil ditambah !');
-            return redirect()->route('program-studi.store');
+            return redirect()->route('program-studi.index');
 
         } catch (ErrorException $e) {
             DB::rollback();
