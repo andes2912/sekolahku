@@ -72,9 +72,9 @@
                                     </li>
                                     <li class="has-child-menu"><a href="#">Kegiatan</a>
                                         <ul class="thired-level">
-                                            <li><a href="">Ekstrakurikuler</a></li>
-                                            <li><a href="">Program Unggulan</a></li>
-                                            <li><a href="">Komunitas</a></li>
+                                            @foreach ($kegiatanM as $kegiatans)
+                                            <li><a href=" {{url('kegiatan', $kegiatans->slug)}} ">{{$kegiatans->nama}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                 </ul>
