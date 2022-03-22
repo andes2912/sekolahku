@@ -32,7 +32,9 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/')->group( function (){
         Route::resources([
             //// PROGRAM STUDI \\\\
-            'program-studi' =>  Backend\Website\ProgramController::class
+            'program-studi' =>  Backend\Website\ProgramController::class,
+            /// KEGIATAN \\\
+            'backend-kegiatan' => Backend\Website\KegiatanController::class
         ]);
             
     });

@@ -50,9 +50,9 @@
                             <span class="menu-item text-truncate" data-i18n="Basic">Program</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="d-flex align-items-center" href=""><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Informasi</span>
+                    <li class="nav-item {{ (request()->is('backend-kegiatan')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-kegiatan.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Kegiatan</span>
                         </a>
                     </li>
                    
