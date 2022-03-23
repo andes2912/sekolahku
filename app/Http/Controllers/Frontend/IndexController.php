@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
 use App\Models\ImageSlider;
 use Illuminate\Http\Request;
 use App\Models\Jurusan;
@@ -20,6 +21,9 @@ class IndexController extends Controller
         // Gambar Slider
         $slider = ImageSlider::where('is_Active','0')->get();
 
-        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider'));
+        // About
+        $about = About::where('is_Active','0')->first();
+
+        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider','about'));
     }
 }

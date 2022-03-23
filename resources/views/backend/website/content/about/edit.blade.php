@@ -50,7 +50,9 @@
                                                 <div class="form-group">
                                                     <label for="basicInput">Gambar</label>
                                                     <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" placeholder="image" />
-                                                    <span class="text-danger" style="font-size: 10px">Kosongkan jika tidak ingin mengubah.</span>
+                                                    <span class="text-danger" style="font-size: 10px">Kosongkan jika tidak ingin mengubah. <br>
+                                                        Disarankan background berwarna putih atau .png.
+                                                    </span>
                                                     @error('image')
                                                         <div class="invalid-feedback">
                                                         <strong>{{ $message }}</strong>
