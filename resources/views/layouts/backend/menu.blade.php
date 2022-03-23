@@ -55,6 +55,11 @@
                             <span class="menu-item text-truncate" data-i18n="Basic">Kegiatan</span>
                         </a>
                     </li>
+                    <li class="nav-item {{ (request()->is('backend-imageslider')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-imageslider.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Gambar Slider</span>
+                        </a>
+                    </li>
                    
                 </ul>
             </li>
