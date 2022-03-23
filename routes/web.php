@@ -42,7 +42,9 @@ Route::middleware('auth')->group(function () {
             /// ABOUT \\\
             'backend-about' => Backend\Website\AboutController::class,
             /// VIDEO \\\
-            'backend-video' => Backend\Website\VideoController::class
+            'backend-video' => Backend\Website\VideoController::class,
+            // PENGAJAR \\\
+            'backend-pengajar'  => Backend\Website\PengajarController::class
         ]);
             
     });
