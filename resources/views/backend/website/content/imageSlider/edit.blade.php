@@ -124,6 +124,17 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
+                                                    <label for="basicInput">Title</label> <span class="text-danger">*</span>
+                                                   <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" value=" {{$image->title}} ">
+                                                    @error('title')
+                                                        <div class="invalid-feedback">
+                                                        <strong>{{ $message }}</strong>
+                                                        </div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
                                                     <label for="basicInput">Description</label> <span class="text-danger">*</span>
                                                     <textarea name="desc" class="form-control  @error('desc') is-invalid @enderror" rows="5"> {{$image->desc}} </textarea>
                                                     @error('desc')

@@ -50,6 +50,7 @@ class ImageSliderController extends Controller
             $imageSlider = new ImageSlider;
             $imageSlider->image     = $nama_image;
             $imageSlider->desc      = $request->desc;
+            $imageSlider->title     = $request->title;
             $imageSlider->urutan    = $request->urutan;
             $imageSlider->save();
 
@@ -104,6 +105,7 @@ class ImageSliderController extends Controller
 
             $imageSlider = ImageSlider::find($id);
             $imageSlider->image     = $nama_image ?? $imageSlider->image;
+            $imageSlider->title     = $request->title;
             $imageSlider->desc      = $request->desc;
             $imageSlider->urutan    = $imageSlider->urutan;
             $imageSlider->is_active = $request->is_active;
