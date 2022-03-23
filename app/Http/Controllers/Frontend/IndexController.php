@@ -8,6 +8,7 @@ use App\Models\ImageSlider;
 use Illuminate\Http\Request;
 use App\Models\Jurusan;
 use App\Models\Kegiatan;
+use App\Models\Pengajar;
 use App\Models\Video;
 
 class IndexController extends Controller
@@ -28,6 +29,9 @@ class IndexController extends Controller
         // Video
         $video = Video::where('is_active','0')->first();
 
-        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider','about','video'));
+        // Pengajar
+        $pengajar = Pengajar::with('user')->where('is_active','0')->get();
+
+        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider','about','video','pengajar'));
     }
 }
