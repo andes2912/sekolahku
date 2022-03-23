@@ -36,7 +36,9 @@ Route::middleware('auth')->group(function () {
             //// PROGRAM STUDI \\\\
             'program-studi' =>  Backend\Website\ProgramController::class,
             /// KEGIATAN \\\
-            'backend-kegiatan' => Backend\Website\KegiatanController::class
+            'backend-kegiatan' => Backend\Website\KegiatanController::class,
+            /// IMAGE SLIDER \\\
+            'backend-imageslider' => Backend\website\ImageSliderController::class
         ]);
             
     });

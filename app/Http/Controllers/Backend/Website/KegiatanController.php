@@ -116,7 +116,7 @@ class KegiatanController extends Controller
             $kegiatan->save();
 
             Session::flash('success','Kegiatan Berhasil diupdate !');
-        return redirect()->route('backend-kegiatan.index');
+            return redirect()->route('backend-kegiatan.index');
         } catch (ErrorException $e) {
             throw new ErrorException($e->getMessage());
         }
