@@ -40,7 +40,9 @@ Route::middleware('auth')->group(function () {
             /// IMAGE SLIDER \\\
             'backend-imageslider' => Backend\Website\ImageSliderController::class,
             /// ABOUT \\\
-            'backend-about' => Backend\Website\AboutController::class
+            'backend-about' => Backend\Website\AboutController::class,
+            /// VIDEO \\\
+            'backend-video' => Backend\Website\VideoController::class
         ]);
             
     });
