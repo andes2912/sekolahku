@@ -1,8 +1,8 @@
 <div class="bend niceties preview-1">
-    <div id="ensign-nivoslider-3" class="slides">
-        <img src="{{asset('Assets/Frontend/img/slider/1-1.jpg')}}" alt="slider" title="#slider-direction-1" />
-        <img src="{{asset('Assets/Frontend/img/slider/1-2.jpg')}}" alt="slider" title="#slider-direction-2" />
-        <img src="{{asset('Assets/Frontend/img/slider/1-3.jpg')}}" alt="slider" title="#slider-direction-3" />
+    <div id="ensign-nivoslider-3" class="slides" style="max-height: 550px">
+        @foreach ($slider as $key => $images)
+        <img src="{{asset('storage/images/slider/' .$images->image)}}" alt="slider" title="#slider-direction-{{$key+1}}" style="max-height: 550px"/>
+        @endforeach
     </div>
     <div id="slider-direction-1" class="t-cn slider-direction">
         <div class="slider-content s-tb slide-1">
