@@ -8,6 +8,7 @@ use App\Models\ImageSlider;
 use Illuminate\Http\Request;
 use App\Models\Jurusan;
 use App\Models\Kegiatan;
+use App\Models\Video;
 
 class IndexController extends Controller
 {
@@ -24,6 +25,9 @@ class IndexController extends Controller
         // About
         $about = About::where('is_Active','0')->first();
 
-        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider','about'));
+        // Video
+        $video = Video::where('is_active','0')->first();
+
+        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider','about','video'));
     }
 }
