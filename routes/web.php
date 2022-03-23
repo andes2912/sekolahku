@@ -38,7 +38,9 @@ Route::middleware('auth')->group(function () {
             /// KEGIATAN \\\
             'backend-kegiatan' => Backend\Website\KegiatanController::class,
             /// IMAGE SLIDER \\\
-            'backend-imageslider' => Backend\website\ImageSliderController::class
+            'backend-imageslider' => Backend\Website\ImageSliderController::class,
+            /// ABOUT \\\
+            'backend-about' => Backend\Website\AboutController::class
         ]);
             
     });
