@@ -9095,6 +9095,17 @@ ul.course-feature2 li:before {
   padding: 7px 10px 5px;
   display: inline-block;
 }
+
+.sidebar-latest-research-area ul li .latest-research-content h6 {
+  font-size: 9px;
+  margin-bottom: 4px;
+  line-height: 0.9;
+  font-weight: 500;
+  background: #002147;
+  color: #FFFFFF;
+  padding: 5px 5px 5px;
+  display: inline-block;
+}
 .sidebar-latest-research-area ul li .latest-research-content p {
   line-height: 1.2;
   margin-bottom: 0;

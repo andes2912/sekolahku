@@ -18,10 +18,14 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/','Frontend\IndexController@index');
 
     ///// MENU \\\\\
-    //// PROGRAM STUDI \\\\
-    Route::get('program/{slug}', [App\Http\Controllers\Frontend\MenuController::class, 'programStudi']);
-    //// PROGRAM STUDI \\\\
-    Route::get('kegiatan/{slug}', [App\Http\Controllers\Frontend\MenuController::class, 'kegiatan']);
+        //// PROGRAM STUDI \\\\
+        Route::get('program/{slug}', [App\Http\Controllers\Frontend\MenuController::class, 'programStudi']);
+        //// PROGRAM STUDI \\\\
+        Route::get('kegiatan/{slug}', [App\Http\Controllers\Frontend\MenuController::class, 'kegiatan']);
+
+        /// BERITA \\\
+        Route::get('berita',[App\Http\Controllers\Frontend\IndexController::class,'berita'])->name('berita');
+        Route::get('berita/{slug}',[App\Http\Controllers\Frontend\IndexController::class,'detailBerita'])->name('detail.berita');
 
 Auth::routes();
 
