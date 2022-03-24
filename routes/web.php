@@ -43,8 +43,10 @@ Route::middleware('auth')->group(function () {
             'backend-about' => Backend\Website\AboutController::class,
             /// VIDEO \\\
             'backend-video' => Backend\Website\VideoController::class,
-            // PENGAJAR \\\
-            'backend-pengajar'  => Backend\Website\PengajarController::class
+            /// PENGAJAR \\\
+            'backend-pengajar'  => Backend\Website\PengajarController::class,
+            /// BERITA \\\
+            'backend-berita'    => Backend\Website\BeritaController::class
         ]);
             
     });
