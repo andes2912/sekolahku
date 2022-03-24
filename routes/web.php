@@ -27,6 +27,10 @@ Route::get('/','Frontend\IndexController@index');
         Route::get('berita',[App\Http\Controllers\Frontend\IndexController::class,'berita'])->name('berita');
         Route::get('berita/{slug}',[App\Http\Controllers\Frontend\IndexController::class,'detailBerita'])->name('detail.berita');
 
+        /// EVENT \\\
+        Route::get('event/{slug}',[App\Http\Controllers\Frontend\IndexController::class,'detailEvent'])->name('detail.event');
+        Route::get('event',[App\Http\Controllers\Frontend\IndexController::class,'events'])->name('event');
+
 Auth::routes();
 
 
