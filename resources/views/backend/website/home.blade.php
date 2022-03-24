@@ -1,7 +1,7 @@
 @extends('layouts.backend.app')
 
 @section('title')
-    Dasboard
+    Dashboard
 @endsection
 
 @section('content')
