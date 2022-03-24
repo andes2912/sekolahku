@@ -28,7 +28,6 @@ class CreatePengajarsTable extends Migration
             $table->enum('is_active',[0,1])->default(0);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

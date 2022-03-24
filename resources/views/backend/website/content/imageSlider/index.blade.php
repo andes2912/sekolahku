@@ -130,12 +130,8 @@
                                             </div>
                                           
                                         </div>
-                                        @if ($images->count() < 3)
-                                            <button class="btn btn-primary" type="submit">Tambah</button>
-                                            <a href="{{route('backend-imageslider.index')}}" class="btn btn-warning">Batal</a>
-                                        @else
-                                            <span class="text-danger" style="font-size: 10px">Gambar hanya bisa di upload max 3.</span>                                            
-                                        @endif
+                                        <button class="btn btn-primary" type="submit">Tambah</button>
+                                        <a href="{{route('backend-imageslider.index')}}" class="btn btn-warning">Batal</a>
                                     </form>
                                 </div>
                             </div>
