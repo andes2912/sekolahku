@@ -50,7 +50,9 @@ Route::middleware('auth')->group(function () {
             /// PENGAJAR \\\
             'backend-pengajar'  => Backend\Website\PengajarController::class,
             /// BERITA \\\
-            'backend-berita'    => Backend\Website\BeritaController::class
+            'backend-berita' => Backend\Website\BeritaController::class,
+            /// EVENT \\\
+            'backend-event' => Backend\Website\EventsController::class   
         ]);
             
     });

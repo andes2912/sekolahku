@@ -80,6 +80,11 @@
                             <span class="menu-item text-truncate" data-i18n="Basic">Berita</span>
                         </a>
                     </li>
+                    <li class="nav-item {{ (request()->is('backend-event')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-event.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Event</span>
+                        </a>
+                    </li>
                    
                 </ul>
             </li>
