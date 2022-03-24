@@ -29,7 +29,6 @@ class BeritaRequest extends FormRequest
                 'kategori_id'   => ['required'],
                 'content'       => ['required'],
                 'thumbnail'     => ['required','image','max:1024'],
-                'created_by'    => ['required']
             ];
         }
 
@@ -51,7 +50,6 @@ class BeritaRequest extends FormRequest
             'thumbnail.required'    => 'Thumbnail tidak boleh kosong.',
             'thumbnail.image'       => 'File yang di masukan tidak valid.',
             'thumbnail.max'         => 'Maksimal size  Thumbnail 1MB.',
-            'created_by.required'   => 'User tidak ditemukan.'
         ];
     }
 }
