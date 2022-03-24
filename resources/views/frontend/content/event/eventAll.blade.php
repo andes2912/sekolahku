@@ -19,7 +19,7 @@
                                         </div>
                                         <div class="item-content">
                                             <h3 class="sidebar-title"><a href="{{route('detail.event',$events->slug)}}">{{$events->title}}</a></h3>
-                                            <p> {{$events->content}} </p>
+                                            <p> {{$events->desc}} </p>
                                             <ul class="event-info-block">
                                                 <li><i class="fa fa-calendar" aria-hidden="true"></i>{{Carbon\Carbon::parse($events->acara)->format('d F, Y')}}</li>
                                                 <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{$events->lokasi}}</li>

@@ -36,7 +36,7 @@
                             </div>
                             <div class="event-content-holder">
                                 <h3><a href="{{route('detail.event', $events->slug)}}">{{$events->title}}</a></h3>
-                                <p> {{$events->content}} </p>
+                                <p> {{$events->desc}} </p>
                                 <ul>
                                     <li>{{Carbon\Carbon::parse($events->acara)->format('h:i')}} - Selesai</li>
                                     <li>{{$events->lokasi}}</li>
