@@ -94,6 +94,17 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group"> <span class="text-danger">*</span>
+                                        <label for="basicInput">Desripsi Singkat</label> <span class="text-danger">*</span>
+                                        <textarea name="desc" class="form-control  @error('desc') is-invalid @enderror" rows="3"> {{old('desc')}} </textarea>
+                                        @error('desc')
+                                            <div class="invalid-feedback">
+                                            <strong>{{ $message }}</strong>
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group"> <span class="text-danger">*</span>
                                         <label for="basicInput">Content</label> <span class="text-danger">*</span>
                                         <textarea name="content" class="form-control  @error('content') is-invalid @enderror" cols="30" rows="10"> {{$event->content}} </textarea>
                                         @error('content')
