@@ -56,7 +56,9 @@ Route::middleware('auth')->group(function () {
             /// BERITA \\\
             'backend-berita' => Backend\Website\BeritaController::class,
             /// EVENT \\\
-            'backend-event' => Backend\Website\EventsController::class   
+            'backend-event' => Backend\Website\EventsController::class,
+            /// FOOTER \\\
+            'backend-footer'    => Backend\Website\FooterController::class
         ]);
             
     });
