@@ -4,39 +4,20 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 news-inner-area">
                 <h2 class="title-default-left">Latest News</h2>
                 <ul class="news-wrapper">
-                    <li>
-                        <div class="news-img-holder">
-                            <a href="#"><img src="img/news/1.jpg" class="img-responsive" alt="news"></a>
-                        </div>
-                        <div class="news-content-holder">
-                            <h3><a href="single-news.html">Summer Course Start From 1st June</a></h3>
-                            <div class="post-date">June 15, 2017</div>
-                            <p>Pellentese turpis dignissim amet area ducation process facilitating Knowledge.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="news-img-holder">
-                            <a href="#"><img src="img/news/2.jpg" class="img-responsive" alt="news"></a>
-                        </div>
-                        <div class="news-content-holder">
-                            <h3><a href="single-news.html">Guest Interview will Occur Soon</a></h3>
-                            <div class="post-date">June 15, 2017</div>
-                            <p>Pellentese turpis dignissim amet area ducation process facilitating Knowledge.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="news-img-holder">
-                            <a href="#"><img src="img/news/3.jpg" class="img-responsive" alt="news"></a>
-                        </div>
-                        <div class="news-content-holder">
-                            <h3><a href="single-news.html">Easy English Learning Way</a></h3>
-                            <div class="post-date">June 15, 2017</div>
-                            <p>Pellentese turpis dignissim amet area ducation process facilitating Knowledge.</p>
-                        </div>
-                    </li>
+                    @foreach ($berita as $beritas)
+                        <li>
+                            <div class="news-img-holder">
+                                <a href="{{route('detail.berita', $beritas->slug)}}"><img src="{{asset('storage/images/berita/' .$beritas->thumbnail)}}" class="img-responsive" alt="news" style="max-height: 100px; max-weidth:100px"></a>
+                            </div>
+                            <div class="news-content-holder">
+                                <h3><a href="{{route('detail.berita', $beritas->slug)}}">{{$beritas->title}}</a></h3>
+                                <div class="post-date">{{Carbon\Carbon::parse($beritas->created_at)->format('d F Y')}}</div>
+                            </div>
+                        </li>
+                    @endforeach
                 </ul>
                 <div class="news-btn-holder">
-                    <a href="#" class="view-all-accent-btn">View All</a>
+                    <a href="{{route('berita')}}" class="view-all-accent-btn">Lihat Semua</a>
                 </div>
             </div>
 

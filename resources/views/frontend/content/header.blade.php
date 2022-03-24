@@ -49,7 +49,7 @@
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                     <nav id="desktop-nav">
                         <ul>
-                            <li class="active"><a href="/">Beranda</a></li>
+                            <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="/">Beranda</a></li>
                             <li><a href="#">Tentang Kami</a>
                                 <ul>
                                     <li><a href="">Profile Sekolah</a></li>
@@ -79,7 +79,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="">Berita</a></li>
+                            <li class="{{ (request()->is('berita')) ? 'active' : '' }}"><a href=" {{route('berita')}} ">Berita</a></li>
                             <li><a href="#">PPDB</a>
                                 <ul>
                                     <li><a href="">Informasi Pendaftaran</a></li>

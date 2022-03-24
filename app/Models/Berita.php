@@ -15,4 +15,9 @@ class Berita extends Model
     {
         return $this->belongsTo(KategoriBerita::class ,'kategori_id','id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class ,'created_by','id');
+    }
 }
