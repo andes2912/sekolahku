@@ -54,6 +54,7 @@ class EventsController extends Controller
             $event = new Events;
             $event->title       = $request->title;
             $event->slug        = $slug;
+            $event->desc        = $request->desc;
             $event->content     = $request->content;
             $event->thumbnail   = $nama_image;
             $event->acara       = $request->acara;
@@ -109,6 +110,7 @@ class EventsController extends Controller
             }
             $event = Events::find($id);
             $event->title       = $request->title;
+            $event->desc        = $request->desc;
             $event->content     = $request->content;
             $event->thumbnail   = $nama_image ?? $event->thumbnail;
             $event->acara       = $request->acara ?? $event->acara;
