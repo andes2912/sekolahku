@@ -25,15 +25,6 @@ class UserSeeder extends Seeder
 
             ],
             [
-                'name'      => 'Andri Desmana',
-                'username'  => 'andes',
-                'email'     => 'andri@sch.id',
-                'role'      => 'Guru',
-                'status'    => 'Aktif',
-                'password'  => bcrypt('Bismillah')
-
-            ],
-            [
                 'name'      => 'Annisa Wahyuni',
                 'username'  => 'annisa',
                 'email'     => 'annisa@sch.id',
