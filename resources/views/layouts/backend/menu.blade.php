@@ -75,6 +75,11 @@
                             <span class="menu-item text-truncate" data-i18n="Basic">Pengajar</span>
                         </a>
                     </li>
+                    <li class="nav-item {{ (request()->is('backend-kategori-berita')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-kategori-berita.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Kategori Berita</span>
+                        </a>
+                    </li>
                     <li class="nav-item {{ (request()->is('backend-berita')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('backend-berita.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">Berita</span>

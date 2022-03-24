@@ -53,6 +53,8 @@ Route::middleware('auth')->group(function () {
             'backend-video' => Backend\Website\VideoController::class,
             /// PENGAJAR \\\
             'backend-pengajar'  => Backend\Website\PengajarController::class,
+            /// KATEGORI BERITA \\\
+            'backend-kategori-berita'   => Backend\Website\KategoriBeritaController::class,
             /// BERITA \\\
             'backend-berita' => Backend\Website\BeritaController::class,
             /// EVENT \\\
