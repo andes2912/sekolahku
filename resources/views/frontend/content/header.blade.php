@@ -5,15 +5,19 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="header-top-left">
                         <div class="logo-area">
-                            <a href="index.html"><img class="img-responsive" src="img/logo-primary.png" alt="logo"></a>
+                            @if ($footer->logo == NULL)
+                            <img class="img-responsive" src="{{asset('Assets/Frontend/img/logo-footer.png')}}" alt="logo">
+                        @else
+                            <img class="img-responsive" src="{{asset('storage/images/logo/' .$footer->logo)}}" alt="logo">
+                        @endif
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="header-top-right">
                         <ul>
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="Tel:+1234567890"> + 123 456 78910 </a></li>
-                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#">info@academics.com</a></li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:{{$footer->telp}}"> {{$footer->telp}} </a></li>
+                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#">{{$footer->email}}</a></li>
                             <li>
                                 @auth
                                     <a class="login-btn-area" href="/home"><i class="fa fa-home" aria-hidden="true"></i> {{Auth::user()->name}}</a>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Berita;
 use App\Models\Events;
+use App\Models\Footer;
 use App\Models\ImageSlider;
 use Illuminate\Http\Request;
 use App\Models\Jurusan;
@@ -41,7 +42,10 @@ class IndexController extends Controller
         // Event
         $event = Events::where('is_active','0')->orderBy('created_at','desc')->get();
 
-        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider','about','video','pengajar','berita','event'));
+        // Footer
+        $footer = Footer::first();
+
+        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider','about','video','pengajar','berita','event','footer'));
     }
 
     // Berita
