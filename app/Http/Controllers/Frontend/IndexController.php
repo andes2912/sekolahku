@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Berita;
+use App\Models\Events;
 use App\Models\ImageSlider;
 use Illuminate\Http\Request;
 use App\Models\Jurusan;
@@ -37,7 +38,10 @@ class IndexController extends Controller
         // Berita
         $berita = Berita::where('is_active','0')->get();
 
-        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider','about','video','pengajar','berita'));
+        // Event
+        $event = Events::where('is_active','0')->get();
+
+        return view('frontend.welcome', compact('jurusanM','kegiatanM','slider','about','video','pengajar','berita','event'));
     }
 
     // Berita
@@ -71,4 +75,37 @@ class IndexController extends Controller
         $berita = Berita::where('slug',$slug)->first();
         return view('frontend.content.showBerita', compact('berita','kategori','beritaOther','jurusanM','kegiatanM'));
     }
+
+
+    // Events
+    public function events()
+    {
+         // Menu
+         $jurusanM = Jurusan::where('is_active','0')->get();
+         $kegiatanM = Kegiatan::where('is_active','0')->get();
+ 
+         // Berita
+         $berita = Berita::where('is_active','0')->get();
+ 
+         $event = Events::where('is_active','0')->get();
+         return view('frontend.content.event.eventAll', compact('event','berita','jurusanM','kegiatanM'));
+    }
+
+
+    // Detail Event
+    public function detailEvent($slug)
+    {
+         // Menu
+         $jurusanM = Jurusan::where('is_active','0')->get();
+         $kegiatanM = Kegiatan::where('is_active','0')->get();
+ 
+         // Berita
+         $berita = Berita::where('is_active','0')->get();
+ 
+         $event = Events::where('slug',$slug)->first();
+         $eventOther = Events::where('is_active','0')->get();
+
+         return view('frontend.content.event.detailEvent', compact('event','eventOther','berita','jurusanM','kegiatanM'));
+    }
+
 }

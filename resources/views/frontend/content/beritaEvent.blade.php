@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 news-inner-area">
-                <h2 class="title-default-left">Latest News</h2>
+                <h2 class="title-default-left">Berita Terbaru</h2>
                 <ul class="news-wrapper">
                     @foreach ($berita as $beritas)
                         <li>
@@ -23,45 +23,30 @@
 
             {{-- Event --}}
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-area">
-                <h2 class="title-default-left">Upcoming Events</h2>
+                <h2 class="title-default-left">Events Terbaru</h2>
                 <ul class="event-wrapper">
-                    <li class="wow bounceInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                        <div class="event-calender-wrapper">
-                            <div class="event-calender-holder">
-                                <h3>26</h3>
-                                <p>Jan</p>
-                                <span>2017</span>
+                    @foreach ($event as $events)
+                        <li class="wow bounceInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                            <div class="event-calender-wrapper">
+                                <div class="event-calender-holder">
+                                    <h3>{{Carbon\Carbon::parse($events->acara)->format('d')}}</h3>
+                                    <p>{{Carbon\Carbon::parse($events->acara)->format('M')}}</p>
+                                    <span>{{Carbon\Carbon::parse($events->acara)->format('Y')}}</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="event-content-holder">
-                            <h3><a href="single-event.html">Html MeetUp Conference 2017</a></h3>
-                            <p>Pellentese turpis dignissim amet area ducation process facilitating Knowledge. Pellentese turpis dignissim amet area ducation process facilitating Knowledge. Pellentese turpis dignissim amet area ducation.</p>
-                            <ul>
-                                <li>04:00 PM - 06:00 PM</li>
-                                <li>Australia , Melborn</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="wow bounceInUp" data-wow-duration="2s" data-wow-delay=".3s">
-                        <div class="event-calender-wrapper">
-                            <div class="event-calender-holder">
-                                <h3>26</h3>
-                                <p>Jan</p>
-                                <span>2017</span>
+                            <div class="event-content-holder">
+                                <h3><a href="{{route('detail.event', $events->slug)}}">{{$events->title}}</a></h3>
+                                <p> {{$events->content}} </p>
+                                <ul>
+                                    <li>{{Carbon\Carbon::parse($events->acara)->format('h:i')}} - Selesai</li>
+                                    <li>{{$events->lokasi}}</li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="event-content-holder">
-                            <h3><a href="single-event.html">Workshop On UI Design</a></h3>
-                            <p>Pellentese turpis dignissim amet area ducation process facilitating Knowledge. Pellentese turpis dignissim amet area ducation process facilitating Knowledge. Pellentese turpis dignissim amet area ducation.</p>
-                            <ul>
-                                <li>03:00 PM - 05:00 PM</li>
-                                <li>Australia , Melborn</li>
-                            </ul>
-                        </div>
-                    </li>
+                        </li>
+                    @endforeach
                 </ul>
                 <div class="event-btn-holder">
-                    <a href="#" class="view-all-primary-btn">View All</a>
+                    <a href="{{route('event')}}" class="view-all-primary-btn">View All</a>
                 </div>
             </div>
         </div>
