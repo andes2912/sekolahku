@@ -22,23 +22,8 @@
                                 @auth
                                     <a class="login-btn-area" href="/home"><i class="fa fa-home" aria-hidden="true"></i> {{Auth::user()->name}}</a>
                                 @else
-                                    <a class="login-btn-area" href="#" id="login-button"><i class="fa fa-lock" aria-hidden="true"></i> Masuk</a>
+                                    <a class="login-btn-area" href="{{route('login')}}"><i class="fa fa-lock" aria-hidden="true"></i> Masuk</a>
                                 @endauth
-                                
-                                <div class="login-form" id="login-form" style="display: none;">
-                                    <div class="title-default-left-bold">Masuk</div>
-                                    <form action=" {{route('login')}} " method="POST">
-                                        @csrf
-                                        <label>E-mail *</label>
-                                        <input type="email" name="email" placeholder="E-mail" required />
-                                        <label>Password *</label>
-                                        <input type="password" name="password" placeholder="Password" required />
-                                        <label class="check">Lost your password?</label>
-                                        <span><input type="checkbox" name="remember"/>Remember Me</span>
-                                        <button class="default-big-btn" type="submit">Login</button>
-                                        <button class="default-big-btn form-cancel" type="submit" value="">Cancel</button>
-                                    </form>
-                                </div>
                             </li>
                             <li><a href="#" class="apply-now-btn2">Apply Now</a></li>
                         </ul>
