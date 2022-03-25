@@ -39,7 +39,9 @@
                     <span class="menu-title text-truncate" data-i18n="Dashboards">Dashboard</span>
                 </a>
             </li>
-            @if (auth::user()->auth == 'Admin')
+
+            {{-- MENU ADMIN --}}
+            @if (Auth::user()->role == 'Admin')
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i>
                     <span class="menu-title text-truncate" data-i18n="Card">Website</span>
@@ -98,7 +100,9 @@
                    
                 </ul>
             </li>
-            @endif
+
+            {{-- MENU GURU --}}
+            @elseif(Auth::user()->role == 'Guru')
             <li class=" nav-item">
                 <a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i>
                     <span class="menu-title text-truncate" data-i18n="Card">Data Murid</span>
@@ -121,6 +125,9 @@
                     </li>
                 </ul>
             </li>
+            @endif
+            
+
         </ul>
     </div>
 </div>
