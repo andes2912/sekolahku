@@ -1,10 +1,6 @@
-
 <?php
-
 namespace App\Http\Requests;
-
 use Illuminate\Foundation\Http\FormRequest;
-
 class ChangePasswordRequest extends FormRequest
 {
     
@@ -35,11 +31,11 @@ class ChangePasswordRequest extends FormRequest
     public function messages()
     {
         return [
-            'current_password.required' => 'Password tidak boleh kosong.',
-            'current_password.password' => 'Password yang dimasukan salah.',
-            'password.required'         => 'Password Baru tidak boleh kososng.',
-            'password.min'              => 'Password minimal 8 karakter.',
-            'password.max'              => 'password maksimal 255 karakter.',
+            'current_password.required'         => 'Password tidak boleh kosong.',
+            'current_password.password'         => 'Password yang dimasukan salah.',
+            'password.required'                 => 'Password Baru tidak boleh kososng.',
+            'password.min'                      => 'Password minimal 8 karakter.',
+            'password.max'                      => 'password maksimal 255 karakter.',
             'password_confirmation.required'    => 'Password Konfirmasi tidak boleh kosong.',
             'password_confirmation.password'    => 'Password Konfirmasi yang dimasukan tidak cocok.',
             'password_confirmation.min'         => 'Password Konfirmasi minimal 8 karakter.',
