@@ -38,6 +38,12 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+    /// PROFILE SETTINGS \\\
+    Route::resource('profile-settings',Backend\ProfileController::class);
+    
+        /// CHANGE PASSWORD
+        Route::put('profile-settings/change-password/{id}',[App\Http\Controllers\Backend\ProfileController::class, 'changePassword'])->name('profile.change-password');
+
     ///// WEBSITE \\\\\
     Route::prefix('/')->group( function (){
         Route::resources([
