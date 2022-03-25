@@ -45,7 +45,7 @@ Route::middleware('auth')->group(function () {
         Route::put('profile-settings/change-password/{id}',[App\Http\Controllers\Backend\ProfileController::class, 'changePassword'])->name('profile.change-password');
 
     ///// WEBSITE \\\\\
-    Route::prefix('/')->group( function (){
+    Route::prefix('/')->middleware('role:Admin')->group( function (){
         Route::resources([
             //// PROGRAM STUDI \\\\
             'program-studi' =>  Backend\Website\ProgramController::class,
@@ -68,6 +68,5 @@ Route::middleware('auth')->group(function () {
             /// FOOTER \\\
             'backend-footer'    => Backend\Website\FooterController::class
         ]);
-            
     });
 });
