@@ -8,7 +8,7 @@
                 <div class="single-item">
                     <div class="lecturers1-item-wrapper">
                         <div class="lecturers-img-wrapper">
-                            <a href="#"><img class="img-responsive" src="{{asset('storage/images/guru/' .$pengajars->user->foto_profile)}}" alt="team"></a>
+                            <a href="#"><img class="img-responsive" src="{{asset('storage/images/profile/' .$pengajars->user->foto_profile)}}" alt="team"></a>
                         </div>
                         <div class="lecturers-content-wrapper">
                             <h3 class="item-title"><a href="#">{{$pengajars->user->name}}</a></h3>

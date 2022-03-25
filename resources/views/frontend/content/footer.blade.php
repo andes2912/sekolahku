@@ -43,7 +43,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                 <div class="footer-box">
-                    <h3>Flickr Photos</h3>
+                    <h3>Photos</h3>
                     <ul class="flickr-photos">
                         <li>
                             <a href="#"><img class="img-responsive" src="{{asset('Assets/frontend/img/footer/1.jpg')}}" alt="flickr"></a>

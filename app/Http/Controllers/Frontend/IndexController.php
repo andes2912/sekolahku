@@ -54,6 +54,9 @@ class IndexController extends Controller
          // Menu
          $jurusanM = Jurusan::where('is_active','0')->get();
          $kegiatanM = Kegiatan::where('is_active','0')->get();
+
+         // Footer
+        $footer = Footer::first();
  
          // Kategori
          $kategori = KategoriBerita::where('is_active','0')->orderBy('created_at','desc')->get();
@@ -61,7 +64,7 @@ class IndexController extends Controller
          // Berita
          $berita = Berita::where('is_active','0')->orderBy('created_at','desc')->paginate(10);
  
-         return view('frontend.content.beritaAll', compact('berita','kategori','jurusanM','kegiatanM'));
+         return view('frontend.content.beritaAll', compact('berita','kategori','jurusanM','kegiatanM','footer'));
     }
     // Show Detail Berita
     public function detailBerita($slug)
@@ -70,6 +73,9 @@ class IndexController extends Controller
         $jurusanM = Jurusan::where('is_active','0')->get();
         $kegiatanM = Kegiatan::where('is_active','0')->get();
 
+        // Footer
+        $footer = Footer::first();
+
         // Kategori
         $kategori = KategoriBerita::where('is_active','0')->orderBy('created_at','desc')->get();
         
@@ -77,7 +83,7 @@ class IndexController extends Controller
         $beritaOther = Berita::where('is_active','0')->orderBy('created_at','desc')->get();
 
         $berita = Berita::where('slug',$slug)->first();
-        return view('frontend.content.showBerita', compact('berita','kategori','beritaOther','jurusanM','kegiatanM'));
+        return view('frontend.content.showBerita', compact('berita','kategori','beritaOther','jurusanM','kegiatanM','footer'));
     }
 
 
@@ -87,12 +93,15 @@ class IndexController extends Controller
          // Menu
          $jurusanM = Jurusan::where('is_active','0')->get();
          $kegiatanM = Kegiatan::where('is_active','0')->get();
+
+         // Footer
+        $footer = Footer::first();
  
          // Berita
          $berita = Berita::where('is_active','0')->orderBy('created_at','desc')->get();
  
          $event = Events::where('is_active','0')->orderBy('created_at','desc')->get();
-         return view('frontend.content.event.eventAll', compact('event','berita','jurusanM','kegiatanM'));
+         return view('frontend.content.event.eventAll', compact('event','berita','jurusanM','kegiatanM','footer'));
     }
 
 
@@ -102,6 +111,9 @@ class IndexController extends Controller
          // Menu
          $jurusanM = Jurusan::where('is_active','0')->get();
          $kegiatanM = Kegiatan::where('is_active','0')->get();
+
+         // Footer
+        $footer = Footer::first();
  
          // Berita
          $berita = Berita::where('is_active','0')->orderBy('created_at','desc')->get();
@@ -109,7 +121,7 @@ class IndexController extends Controller
          $event = Events::where('slug',$slug)->first();
          $eventOther = Events::where('is_active','0')->orderBy('created_at','desc')->get();
 
-         return view('frontend.content.event.detailEvent', compact('event','eventOther','berita','jurusanM','kegiatanM'));
+         return view('frontend.content.event.detailEvent', compact('event','eventOther','berita','jurusanM','kegiatanM','footer'));
     }
 
 }
