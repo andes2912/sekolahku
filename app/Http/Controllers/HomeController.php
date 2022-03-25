@@ -26,7 +26,7 @@ class HomeController extends Controller
         $role = Auth::user()->role;
         
         if (Auth::check()) {
-            if ($role == 'Admin') {
+            if ($role == 'Admin' || $role == 'Guru' || $role == 'Murid' || $role == 'Staf') {
                 return view('backend.website.home');
             }
         }
