@@ -31,7 +31,7 @@ Route::get('/','Frontend\IndexController@index');
         Route::get('event/{slug}',[App\Http\Controllers\Frontend\IndexController::class,'detailEvent'])->name('detail.event');
         Route::get('event',[App\Http\Controllers\Frontend\IndexController::class,'events'])->name('event');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 
 // ======= BACKEND ======= \\
