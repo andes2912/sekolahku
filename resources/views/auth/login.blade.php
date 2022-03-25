@@ -82,6 +82,14 @@
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+                                @if($message = Session::get('error'))
+                                    <div class="alert alert-danger" role="alert">
+                                        <div class="alert-body">
+                                            <strong>{{ $message }}</strong>
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                        </div>
+                                    </div>
+                                @endif
                                 <h2 class="card-title font-weight-bold mb-1">Welcome to SekolahKu! 👋</h2>
                                 <p class="card-text mb-2">Silakan masuk ke akun Anda dan mulai petualangan</p>
                                 <form class="auth-login-form mt-2" action="{{route('login')}}" method="POST">
