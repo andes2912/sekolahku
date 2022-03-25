@@ -48,7 +48,7 @@ class PengajarController extends Controller
             $image = $request->file('foto_profile');
             $nama_img = time()."_".$image->getClientOriginalName();
             // isi dengan nama folder tempat kemana file diupload
-            $tujuan_upload = 'public/images/profile';
+            $tujuan_upload = 'public/images/guru';
             $image->storeAs($tujuan_upload,$nama_img);
 
             // Pilih kalimat
@@ -129,7 +129,7 @@ class PengajarController extends Controller
                 $image = $request->file('foto_profile');
                 $nama_img = time()."_".$image->getClientOriginalName();
                 // isi dengan nama folder tempat kemana file diupload
-                $tujuan_upload = 'public/images/profile';
+                $tujuan_upload = 'public/images/guru';
                 $image->storeAs($tujuan_upload,$nama_img);
             }
 
