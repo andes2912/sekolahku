@@ -23,10 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-       if (Auth::check()) {
-           if (Auth::user()->role == 'Admin') {
-               return view('backend.website.home');
-           }
-       }
+        $role = Auth::user()->role;
+        
+        if (Auth::check()) {
+            if ($role == 'Admin') {
+                return view('backend.website.home');
+            }
+        }
     }
 }

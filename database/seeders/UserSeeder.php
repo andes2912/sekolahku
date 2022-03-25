@@ -14,31 +14,19 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $user = [
-            [
-                'name'      => 'Kepala Sekolah',
-                'username'  => 'kepsek',
-                'email'     => 'kepsek@sch.id',
-                'role'      => 'Admin',
-                'status'    => 'Aktif',
-                'password'  => bcrypt('Bismillah')
 
-            ],
-            [
-                'name'      => 'Annisa Wahyuni',
-                'username'  => 'annisa',
-                'email'     => 'annisa@sch.id',
-                'role'      => 'Murid',
-                'status'    => 'Aktif',
-                'password'  => bcrypt('Bismillah')
+         $user = User::create([
+            'name'      => 'Kepala Sekolah',
+            'username'  => 'kepsek',
+            'email'     => 'kepsek@sch.id',
+            'role'      => 'Admin',
+            'status'    => 'Aktif',
+            'password'  => bcrypt('Bismillah')
+        ]);
 
-            ]
-        ];
+        $user->assignRole('Admin');
 
-        User::truncate();
-        foreach ($user as $value) {
-            User::create($value);
-            $this->command->info('Data User '.$value['name'].' has been saved.');
-        }
+        $this->command->info('Data User '.$user->name.' has been saved.');
+       
     }
 }
