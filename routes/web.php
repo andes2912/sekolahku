@@ -68,7 +68,10 @@ Route::middleware('auth')->group(function () {
 
         ///// PENGGUNA \\\\\
         Route::resources([
-            'backend-pengguna-pengajar' => Backend\Pengguna\PengajarController::class
+            /// PENGAJAR \\\
+            'backend-pengguna-pengajar' => Backend\Pengguna\PengajarController::class,
+            /// STAF \\\
+            'backend-pengguna-staf' => Backend\Pengguna\StafController::class
         ]);
     });
 });

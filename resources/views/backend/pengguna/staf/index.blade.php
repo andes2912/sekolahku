@@ -39,7 +39,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header border-bottom">
-                                    <h4 class="card-title">Staf Sekolah <a href=" {{route('backend-pengguna.create')}} " class="btn btn-primary">Tambah</a> </h4>
+                                    <h4 class="card-title">Staf Sekolah <a href=" {{route('backend-pengguna-staf.create')}} " class="btn btn-primary">Tambah</a> </h4>
                                 </div>
                                 <div class="card-datatable">
                                     <table class="dt-responsive table">
@@ -55,7 +55,17 @@
                                             </tr>
                                         </thead>    
                                         <tbody>
-                                          
+                                            @foreach ($staf as $key => $stafs)
+                                            <tr>
+                                                <td></td>
+                                                <td> {{$key+1}} </td>
+                                                <td> {{$stafs->name}} </td>
+                                                <td> {{$stafs->userDetail->nip}} </td>
+                                                <td> {{$stafs->email}} </td>
+                                                <td> {{$stafs->status == 'Aktif' ? 'Aktif' : 'Tidak Aktif'}} </td>
+                                                <td><a href=" {{route('backend-pengguna-staf.edit', $stafs->id)}} " class="btn btn-success btn-sm">Edit</a></td>
+                                            </tr>
+                                       @endforeach
                                         </tbody>                                   
                                     </table>
                                 </div>

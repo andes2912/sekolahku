@@ -106,8 +106,8 @@
                             <span class="menu-item text-truncate" data-i18n="Basic">Pengajar</span>
                         </a>
                     </li>    
-                    <li class="nav-item {{ (request()->is('backend-pengguna-pengajar')) ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href=" {{route('backend-pengguna-pengajar.index')}} "><i data-feather="circle"></i>
+                    <li class="nav-item {{ (request()->is('backend-pengguna-staf')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-pengguna-staf.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">Staf</span>
                         </a>
                     </li>    
