@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePengajarsTable extends Migration
+class CreateUsersDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreatePengajarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengajars', function (Blueprint $table) {
+        Schema::create('users_details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('mengajar');
+            $table->enum('role',['Admin','Guru','Staf','Murid','Orang Tua','Alumni','Guest']);
+            $table->string('mengajar')->nullable();
             $table->bigInteger('nip')->nullable();
             $table->string('email')->nullable();
             $table->string('linkidln')->nullable();
@@ -27,7 +28,6 @@ class CreatePengajarsTable extends Migration
             $table->string('website')->nullable();
             $table->enum('is_active',[0,1])->default(0);
             $table->timestamps();
-
         });
     }
 
@@ -38,6 +38,6 @@ class CreatePengajarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pengajars');
+        Schema::dropIfExists('users_details');
     }
 }

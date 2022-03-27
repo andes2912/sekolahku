@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Website;
+namespace App\Http\Controllers\Backend\Pengguna;
 
 use App\Http\Controllers\Controller;
-use App\Models\Pengajar;
 use App\Models\User;
+use App\Models\UsersDetail;
 use Illuminate\Http\Request;
-use App\Http\Requests\PengajarRequest;
+use App\Http\Requests\StafRequest;
 use ErrorException;
-use DB;
 use Session;
+use Illuminate\Support\Facades\DB;
 
-class PengajarController extends Controller
+class StafController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +20,8 @@ class PengajarController extends Controller
      */
     public function index()
     {
-        $pengajar = Pengajar::with('user')->get();
-        return view('backend.website.content.pengajar.index',compact('pengajar'));
+        $staf = User::with('userDetail')->where('role','Staf')->get();
+        return view('backend.pengguna.staf.index', compact('staf'));
     }
 
     /**
@@ -31,7 +31,7 @@ class PengajarController extends Controller
      */
     public function create()
     {
-        return view('backend.website.content.pengajar.create');
+        return view('backend.pengguna.staf.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class PengajarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PengajarRequest $request)
+    public function store(StafRequest $request)
     {
         try {
             DB::beginTransaction();
@@ -55,34 +55,34 @@ class PengajarController extends Controller
             $kalimatKe  = "1";
             $username   = implode(" ", array_slice(explode(" ", $request->name), 0, $kalimatKe)); // ambil kalimat
 
-            $user = new User;
+            $user = new User();
             $user->name             = $request->name;
             $user->email            = $request->email;
             $user->username         = strtolower($username).date("s");
-            $user->role             = 'Guru';
+            $user->role             = 'Staf';
             $user->status           = 'Aktif';
             $user->foto_profile     = $nama_img;
             $user->password         = bcrypt('12345678');
             $user->save();
 
             if ($user) {
-                $pengajar = new Pengajar;
-                $pengajar->user_id      = $user->id;
-                $pengajar->mengajar     = $request->mengajar;
-                $pengajar->nip          = $request->nip;
-                $pengajar->email        = $request->email;
-                $pengajar->linkidln     = $request->linkidln;
-                $pengajar->instagram    = $request->instagram;
-                $pengajar->website      = $request->website;
-                $pengajar->facebook     = $request->facebook;
-                $pengajar->twitter      = $request->twitter;
-                $pengajar->youtube      = $request->youtube;
-                $pengajar->save();
+                $userDetail = new UsersDetail();
+                $userDetail->user_id      = $user->id;
+                $userDetail->role         = $user->role;
+                $userDetail->nip          = $request->nip;
+                $userDetail->email        = $request->email;
+                $userDetail->linkidln     = $request->linkidln;
+                $userDetail->instagram    = $request->instagram;
+                $userDetail->website      = $request->website;
+                $userDetail->facebook     = $request->facebook;
+                $userDetail->twitter      = $request->twitter;
+                $userDetail->youtube      = $request->youtube;
+                $userDetail->save();
             }
 
             DB::commit();
-            Session::flash('success','Pengajar Berhasil ditambah !');
-            return redirect()->route('backend-pengajar.index');
+            Session::flash('success','Staf Berhasil ditambah !');
+            return redirect()->route('backend-pengguna-staf.index');
 
         } catch (ErrorException $e) {
             DB::rollback();
@@ -109,8 +109,8 @@ class PengajarController extends Controller
      */
     public function edit($id)
     {
-        $pengajar = Pengajar::with('user')->where('user_id',$id)->first();
-        return view('backend.website.content.pengajar.edit', compact('pengajar'));
+        $staf = User::with('userDetail')->where('role','Staf')->find($id);
+        return view('backend.pengguna.staf.edit', compact('staf'));
     }
 
     /**
@@ -120,7 +120,7 @@ class PengajarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PengajarRequest $request, $id)
+    public function update(Request $request, $id)
     {
         try {
             DB::beginTransaction();
@@ -133,36 +133,32 @@ class PengajarController extends Controller
                 $image->storeAs($tujuan_upload,$nama_img);
             }
 
-            // Pilih kalimat
-            $kalimatKe  = "1";
-            $username   = implode(" ", array_slice(explode(" ", $request->name), 0, $kalimatKe)); // ambil kalimat
-
+           
             $user = User::find($id);
             $user->name             = $request->name;
             $user->email            = $request->email;
-            $user->username         = $request->username ? $request->username : strtolower($username).date("s");
             $user->status           = $request->status;
             $user->foto_profile     = $nama_img ?? $user->foto_profile;
             $user->save();
 
             if ($user) {
-                $pengajar = Pengajar::where('user_id',$user->id)->first();
-                $pengajar->mengajar     = $request->mengajar;
-                $pengajar->nip          = $request->nip;
-                $pengajar->email        = $request->email;
-                $pengajar->is_active    = $request->status == 'Aktif' ? '0' : '1';
-                $pengajar->linkidln     = $request->linkidln;
-                $pengajar->instagram    = $request->instagram;
-                $pengajar->website      = $request->website;
-                $pengajar->facebook     = $request->facebook;
-                $pengajar->twitter      = $request->twitter;
-                $pengajar->youtube      = $request->youtube;
-                $pengajar->save();
+                $userDetail = UsersDetail::where('user_id',$id)->first();
+                $userDetail->user_id      = $user->id;
+                $userDetail->nip          = $request->nip;
+                $userDetail->is_active    = $user->status == 'Aktif' ? '0' : '1';
+                $userDetail->email        = $request->email;
+                $userDetail->linkidln     = $request->linkidln;
+                $userDetail->instagram    = $request->instagram;
+                $userDetail->website      = $request->website;
+                $userDetail->facebook     = $request->facebook;
+                $userDetail->twitter      = $request->twitter;
+                $userDetail->youtube      = $request->youtube;
+                $userDetail->save();
             }
 
             DB::commit();
-            Session::flash('success','Pengajar Berhasil ditambah !');
-            return redirect()->route('backend-pengajar.index');
+            Session::flash('success','Staf Berhasil diubah !');
+            return redirect()->route('backend-pengguna-staf.index');
 
         } catch (ErrorException $e) {
             DB::rollback();

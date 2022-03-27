@@ -72,11 +72,6 @@
                             <span class="menu-item text-truncate" data-i18n="Basic">Video</span>
                         </a>
                     </li>
-                    <li class="nav-item {{ (request()->is('backend-pengajar')) ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href=" {{route('backend-pengajar.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Pengajar</span>
-                        </a>
-                    </li>
                     <li class="nav-item {{ (request()->is('backend-kategori-berita')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('backend-kategori-berita.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">Kategori Berita</span>
@@ -98,6 +93,29 @@
                         </a>
                     </li>
                    
+                </ul>
+            </li>
+
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#"><i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Card">Pengguna</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="nav-item {{ (request()->is('backend-pengguna-pengajar')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-pengguna-pengajar.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Pengajar</span>
+                        </a>
+                    </li>    
+                    <li class="nav-item {{ (request()->is('backend-pengguna-staf')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-pengguna-staf.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Staf</span>
+                        </a>
+                    </li>    
+                    <li class="nav-item {{ (request()->is('program-studi')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('program-studi.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Murid</span>
+                        </a>
+                    </li>                   
                 </ul>
             </li>
 
