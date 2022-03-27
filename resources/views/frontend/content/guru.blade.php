@@ -8,13 +8,13 @@
                 <div class="single-item">
                     <div class="lecturers1-item-wrapper">
                         <div class="lecturers-img-wrapper">
-                            <a href="#"><img class="img-responsive" src="{{asset('storage/images/profile/' .$pengajars->user->foto_profile)}}" alt="team"></a>
+                            <a href="#"><img class="img-responsive" src="{{asset('storage/images/profile/' .$pengajars->foto_profile)}}" alt="team"></a>
                         </div>
                         <div class="lecturers-content-wrapper">
-                            <h3 class="item-title"><a href="#">{{$pengajars->user->name}}</a></h3>
-                            <span class="item-designation">{{$pengajars->mengajar}}</span>
+                            <h3 class="item-title"><a href="#">{{$pengajars->name}}</a></h3>
+                            <span class="item-designation">{{$pengajars->userDetail->mengajar}}</span>
                             <ul class="lecturers-social">
-                                <li><a href="{{$pengajars->website}}" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+                                <li><a href="{{$pengajars->userDetail->website}}" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
                                 <li><a href="mailto:{{$pengajars->email}}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
                                 <li><a href="{{'https://www.linkedin.com/in',$pengajars->linkedln}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                 <li><a href="{{'https://www.twitter.com/',$pengajars->twitter}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

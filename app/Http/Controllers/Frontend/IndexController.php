@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use App\Models\Jurusan;
 use App\Models\KategoriBerita;
 use App\Models\Kegiatan;
-use App\Models\Pengajar;
+use App\Models\User;
 use App\Models\Video;
 
 class IndexController extends Controller
@@ -34,7 +34,7 @@ class IndexController extends Controller
         $video = Video::where('is_active','0')->first();
 
         // Pengajar
-        $pengajar = Pengajar::with('user')->where('is_active','0')->get();
+        $pengajar = User::with('userDetail')->where('status','Aktif')->where('role','Guru')->get();
 
         // Berita
         $berita = Berita::where('is_active','0')->orderBy('created_at','desc')->get();
