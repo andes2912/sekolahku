@@ -40,12 +40,11 @@ Route::middleware('auth')->group(function () {
 
     /// PROFILE SETTINGS \\\
     Route::resource('profile-settings',Backend\ProfileController::class);
-    
-        /// CHANGE PASSWORD
-        Route::put('profile-settings/change-password/{id}',[App\Http\Controllers\Backend\ProfileController::class, 'changePassword'])->name('profile.change-password');
+    /// CHANGE PASSWORD
+    Route::put('profile-settings/change-password/{id}',[App\Http\Controllers\Backend\ProfileController::class, 'changePassword'])->name('profile.change-password');
 
-    ///// WEBSITE \\\\\
     Route::prefix('/')->middleware('role:Admin')->group( function (){
+        ///// WEBSITE \\\\\
         Route::resources([
             //// PROGRAM STUDI \\\\
             'program-studi' =>  Backend\Website\ProgramController::class,
@@ -67,6 +66,11 @@ Route::middleware('auth')->group(function () {
             'backend-event' => Backend\Website\EventsController::class,
             /// FOOTER \\\
             'backend-footer'    => Backend\Website\FooterController::class
+        ]);
+
+        ///// PENGGUNA \\\\\
+        Route::resources([
+            'backend-pengguna-pengajar' => Backend\Pengguna\PengajarController::class
         ]);
     });
 });
