@@ -15,6 +15,7 @@ use App\Models\Kegiatan;
 use App\Models\ProfileSekolah;
 use App\Models\User;
 use App\Models\Video;
+use App\Models\Visimisi;
 
 class IndexController extends Controller
 {
@@ -139,6 +140,22 @@ class IndexController extends Controller
 
         $profile = ProfileSekolah::first();
         return view('frontend.content.profileSekolah', compact('profile','jurusanM','kegiatanM','pengajar','footer'));
+    }
+
+    // Visi dan Misi
+    public function visimisi()
+    {
+        $jurusanM = Jurusan::where('is_active','0')->get();
+        $kegiatanM = Kegiatan::where('is_active','0')->get();
+
+        // Pengajar
+        $pengajar = User::with('userDetail')->where('status','Aktif')->where('role','Guru')->get();
+
+        // Footer
+        $footer = Footer::first();
+
+        $visimisi = Visimisi::first();
+        return view('frontend.content.visimisi', compact('visimisi','jurusanM','kegiatanM','pengajar','footer'));
     }
 
 }

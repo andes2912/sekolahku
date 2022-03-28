@@ -42,7 +42,7 @@
                             <li><a href="#">Tentang Kami</a>
                                 <ul>
                                     <li><a href=" {{route('profile.sekolah')}} ">Profile Sekolah</a></li>
-                                    <li><a href="">Visi dan Misi</a></li>
+                                    <li><a href=" {{route('visimisi.sekolah')}} ">Visi dan Misi</a></li>
                                 </ul>
                             </li>
                            
