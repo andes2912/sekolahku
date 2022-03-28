@@ -101,10 +101,10 @@ class VisidanMisiController extends Controller
                 $image->storeAs($tujuan_upload,$nama_img);
             }
 
-            $visimisi = new Visimisi();
+            $visimisi = Visimisi::find($id);
             $visimisi->visi     = $request->visi;
             $visimisi->misi     = $request->misi;
-            $visimisi->image    = $nama_img;
+            $visimisi->image    = $nama_img ?? $visimisi->image;
             $visimisi->update();
 
             Session::flash('success','Visi dan Misi Berhasil diupdate!');
