@@ -92,7 +92,16 @@
                             <span class="menu-item text-truncate" data-i18n="Basic">Footer</span>
                         </a>
                     </li>
-                   
+                    <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Tentang</span></a>
+                        <ul class="menu-content">
+                            <li class="nav-item {{ (request()->is('backend-profile-sekolah')) ? 'active' : '' }}">
+                                <a class="d-flex align-items-center" href="{{route('backend-profile-sekolah.index')}}"><span class="menu-item text-truncate" data-i18n="Third Level">Profile Sekolah</span></a>
+                            </li>
+                            <li class="nav-item {{ (request()->is('backend-visimisi')) ? 'active' : '' }}">
+                                <a class="d-flex align-items-center" href="{{route('backend-visimisi.index')}}"><span class="menu-item text-truncate" data-i18n="Third Level">Visi dan Misi</span></a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
 

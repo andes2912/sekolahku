@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Backend\Website;
 
 use App\Http\Controllers\Controller;
-use App\Models\Kegiatan;
+use App\Models\ProfileSekolah;
 use Illuminate\Http\Request;
-use App\Http\Requests\KegiatanRequest;
+use App\Http\Requests\ProfileSekolahRequest;
 use ErrorException;
 use Session;
-use DB;
 
-class KegiatanController extends Controller
+class ProfilSekolahController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +18,8 @@ class KegiatanController extends Controller
      */
     public function index()
     {
-        $kegiatan = Kegiatan::all();
-        return view('backend.website.kegiatan.index', compact('kegiatan'));
+        $profile = ProfileSekolah::first();
+        return view('backend.website.tentang.index',compact('profile'));
     }
 
     /**
@@ -30,7 +29,7 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        return view('backend.website.kegiatan.create');
+        //
     }
 
     /**
@@ -39,31 +38,27 @@ class KegiatanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(KegiatanRequest $request)
+    public function store(ProfileSekolahRequest $request)
     {
         try {
-            if ($request->image) {
-                $image = $request->file('image');
-                $nama_img = time()."_".$image->getClientOriginalName();
-                // isi dengan nama folder tempat kemana file diupload
-                $tujuan_upload = 'public/images/kegiatan';
-                $image->storeAs($tujuan_upload,$nama_img);
-            }
+            $image = $request->file('image');
+            $nama_img = time()."_".$image->getClientOriginalName();
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'public/images/profileSekolah';
+            $image->storeAs($tujuan_upload,$nama_img);
 
-            $url = \Str::slug($request->nama);
-            $kegiatan = new Kegiatan();
-            $kegiatan->nama     = $request->nama;
-            $kegiatan->slug     = $url;
-            $kegiatan->image    = $nama_img ?? NULL;
-            $kegiatan->content  = $request->content;
-            $kegiatan->save();
+            $profile = new ProfileSekolah();
+            $profile->title     = strtoupper($request->title);
+            $profile->content   = $request->content;
+            $profile->image     = $nama_img;
+            $profile->save();
 
-            Session::flash('success','Kegiatan Berhasil ditambah !');
-            return redirect()->route('backend-kegiatan.index');
+            Session::flash('success','Profile Sekolah Berhasil dibuat!');
+            return redirect()->route('backend-profile-sekolah.index');
+
         } catch (ErrorException $e) {
             throw new ErrorException($e->getMessage());
         }
-
     }
 
     /**
@@ -74,6 +69,7 @@ class KegiatanController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
@@ -84,8 +80,7 @@ class KegiatanController extends Controller
      */
     public function edit($id)
     {
-        $kegiatan = Kegiatan::find($id);
-        return view('backend.website.kegiatan.edit', compact('kegiatan'));
+        //
     }
 
     /**
@@ -95,28 +90,26 @@ class KegiatanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProfileSekolahRequest $request, $id)
     {
         try {
             if ($request->image) {
                 $image = $request->file('image');
                 $nama_img = time()."_".$image->getClientOriginalName();
                 // isi dengan nama folder tempat kemana file diupload
-                $tujuan_upload = 'public/images/kegiatan';
+                $tujuan_upload = 'public/images/profileSekolah';
                 $image->storeAs($tujuan_upload,$nama_img);
             }
 
-            $url = \Str::slug($request->nama);
-            $kegiatan = Kegiatan::findOrFail($id);
-            $kegiatan->nama         = $request->nama;
-            $kegiatan->slug         = $url;
-            $kegiatan->image        = $nama_img ?? $kegiatan->image;
-            $kegiatan->is_active    = $request->is_active;
-            $kegiatan->content      = $request->content;
-            $kegiatan->save();
+            $profile = ProfileSekolah::find($id);
+            $profile->title     = strtoupper($request->title);
+            $profile->content   = $request->content;
+            $profile->image     = $nama_img ?? $profile->image;
+            $profile->save();
 
-            Session::flash('success','Kegiatan Berhasil diupdate !');
-            return redirect()->route('backend-kegiatan.index');
+            Session::flash('success','Profile Sekolah Berhasil diupdate!');
+            return redirect()->route('backend-profile-sekolah.index');
+
         } catch (ErrorException $e) {
             throw new ErrorException($e->getMessage());
         }
