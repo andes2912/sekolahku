@@ -46,6 +46,10 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/')->middleware('role:Admin')->group( function (){
         ///// WEBSITE \\\\\
         Route::resources([
+            /// PROFILE SEKOLAH \\
+            'backend-profile-sekolah'   => Backend\Website\ProfilSekolahController::class,
+            /// VISI & MISI \\\
+            'backend-visimisi'  => Backend\Website\VisidanMisiController::class,
             //// PROGRAM STUDI \\\\
             'program-studi' =>  Backend\Website\ProgramController::class,
             /// KEGIATAN \\\
@@ -63,7 +67,7 @@ Route::middleware('auth')->group(function () {
             /// EVENT \\\
             'backend-event' => Backend\Website\EventsController::class,
             /// FOOTER \\\
-            'backend-footer'    => Backend\Website\FooterController::class
+            'backend-footer'    => Backend\Website\FooterController::class,
         ]);
 
         ///// PENGGUNA \\\\\
