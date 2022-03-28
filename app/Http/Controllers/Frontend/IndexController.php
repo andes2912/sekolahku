@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Models\Jurusan;
 use App\Models\KategoriBerita;
 use App\Models\Kegiatan;
+use App\Models\ProfileSekolah;
 use App\Models\User;
 use App\Models\Video;
 
@@ -108,9 +109,9 @@ class IndexController extends Controller
     // Detail Event
     public function detailEvent($slug)
     {
-         // Menu
-         $jurusanM = Jurusan::where('is_active','0')->get();
-         $kegiatanM = Kegiatan::where('is_active','0')->get();
+        // Menu
+        $jurusanM = Jurusan::where('is_active','0')->get();
+        $kegiatanM = Kegiatan::where('is_active','0')->get();
 
          // Footer
         $footer = Footer::first();
@@ -122,6 +123,22 @@ class IndexController extends Controller
          $eventOther = Events::where('is_active','0')->orderBy('created_at','desc')->get();
 
          return view('frontend.content.event.detailEvent', compact('event','eventOther','berita','jurusanM','kegiatanM','footer'));
+    }
+
+    // Profile Sekolah
+    public function profileSekolah()
+    {
+        $jurusanM = Jurusan::where('is_active','0')->get();
+        $kegiatanM = Kegiatan::where('is_active','0')->get();
+
+        // Pengajar
+        $pengajar = User::with('userDetail')->where('status','Aktif')->where('role','Guru')->get();
+
+        // Footer
+        $footer = Footer::first();
+
+        $profile = ProfileSekolah::first();
+        return view('frontend.content.profileSekolah', compact('profile','jurusanM','kegiatanM','pengajar','footer'));
     }
 
 }

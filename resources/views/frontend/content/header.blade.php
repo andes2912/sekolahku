@@ -41,12 +41,8 @@
                             <li class="{{ (request()->is('/')) ? 'active' : '' }}"><a href="/">Beranda</a></li>
                             <li><a href="#">Tentang Kami</a>
                                 <ul>
-                                    <li><a href="">Profile Sekolah</a></li>
+                                    <li><a href=" {{route('profile.sekolah')}} ">Profile Sekolah</a></li>
                                     <li><a href="">Visi dan Misi</a></li>
-                                    <li><a href="">Struktur Organisasi</a></li>
-                                    <li><a href="">Daftar Guru</a></li>
-                                    <li><a href="">Akreditasi</a></li>
-                                    <li><a href="">Prestasi</a></li>
                                 </ul>
                             </li>
                            

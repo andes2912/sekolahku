@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/','Frontend\IndexController@index');
 
     ///// MENU \\\\\
+        //// PROFILE SEKOLAJ \\\\
+        Route::get('profile-sekolah',[App\Http\Controllers\Frontend\IndexController::class,'profileSekolah'])->name('profile.sekolah');
         //// PROGRAM STUDI \\\\
         Route::get('program/{slug}', [App\Http\Controllers\Frontend\MenuController::class, 'programStudi']);
         //// PROGRAM STUDI \\\\

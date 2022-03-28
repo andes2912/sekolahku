@@ -20,8 +20,8 @@
         @include('frontend.content.video')
     @endsection
 
-     {{-- Guru --}}
-     @section('guru')
+    {{-- Guru --}}
+    @section('guru')
         @include('frontend.content.guru')
     @endsection
 
