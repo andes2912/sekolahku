@@ -71,7 +71,9 @@ Route::middleware('auth')->group(function () {
             /// PENGAJAR \\\
             'backend-pengguna-pengajar' => Backend\Pengguna\PengajarController::class,
             /// STAF \\\
-            'backend-pengguna-staf' => Backend\Pengguna\StafController::class
+            'backend-pengguna-staf' => Backend\Pengguna\StafController::class,
+            /// MURID \\\
+            'backend-pengguna-murid' => Backend\Pengguna\MuridController::class
         ]);
     });
 });

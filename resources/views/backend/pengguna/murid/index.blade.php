@@ -39,7 +39,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header border-bottom">
-                                    <h4 class="card-title">Murid <a href=" {{route('backend-pengguna.create')}} " class="btn btn-primary">Tambah</a> </h4>
+                                    <h4 class="card-title">Murid <a href=" {{route('backend-pengguna-murid.create')}} " class="btn btn-primary">Tambah</a> </h4>
                                 </div>
                                 <div class="card-datatable">
                                     <table class="dt-responsive table">
@@ -48,14 +48,26 @@
                                                 <th></th>
                                                 <th>No</th>
                                                 <th>Nama</th>
-                                                <th>NIP</th>
                                                 <th>Email</th>
                                                 <th>Status</th>
+                                                <th>Role</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>    
                                         <tbody>
-                                          
+                                            @foreach ($murid as $key => $murids)
+                                                <tr>
+                                                    <td></td>
+                                                    <td> {{$key+1}} </td>
+                                                    <td> {{$murids->name}} </td>
+                                                    <td> {{$murids->email}} </td>
+                                                    <td> {{$murids->status}} </td>
+                                                    <td> {{$murids->role == 'Guest' ? 'Calon Murid' : 'Murid'}} </td>
+                                                    <td>
+                                                        <a href=" {{route('backend-pengguna-murid.edit', $murids->id)}} " class="btn btn-success btn-sm">Edit</a>
+                                                    </td>
+                                                </tr>
+                                             @endforeach
                                         </tbody>                                   
                                     </table>
                                 </div>
