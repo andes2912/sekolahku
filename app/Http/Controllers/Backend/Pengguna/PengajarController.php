@@ -81,6 +81,7 @@ class PengajarController extends Controller
                 $userDetail->save();
             }
 
+            $user->assignRole($user->role);
             DB::commit();
             Session::flash('success','Pengajar Berhasil ditambah !');
             return redirect()->route('backend-pengguna-pengajar.index');

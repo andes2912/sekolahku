@@ -1,7 +1,7 @@
 @extends('layouts.backend.app')
 
 @section('title')
-   Tambah Murid
+   Edit Murid
 @endsection
 
 @section('content')
@@ -36,16 +36,17 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header header-bottom">
-                        <h4>Tambah Murid</h4>
+                        <h4>Edit Murid</h4>
                     </div>
                     <div class="card-body">
-                        <form action=" {{route('backend-pengguna-murid.store')}} " method="post" enctype="multipart/form-data">
+                        <form action=" {{route('backend-pengguna-murid.update', $murid->id)}} " method="post" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Nama</label> <span class="text-danger">*</span>
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value=" {{old('name')}} " placeholder="Nama" />
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value=" {{$murid->name}} " placeholder="Nama" />
                                         @error('name')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -57,7 +58,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Email</label> <span class="text-danger">*</span>
-                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value=" {{old('email')}} " placeholder="Email" />
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value=" {{$murid->email}} " placeholder="Email" />
                                         @error('email')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -68,13 +69,13 @@
 
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="basicInput">Kelamin</label> <span class="text-danger">*</span>
-                                        <select name="kelamin" class="form-control @error('kelamin') is-invalid @enderror">
+                                        <label for="basicInput">Status</label> <span class="text-danger">*</span>
+                                        <select name="status" class="form-control @error('status') is-invalid @enderror">
                                             <option value="">-- Pilih --</option>
-                                            <option value="Laki-laki">Laki-laki</option>
-                                            <option value="Perempuan">Perempuan</option>
+                                            <option value="Aktif" {{$murid->status == 'Aktif' ? 'selected' : ''}} >Aktif</option>
+                                            <option value="Tidak Aktif" {{$murid->status == 'Tidak Aktif' ? 'selected' : ''}} >Tidak Aktif</option>
                                         </select>
-                                        @error('kelamin')
+                                        @error('status')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
                                             </div>
@@ -84,18 +85,21 @@
 
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <label for="basicInput">Foto Profile</label>  <span class="text-danger">*</span>
-                                        <input type="file" class="form-control @error('foto_profile') is-invalid @enderror" name="foto_profile"/>
-                                        @error('foto_profile')
+                                        <label for="basicInput">Role</label> <span class="text-danger">*</span>
+                                        <select name="role" class="form-control @error('role') is-invalid @enderror">
+                                            <option value="">-- Pilih --</option>
+                                            <option value="Murid" {{$murid->role == 'Murid' ? 'selected' : ''}} >Murid</option>
+                                            <option value="Guest" {{$murid->role == 'Guest' ? 'selected' : ''}} >Guest</option>
+                                        </select>
+                                        @error('role')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
                                             </div>
                                         @enderror
                                     </div>
                                 </div>
-                              
                             </div>
-                            <button class="btn btn-primary" type="submit">Tambah</button>
+                            <button class="btn btn-primary" type="submit">Update</button>
                             <a href="{{route('backend-pengguna-murid.index')}}" class="btn btn-warning">Batal</a>
                         </form>
                     </div>

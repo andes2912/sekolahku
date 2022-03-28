@@ -156,6 +156,7 @@ class StafController extends Controller
                 $userDetail->save();
             }
 
+            $user->assignRole($user->role);
             DB::commit();
             Session::flash('success','Staf Berhasil diubah !');
             return redirect()->route('backend-pengguna-staf.index');
