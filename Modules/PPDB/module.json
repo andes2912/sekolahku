@@ -1,0 +1,13 @@
+{
+    "name": "PPDB",
+    "alias": "ppdb",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PPDB\\Providers\\PPDBServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
