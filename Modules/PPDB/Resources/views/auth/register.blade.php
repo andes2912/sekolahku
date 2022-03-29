@@ -9,7 +9,7 @@
     <meta name="description" content="Sekolahku adalah aplikasi manajemen sekolah berbasis website yang di bangun dan di kembangkan dengan Framework Laravel">
     <meta name="keywords" content="">
     <meta name="author" content="Andri Desmana">
-    <title>Login Page - SekolahKu</title>
+    <title>Register Page - SekolahKu</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -89,21 +89,23 @@
                                             <button type="button" class="close" data-dismiss="alert">×</button>
                                         </div>
                                     </div>
-                                @elseif($message = Session::get('success'))
-                                <div class="alert alert-success" role="alert">
-                                    <div class="alert-body">
-                                        <strong>{{ $message }}</strong>
-                                        <button type="button" class="close" data-dismiss="alert">×</button>
-                                    </div>
-                                </div>
                                 @endif
                                 <h2 class="card-title font-weight-bold mb-1">Welcome to SekolahKu! 👋</h2>
-                                <p class="card-text mb-2">Silakan masuk ke akun Anda dan mulai petualangan</p>
-                                <form class="auth-login-form mt-2" action="{{route('login')}}" method="POST">
+                                <p class="card-text mb-2">Pendaftaran PPDB MK Yadika Natar</p>
+                                <form class="auth-login-form mt-2" action="{{route('register.store')}}" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <label class="form-label" for="login-email">Email</label>
-                                        <input class="form-control @error('email') is-invalid @enderror" id="login-email" type="text" name="email" placeholder="Masukan Email" aria-describedby="login-email" autofocus="" tabindex="1" />
+                                        <label class="form-label">Nama Lengkap</label>
+                                        <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value=" {{old('name')}} " placeholder="Masukan Nama Lengkap" autofocus="" tabindex="1" />
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" value=" {{old('email')}} " placeholder="Masukan Email" autofocus="" tabindex="1" />
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -111,13 +113,39 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <div class="d-flex justify-content-between">
-                                            <label for="login-password">Password</label><a href=""><small>Forgot Password?</small></a>
-                                        </div>
+                                        <label class="form-label">No WhatApp Calon Murid</label>
+                                        <input class="form-control @error('whatsapp') is-invalid @enderror" type="text" name="whatsapp" value=" {{old('whatsapp')}} " placeholder="Masukan No WhatsApp" autofocus="" tabindex="1" />
+                                        @error('whatsapp')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Asal Sekolah</label>
+                                        <input class="form-control @error('asal_sekolah') is-invalid @enderror" type="text" name="asal_sekolah" value=" {{old('asal_sekolah')}} " placeholder="Masukan Asal Sekolah" autofocus="" tabindex="1" />
+                                        @error('asal_sekolah')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input class="form-control form-control-merge @error('password') is-invalid @enderror" id="login-password" type="password" name="password" placeholder="············" aria-describedby="login-password" tabindex="2" />
+                                            <input class="form-control form-control-merge @error('password') is-invalid @enderror" type="password" name="password" placeholder="············" tabindex="2" />
                                             <div class="input-group-append"><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span></div>
                                             @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group input-group-merge form-password-toggle">
+                                            <input class="form-control form-control-merge @error('confirm_password') is-invalid @enderror" type="confirm_password" name="confirm_password" placeholder="············" tabindex="2" />
+                                            <div class="input-group-append"><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span></div>
+                                            @error('confirm_password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -130,7 +158,7 @@
                                             <label class="custom-control-label" for="remember-me"> Remember Me</label>
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary btn-block" tabindex="4">Masuk</button>
+                                    <button class="btn btn-primary btn-block" tabindex="4">Daftar</button>
                                 </form>
                                 </div>
                         </div>

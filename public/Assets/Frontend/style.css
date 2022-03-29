@@ -798,6 +798,27 @@ h2.sidebar-title:before {
   background: #002147;
   color: #FFFFFF !important;
 }
+.apply-now-btn3 {
+  text-align: center;
+  color: #002147 !important;
+  padding: 8px 0;
+  width: 104px;
+  background: #faeab2;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+  border: 2px solid #faeab2;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.apply-now-btn3:hover {
+  background: transparent;
+  color: #FFFFFF !important;
+}
 .pricetable-btn {
   padding: 10px 0;
   text-align: center;
@@ -10119,4 +10140,8 @@ ul.course-feature2 li:before {
   -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.invalid-feedback {
+  color: red;
 }

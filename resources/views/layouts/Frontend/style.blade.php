@@ -18,6 +18,8 @@
 <link rel="stylesheet" href="{{asset('Assets/Frontend/vendor/slider/css/preview.css')}}" type="text/css" media="screen" />
 <!-- Datetime Picker Style CSS -->
 <link rel="stylesheet" href="{{asset('Assets/Frontend/css/jquery.datetimepicker.css')}}">
+<!-- Select2 CSS -->
+<link rel="stylesheet" href="{{asset('Assets/Frontend/css/select2.min.css')}}">
 <!-- Magic popup CSS -->
 <link rel="stylesheet" href="{{asset('Assets/Frontend/css/magnific-popup.css')}}">
 <!-- Switch Style CSS -->

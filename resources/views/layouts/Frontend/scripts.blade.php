@@ -18,6 +18,8 @@
 <!-- jquery.counterup js -->
 <script src="{{asset('Assets/Frontend/js/jquery.counterup.min.js')}}"></script>
 <script src="{{asset('Assets/Frontend/js/waypoints.min.js')}}"></script>
+<!-- Select2 Js -->
+<script src="{{asset('Assets/Frontend/js/select2.min.js')}}" type="text/javascript"></script>
 <!-- Countdown js -->
 <script src="{{asset('Assets/Frontend/js/jquery.countdown.min.js')}}" type="text/javascript"></script>
 <!-- Isotope js -->

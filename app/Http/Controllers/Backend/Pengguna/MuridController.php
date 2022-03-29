@@ -80,7 +80,7 @@ class MuridController extends Controller
 
             $murid = new User();
             $murid->name            = $request->name;
-            $murid->username        = $request->name;
+            $murid->username        = $username;
             $murid->email           = $request->email;
             $murid->role            = 'Guest';
             $murid->foto_profile    = $nama_img ?? '';
