@@ -80,6 +80,7 @@ class StafController extends Controller
                 $userDetail->save();
             }
 
+            $user->assignRole($user->role);
             DB::commit();
             Session::flash('success','Staf Berhasil ditambah !');
             return redirect()->route('backend-pengguna-staf.index');
@@ -138,6 +139,7 @@ class StafController extends Controller
             $user->name             = $request->name;
             $user->email            = $request->email;
             $user->status           = $request->status;
+            $user->role             = $request->status;
             $user->foto_profile     = $nama_img ?? $user->foto_profile;
             $user->save();
 
