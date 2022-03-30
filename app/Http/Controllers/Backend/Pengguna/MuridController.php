@@ -123,7 +123,7 @@ class MuridController extends Controller
      */
     public function edit($id)
     {
-        $murid = User::where('role','Guest')->find($id);
+        $murid = User::whereIn('role',['Guest','Murid'])->find($id);
         return view('backend.pengguna.murid.edit', compact('murid'));
     }
 
