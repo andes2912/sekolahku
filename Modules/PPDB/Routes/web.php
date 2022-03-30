@@ -37,6 +37,7 @@ Route::prefix('/ppdb')->middleware('role:Guest')->group( function (){
 //// ROLE PPDB \\\\
 Route::prefix('/ppdb')->middleware('role:PPDB')->group( function (){
 
+
     /// DATA MURID \\\
     Route::resource('data-murid','DataMuridController');
 });

@@ -29,6 +29,7 @@ class HomeController extends Controller
             if ($role == 'Admin' || $role == 'Guru' || $role == 'Murid' || $role == 'Staf') {
                 return view('backend.website.home');
             } elseif($role == 'Guest' || $role == 'PPDB') {
+
                 return view('ppdb::backend.index');
             }
         }

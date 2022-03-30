@@ -11,6 +11,7 @@ use Validator;
 use Illuminate\Routing\Controller;
 use DB;
 use Session;
+
 class DataMuridController extends Controller
 {
     /**
@@ -51,6 +52,7 @@ class DataMuridController extends Controller
     {
         $murid = User::with('muridDetail','dataOrtu')->where('role','Guest')->find($id);
         return view('ppdb::backend.dataMurid.show',compact('murid'));
+
     }
 
     /**
@@ -114,6 +116,7 @@ class DataMuridController extends Controller
             DB::rollback();
             throw new ErrorException($e->getMessage());
         }
+
     }
 
     /**
