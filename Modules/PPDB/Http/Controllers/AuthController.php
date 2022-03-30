@@ -5,6 +5,8 @@ namespace Modules\PPDB\Http\Controllers;
 use App\Models\dataMurid;
 use App\Models\User;
 use ErrorException;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\PPDB\Http\Requests\RegisterRequest;
@@ -13,6 +15,20 @@ use DB;
 
 class AuthController extends Controller
 {
+    use RegistersUsers;
+
+    /**
+     * Where to redirect users after registration.
+     *
+     * @var string
+     */
+    protected $redirectTo = RouteServiceProvider::HOME;
+
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     // Register View
     public function registerView()
     {
