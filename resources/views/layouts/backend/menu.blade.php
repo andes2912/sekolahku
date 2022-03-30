@@ -170,6 +170,14 @@
                     <span class="menu-title text-truncate" data-i18n="Pendaftaran">Pendaftaran</span>
                 </a>
             </li>
+
+            {{-- MENU PPDB --}}
+            @elseif(Auth::user()->role == 'PPDB')
+            <li class="nav-item {{ (request()->is('ppdb/data-murid')) ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href="{{route('data-murid.index')}}"><i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Data Calon Murid">Data Calon Murid</span>
+                </a>
+            </li>
             @endif
         </ul>
     </div>

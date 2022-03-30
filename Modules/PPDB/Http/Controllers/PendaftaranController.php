@@ -22,17 +22,11 @@ class PendaftaranController extends Controller
     public function index()
     {
         $user = User::with('muridDetail','dataOrtu')->where('status','Aktif')->where('id',Auth::id())->first();
-
-        // Jika data orang tua masih kosong
-        if ($user->dataOrtu->nama_ayah == NULL) {
-            Session::flash('success','Data kamu belum lengkap !');
-           return redirect('ppdb/form-data-orangtua');
-        }
-
+        
         // Jika data murid sudah lengkap
         if ($user->muridDetail->agama) {
-            Session::flash('success','Data kamu sudah lengkap !');
-           return redirect('/home');
+            // Session::flash('success','Data kamu sudah lengkap !');
+           return redirect('ppdb/form-data-orangtua');
         }
         return view('ppdb::backend.pendaftaran.index', compact('user'));
     }

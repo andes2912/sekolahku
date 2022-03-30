@@ -2,9 +2,15 @@
 
 namespace Modules\PPDB\Http\Controllers;
 
+use App\Models\dataMurid;
+use App\Models\User;
 use Illuminate\Contracts\Support\Renderable;
+use ErrorException;
 use Illuminate\Http\Request;
+use Validator;
 use Illuminate\Routing\Controller;
+use DB;
+use Session;
 
 class DataMuridController extends Controller
 {
@@ -14,7 +20,8 @@ class DataMuridController extends Controller
      */
     public function index()
     {
-        return view('ppdb::backend.dataMuridindex');
+        $murid = User::where('role','Guest')->get();
+        return view('ppdb::backend.dataMurid.index', compact('murid'));
     }
 
     /**
@@ -43,7 +50,9 @@ class DataMuridController extends Controller
      */
     public function show($id)
     {
-        return view('ppdb::show');
+        $murid = User::with('muridDetail','dataOrtu')->where('role','Guest')->find($id);
+        return view('ppdb::backend.dataMurid.show',compact('murid'));
+
     }
 
     /**
@@ -64,7 +73,50 @@ class DataMuridController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            DB::beginTransaction();
+            $validator = Validator::make($request->all(), [
+                'nis'   => 'required|numeric|unique:data_murids',
+                'nisn'  => 'required|numeric|unique:data_murids',
+            ],
+            [
+                'nis.required'      => 'NIS tidak boleh kosong.',
+                'nisn.required'     => 'NISN tidak boleh kosong.',
+                'nis.numeric'       => 'NIS hanya mendukung angka.',
+                'nis.unique'        => 'NIS sudah pernah digunakan.',
+                'nisn.numeric'      => 'NISN hanya mendukung angka.',
+                'nisn.unique'       => 'NISN sudah pernah digunakan.',
+            ]
+            );
+
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            $murid = User::find($id);
+            $murid->role = 'Murid';
+            $murid->update();
+
+            if ($murid) {
+                $data = dataMurid::where('user_id', $id)->first();
+                $data->nis      = $request->nis;
+                $data->nisn     = $request->nisn;
+                $data->update();
+            }
+
+            DB::table('model_has_roles')->where('model_id',$id)->delete();
+            $murid->assignRole($murid->role);
+
+            DB::commit();
+            Session::flash('success','Success, Data Berhasil diupdate !');
+            return redirect()->route('data-murid.index');
+        } catch (ErrorException $e) {
+            DB::rollback();
+            throw new ErrorException($e->getMessage());
+        }
+
     }
 
     /**
