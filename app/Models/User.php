@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Modules\PPDB\Entities\DataOrangTua;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -49,5 +50,15 @@ class User extends Authenticatable
     public function userDetail()
     {
         return $this->belongsTo(UsersDetail::class,'id','user_id');
+    }
+
+    public function muridDetail()
+    {
+        return $this->belongsTo(dataMurid::class, 'id','user_id');
+    }
+
+    public function dataOrtu()
+    {
+        return $this->belongsTo(DataOrangTua::class,'id','user_id');
     }
 }
