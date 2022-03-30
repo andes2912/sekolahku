@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Backend\Pengguna;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use ErrorException;
 use App\Models\User;
 use App\Models\UsersDetail;
-use Illuminate\Http\Request;
-use App\Http\Requests\StafRequest;
-use ErrorException;
+use App\Http\Requests\ppdbRequest;
+use DB;
 use Session;
-use Illuminate\Support\Facades\DB;
 
-class StafController extends Controller
+class PPDBController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +20,8 @@ class StafController extends Controller
      */
     public function index()
     {
-        $staf = User::with('userDetail')->where('role','Staf')->get();
-        return view('backend.pengguna.staf.index', compact('staf'));
+        $user = User::with('userDetail')->where('role','PPDB')->get();
+        return view('backend.pengguna.ppdb.index', compact('user'));
     }
 
     /**
@@ -31,7 +31,7 @@ class StafController extends Controller
      */
     public function create()
     {
-        return view('backend.pengguna.staf.create');
+        return view('backend.pengguna.ppdb.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class StafController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StafRequest $request)
+    public function store(ppdbRequest $request)
     {
         try {
             DB::beginTransaction();
@@ -59,7 +59,7 @@ class StafController extends Controller
             $user->name             = $request->name;
             $user->email            = $request->email;
             $user->username         = strtolower($username).date("s");
-            $user->role             = 'Staf';
+            $user->role             = 'PPDB';
             $user->status           = 'Aktif';
             $user->foto_profile     = $nama_img;
             $user->password         = bcrypt('12345678');
@@ -82,8 +82,8 @@ class StafController extends Controller
 
             $user->assignRole($user->role);
             DB::commit();
-            Session::flash('success','Staf Berhasil ditambah !');
-            return redirect()->route('backend-pengguna-staf.index');
+            Session::flash('success','Staf PPDB Berhasil ditambah !');
+            return redirect()->route('backend-pengguna-ppdb.index');
 
         } catch (ErrorException $e) {
             DB::rollback();
@@ -110,8 +110,8 @@ class StafController extends Controller
      */
     public function edit($id)
     {
-        $staf = User::with('userDetail')->where('role','Staf')->find($id);
-        return view('backend.pengguna.staf.edit', compact('staf'));
+        $user = User::with('userDetail')->find($id);
+        return view('backend.pengguna.ppdb.edit', compact('user'));
     }
 
     /**
@@ -158,8 +158,8 @@ class StafController extends Controller
             }
 
             DB::commit();
-            Session::flash('success','Staf Berhasil diubah !');
-            return redirect()->route('backend-pengguna-staf.index');
+            Session::flash('success','Staf PPDB Berhasil diubah !');
+            return redirect()->route('backend-pengguna-ppdb.index');
 
         } catch (ErrorException $e) {
             DB::rollback();
