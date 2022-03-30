@@ -20,6 +20,7 @@ Route::prefix('ppdb')->group(function() {
     Route::post('/register','AuthController@registerStore')->name('register.store');
 });
 
+//// ROLE GUEST \\\\
 Route::prefix('/ppdb')->middleware('role:Guest')->group( function (){
 
     /// DATA MURID \\
@@ -30,4 +31,12 @@ Route::prefix('/ppdb')->middleware('role:Guest')->group( function (){
     /// DATA ORANG TUA \\
     Route::get('form-data-orangtua','PendaftaranController@dataOrtuView');
     Route::put('form-data-orangtua/{id}','PendaftaranController@updateOrtu');
+});
+
+
+//// ROLE PPDB \\\\
+Route::prefix('/ppdb')->middleware('role:Staf')->group( function (){
+
+    /// DATA MURID \\\
+    Route::resource('data-murid','DataMuridController');
 });

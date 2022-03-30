@@ -159,9 +159,14 @@
             </li>
 
             {{-- MENU GUEST --}}
-            @elseif(Auth::user()->role == 'Guest')
-            <li class="nav-item {{ (request()->is('ppdb/form-pendaftaran')) ? 'active' : '' }}">
+            @elseif(Auth::user()->role == 'Staf')
+            {{-- <li class="nav-item {{ (request()->is('ppdb/form-pendaftaran')) ? 'active' : '' }}">
                 <a class="d-flex align-items-center" href="{{route('ppdb.form-pendaftaran')}}"><i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Pendaftaran">Pendaftaran</span>
+                </a>
+            </li> --}}
+            <li class="nav-item {{ (request()->is('ppdb/data-murid')) ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href="{{route('data-murid.index')}}"><i data-feather="book"></i>
                     <span class="menu-title text-truncate" data-i18n="Pendaftaran">Pendaftaran</span>
                 </a>
             </li>
