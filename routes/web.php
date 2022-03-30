@@ -83,7 +83,9 @@ Route::middleware('auth')->group(function () {
             /// STAF \\\
             'backend-pengguna-staf' => Backend\Pengguna\StafController::class,
             /// MURID \\\
-            'backend-pengguna-murid' => Backend\Pengguna\MuridController::class
+            'backend-pengguna-murid' => Backend\Pengguna\MuridController::class,
+            /// PPDB \\\
+            'backend-pengguna-ppdb' => Backend\Pengguna\PPDBController::class
         ]);
     });
 });
