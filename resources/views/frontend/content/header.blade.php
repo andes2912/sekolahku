@@ -20,12 +20,11 @@
                             <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#">{{@$footer->email}}</a></li>
                             <li>
                                 @auth
-                                    <a class="login-btn-area" href="/home"><i class="fa fa-home" aria-hidden="true"></i> {{Auth::user()->name}}</a>
+                                    <a href="/home" class="apply-now-btn2">Home</a>
                                 @else
-                                    <a class="login-btn-area" href="{{route('login')}}"><i class="fa fa-lock" aria-hidden="true"></i> Masuk</a>
+                                    <a class="apply-now-btn2" href="{{route('login')}}"> Masuk</a>
                                 @endauth
                             </li>
-                            <li><a href="#" class="apply-now-btn2">Apply Now</a></li>
                         </ul>
                     </div>
                 </div>
@@ -58,18 +57,14 @@
                                     <li class="has-child-menu"><a href="#">Kegiatan</a>
                                         <ul class="thired-level">
                                             @foreach ($kegiatanM as $kegiatans)
-                                            <li><a href=" {{url('kegiatan', $kegiatans->slug)}} ">{{$kegiatans->nama}}</a></li>
+                                                <li><a href=" {{url('kegiatan', $kegiatans->slug)}} ">{{$kegiatans->nama}}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                             <li class="{{ (request()->is('berita')) ? 'active' : '' }}"><a href=" {{route('berita')}} ">Berita</a></li>
-                            <li><a href="#">PPDB</a>
-                                <ul>
-                                    <li><a href=" {{url('ppdb')}} ">Informasi Pendaftaran</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{url('ppdb')}}" target="_blank">PPDB</a></li>
                             
                             <li><a href="#">Lainnya</a>
                                 <ul>
@@ -79,14 +74,6 @@
                             </li>
                         </ul>
                     </nav>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div class="header-search">
-                        <form>
-                            <input type="text" class="search-form" placeholder="Search...." required="">
-                            <a href="#" class="search-button" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></a>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
@@ -103,12 +90,8 @@
                             <li class="active"><a href="#">Beranda</a></li>
                             <li><a href="#">Tentang Kami</a>
                                 <ul>
-                                    <li><a href="">Profile Sekolah</a></li>
-                                    <li><a href="">Visi dan Misi</a></li>
-                                    <li><a href="">Struktur Organisasi</a></li>
-                                    <li><a href="">Daftar Guru</a></li>
-                                    <li><a href="">Akreditasi</a></li>
-                                    <li><a href="">Prestasi</a></li>
+                                    <li><a href=" {{route('profile.sekolah')}} ">Profile Sekolah</a></li>
+                                    <li><a href=" {{route('visimisi.sekolah')}} ">Visi dan Misi</a></li>
                                 </ul>
                             </li>
                            
@@ -116,26 +99,22 @@
                                 <ul>
                                     <li class="has-child-menu"><a href="#">Program Studi</a>
                                         <ul class="thired-level">
-                                            <li><a href="">Teknik Komputer Jariangan</a></li>
-                                            <li><a href="">Akuntansi</a></li>
-                                            <li><a href="">Teknik Kendarangan Ringan</a></li>
+                                            @foreach ($jurusanM as $jurusans)
+                                                <li><a href=" {{ url('program', $jurusans->slug)}} "> {{$jurusans->nama}} </a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="has-child-menu"><a href="#">Kegiatan</a>
                                         <ul class="thired-level">
-                                            <li><a href="">Ekstrakurikuler</a></li>
-                                            <li><a href="">Program Unggulan</a></li>
-                                            <li><a href="">Komunitas</a></li>
+                                            @foreach ($kegiatanM as $kegiatans)
+                                                <li><a href=" {{url('kegiatan', $kegiatans->slug)}} ">{{$kegiatans->nama}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="">Berita</a></li>
-                            <li><a href="#">PPDB</a>
-                                <ul>
-                                    <li><a href="">Informasi Pendaftaran</a></li>
-                                </ul>
-                            </li>
+                            <li class="{{ (request()->is('berita')) ? 'active' : '' }}"><a href=" {{route('berita')}} ">Berita</a></li>
+                            <li><a href="{{url('ppdb')}}" target="_blank">PPDB</a></li>
                             
                             <li><a href="#">Lainnya</a>
                                 <ul>
@@ -143,7 +122,13 @@
                                     <li><a href="">Alumni</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Masuk</a></li>
+                            <li>
+                                @auth
+                                    <a href="">{{Auth::user()->name}}</a>
+                                @else
+                                    <a href=" {{route('login')}} ">Masuk</a>
+                                @endauth
+                            </li>
                         </ul>
                     </nav>
                 </div>

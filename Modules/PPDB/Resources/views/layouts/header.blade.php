@@ -11,19 +11,21 @@
                     <div class="col-lg-6 col-md-6 col-sm-9">
                         <nav id="desktop-nav">
                             <ul>
-                                
                                 <li><a href="#">Program Studi</a></li>
                                 <li><a href="#">Alur Pendaftaran</a></li>
                                 <li><a href="#">Berkas</a></li>
                                 <li><a href="#">Biaya</a></li>
-                               
                             </ul>
                         </nav>
                     </div>
                     <div class="col-lg-4 col-md-4 hidden-sm">
                         <div class="apply-btn-area">
-                            <a href="{{route('login')}}" class="apply-now-btn3">Login</a>
-                            <a href="{{route('register')}}" class="apply-now-btn">Daftar</a>
+                            @auth
+                                <a href="{{url('/home')}}" class="apply-now-btn3">Home</a>
+                            @else
+                                <a href="{{route('login')}}" class="apply-now-btn3">Login</a>
+                                <a href="{{route('register')}}" class="apply-now-btn">Daftar</a>
+                            @endauth
                         </div>
                     </div>
                 </div>
