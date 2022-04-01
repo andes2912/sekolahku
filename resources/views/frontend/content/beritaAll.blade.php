@@ -30,6 +30,9 @@
                                 </div>
                             </div>
                         @endforeach
+                        @if ($berita == NULL)
+                            <img src="{{asset('Assets/Frontend/img/empty.svg')}}" class="img-responsive" style="object-fit:cover; margin-top:5% !important; display: block; margin: 0 auto;">
+                        @endif
                       
                         {{ $berita->links('frontend.content.paginate') }}
 
