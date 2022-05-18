@@ -49,8 +49,8 @@ class berkasMuridRequest extends FormRequest
         'foto.required'                   => 'Foto tidak boleh kosong.',
         'foto.mimes'                      => 'Foto hanya mendukung .jpg .jpeg .png atau pdf.',
         'foto.max'                        => 'Ukuran file tidak boleh lebih dari 2MB.',
-
-
+        'ijazah.mimes'                    => 'File Ijazah hanya mendukung .jpg .jpeg .png atau pdf.',
+        'ijazah.max'                      => 'Ukuran file tidak boleh lebih dari 2MB.',
       ];
     }
 

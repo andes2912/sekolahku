@@ -23,6 +23,11 @@
     <div class="content-body">
         <div class="row">
             <div class="col-12">
+              <div class="alert alert-danger {{$murid->berkas->kartu_keluarga != NULL ? 'hidden' : ''}}" role="alert">
+                    <div class="alert-body">
+                        <strong>Info:</strong> Data Calon Murid Belum Lengkap !
+                    </div>
+                </div>
                 <div class="card">
                     <div class="card-body">
                         <form action=" {{route('data-murid.update',$murid->id)}} " method="post" enctype="multipart/form-data">
@@ -350,7 +355,7 @@
 
                                 </div>
                             </div>
-                            <button class="btn btn-primary" type="submit">Terima Murid</button>
+                            <button class="btn btn-primary" type="submit" {{$murid->berkas->kartu_keluarga == NULL ? 'disabled' : ''}} >Terima Murid</button>
                             <a href="{{route('data-murid.index')}}" class="btn btn-warning">Batal</a>
                         </form>
                     </div>

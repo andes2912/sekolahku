@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 use Modules\PPDB\Http\Requests\{berkasMuridRequest, DataMuridRequest,DataOrtuRequest};
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Modules\PPDB\Entities\BerkasMurid;
 use Modules\PPDB\Entities\DataOrangTua;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class PendaftaranController extends Controller
 {
@@ -113,7 +113,7 @@ class PendaftaranController extends Controller
 
             DB::commit();
             Session::flash('success','Success, Data Berhasil dikirim !');
-            return redirect('/home');
+            return redirect('/ppdb/form-berkas');
         } catch (ErrorException $e) {
             DB::rollback();
             throw new ErrorException($e->getMessage());
@@ -173,12 +173,18 @@ class PendaftaranController extends Controller
             $tujuan_upload = 'public/images/berkas_murid';
             $imagerapor->storeAs($tujuan_upload,$rapor);
 
-            if ($request->foto) {
-              $imagefoto = $request->file('foto');
-              $foto = time()."_".$imagefoto->getClientOriginalName();
+            $imagefoto = $request->file('foto');
+            $foto = time()."_".$imagefoto->getClientOriginalName();
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'public/images/berkas_murid';
+            $imagefoto->storeAs($tujuan_upload,$foto);
+
+            if ($request->ijazah) {
+              $imageijazah = $request->file('ijazah');
+              $ijazah = time()."_".$imageijazah->getClientOriginalName();
               // isi dengan nama folder tempat kemana file diupload
               $tujuan_upload = 'public/images/berkas_murid';
-              $imagefoto->storeAs($tujuan_upload,$foto);
+              $imageijazah->storeAs($tujuan_upload,$ijazah);
             }
 
             $berkas = BerkasMurid::find($id);
@@ -188,7 +194,8 @@ class PendaftaranController extends Controller
             $berkas->surat_sehat            = $suratsehat;
             $berkas->surat_tidak_buta_warna = $surattidakbutawarna;
             $berkas->rapor                  = $rapor;
-            $berkas->foto                   = $foto ?? NULL;
+            $berkas->foto                   = $foto;
+            $berkas->ijazah                 = $ijazah ?? null;
             $berkas->save();
 
             DB::commit();
