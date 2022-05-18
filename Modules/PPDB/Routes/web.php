@@ -23,14 +23,18 @@ Route::prefix('ppdb')->group(function() {
 //// ROLE GUEST \\\\
 Route::prefix('/ppdb')->middleware('role:Guest')->group( function (){
 
-    /// DATA MURID \\
+    /// DATA MURID \\\
     Route::get('form-pendaftaran','PendaftaranController@index')->name('ppdb.form-pendaftaran');
     Route::put('form-pendaftaran/{id}','PendaftaranController@update');
 
 
-    /// DATA ORANG TUA \\
+    /// DATA ORANG TUA \\\
     Route::get('form-data-orangtua','PendaftaranController@dataOrtuView');
     Route::put('form-data-orangtua/{id}','PendaftaranController@updateOrtu');
+
+    /// BERKAS MURID \\\
+    Route::get('form-berkas','PendaftaranController@berkasView');
+    Route::put('form-berkas/{id}','PendaftaranController@berkasStore');
 });
 
 

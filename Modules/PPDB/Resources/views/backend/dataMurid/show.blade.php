@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+<style>
+  .hidden {
+    display: none
+  }
+</style>
 <div class="content-wrapper container-xxl p-0">
     <div class="content-header row">
         <div class="content-header-left col-md-9 col-12 mb-2">
@@ -28,7 +33,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Nama Lengkap</label>
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value=" {{$murid->name}} " placeholder="Nama Lengkap" disabled />                                       
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value=" {{$murid->name}} " placeholder="Nama Lengkap" disabled />
                                         @error('name')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -39,7 +44,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Email Address</label>
-                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value=" {{$murid->email}}" placeholder="Email Address" disabled />                                       
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value=" {{$murid->email}}" placeholder="Email Address" disabled />
                                         @error('email')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -50,7 +55,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">NIS</label>
-                                        <input type="text" class="form-control @error('nis') is-invalid @enderror" name="nis" value=" {{$murid->muridDetail->nis}} " />                                       
+                                        <input type="text" class="form-control @error('nis') is-invalid @enderror" name="nis" value=" {{$murid->muridDetail->nis}} " />
                                         @error('nis')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -62,7 +67,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">NISN</label>
-                                        <input type="text" class="form-control @error('nisn') is-invalid @enderror" name="nisn" value=" {{$murid->muridDetail->nisn}} " />                                       
+                                        <input type="text" class="form-control @error('nisn') is-invalid @enderror" name="nisn" value=" {{$murid->muridDetail->nisn}} " />
                                         @error('nisn')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -74,7 +79,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Tempat Lahir</label>
-                                        <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value=" {{$murid->muridDetail->tempat_lahir}} " disabled/>                                       
+                                        <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value=" {{$murid->muridDetail->tempat_lahir}} " disabled/>
                                         @error('tempat_lahir')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -86,7 +91,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Tanggal Lahir</label>
-                                        <input type="text" class="form-control @error('tgl_lahir') is-invalid @enderror" name="tgl_lahir" value=" {{$murid->muridDetail->tgl_lahir}} " disabled/>                                       
+                                        <input type="text" class="form-control @error('tgl_lahir') is-invalid @enderror" name="tgl_lahir" value=" {{$murid->muridDetail->tgl_lahir}} " disabled/>
                                         @error('tgl_lahir')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -98,7 +103,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">No Telp</label>
-                                        <input type="text" class="form-control @error('telp') is-invalid @enderror" name="telp" value=" {{$murid->muridDetail->telp}} "disabled/>                                       
+                                        <input type="text" class="form-control @error('telp') is-invalid @enderror" name="telp" value=" {{$murid->muridDetail->telp}} "disabled/>
                                         @error('telp')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -110,7 +115,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">No WhatsApp</label>
-                                        <input type="text" class="form-control @error('whatsapp') is-invalid @enderror" name="whatsapp" value=" {{$murid->muridDetail->whatsapp}} " disabled/>                                       
+                                        <input type="text" class="form-control @error('whatsapp') is-invalid @enderror" name="whatsapp" value=" {{$murid->muridDetail->whatsapp}} " disabled/>
                                         @error('whatsapp')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -142,7 +147,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Asal Sekolah</label>
-                                        <input type="text" class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" value=" {{$murid->muridDetail->asal_sekolah}} " disabled/>                                       
+                                        <input type="text" class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" value=" {{$murid->muridDetail->asal_sekolah}} " disabled/>
                                         @error('asal_sekolah')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -169,7 +174,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Nama Ayah</label>
-                                        <input type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" value=" {{$murid->dataOrtu->nama_ayah}} " placeholder="Nama Ayah" disabled />                                       
+                                        <input type="text" class="form-control @error('nama_ayah') is-invalid @enderror" name="nama_ayah" value=" {{$murid->dataOrtu->nama_ayah}} " placeholder="Nama Ayah" disabled />
                                         @error('nama_ayah')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -180,7 +185,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">No Telp Ayah</label>
-                                        <input type="text" class="form-control @error('telp_ayah') is-invalid @enderror" name="telp_ayah" value=" {{$murid->dataOrtu->telp_ayah}} " placeholder="telp Ayah" disabled />                                       
+                                        <input type="text" class="form-control @error('telp_ayah') is-invalid @enderror" name="telp_ayah" value=" {{$murid->dataOrtu->telp_ayah}} " placeholder="telp Ayah" disabled />
                                         @error('telp_ayah')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -243,7 +248,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Nama Ibu</label>
-                                        <input type="text" class="form-control @error('nama_ibu') is-invalid @enderror" name="nama_ibu" value=" {{$murid->dataOrtu->nama_ibu}} " placeholder="Nama Ibu" disabled />                                       
+                                        <input type="text" class="form-control @error('nama_ibu') is-invalid @enderror" name="nama_ibu" value=" {{$murid->dataOrtu->nama_ibu}} " placeholder="Nama Ibu" disabled />
                                         @error('nama_ibu')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -254,7 +259,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">No Telp Ibu</label>
-                                        <input type="text" class="form-control @error('telp_ibu') is-invalid @enderror" name="telp_ibu" value=" {{$murid->dataOrtu->telp_ibu}} " placeholder="telp Ibu" disabled />                                       
+                                        <input type="text" class="form-control @error('telp_ibu') is-invalid @enderror" name="telp_ibu" value=" {{$murid->dataOrtu->telp_ibu}} " placeholder="telp Ibu" disabled />
                                         @error('telp_ibu')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -310,9 +315,43 @@
                                         @enderror
                                     </div>
                                 </div>
+                            </div> <br>
+                            <h4>Berkas Murid</h4>
+                            <hr>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul>
+                                      <li>Kartu Keluarga
+                                        <a href="{{asset('storage/images/berkas_murid/' .$murid->berkas->kartu_keluarga)}}" target="_blank" class="badge badge-info {{$murid->berkas->kartu_keluarga == NULL ? 'hidden' : ''}}">view</a>
+                                      </li>
+                                      <li>Surat Kelakuan Baik
+                                        <a href="{{asset('storage/images/berkas_murid/' .$murid->berkas->surat_kelakuan_baik)}}" target="_blank" class="badge badge-info {{$murid->berkas->surat_kelakuan_baik == NULL ? 'hidden' : ''}} ">view</a>
+                                      </li>
+                                      <li>Surat Tidak Buta Warna
+                                        <a href="{{asset('storage/images/berkas_murid/' .$murid->berkas->surat_tidak_buta_warna)}}" target="_blank" class="badge badge-info {{$murid->berkas->surat_tidak_buta_warna == NULL ? 'hidden' : ''}} ">view</a>
+                                      </li>
+                                      <li>ijazah
+                                        <a href="{{asset('storage/images/berkas_murid/' .$murid->berkas->ijazah)}}" target="_blank" class="badge badge-info {{$murid->berkas->ijazah == NULL ? 'hidden' : ''}} ">view</a>
+                                      </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                  <ul>
+                                    <li>Akte Kelahiran
+                                      <a href="{{asset('storage/images/berkas_murid/' .$murid->berkas->akte_kelahiran)}}" target="_blank" class="badge badge-info {{$murid->berkas->akte_kelahiran == NULL ? 'hidden' : ''}} ">view</a>
+                                    </li>
+                                    <li>Surat Sehat
+                                      <a href="{{asset('storage/images/berkas_murid/' .$murid->berkas->surat_sehat)}}" target="_blank" class="badge badge-info {{$murid->berkas->surat_sehat == NULL ? 'hidden' : ''}} ">view</a>
+                                    </li>
+                                    <li>Rapor
+                                      <a href="{{asset('storage/images/berkas_murid/' .$murid->berkas->rapor)}}" target="_blank" class="badge badge-info {{$murid->berkas->rapor == NULL ? 'hidden' : ''}} ">view</a>
+                                    </li>
+                                  </ul>
+
+                                </div>
                             </div>
                             <button class="btn btn-primary" type="submit">Terima Murid</button>
-                            <a href="/home" class="btn btn-warning">Batal</a>
+                            <a href="{{route('data-murid.index')}}" class="btn btn-warning">Batal</a>
                         </form>
                     </div>
                 </div>

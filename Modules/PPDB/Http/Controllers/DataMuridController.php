@@ -20,7 +20,7 @@ class DataMuridController extends Controller
      */
     public function index()
     {
-        $murid = User::where('role','Guest')->get();
+        $murid = User::with('muridDetail')->where('role','Guest')->get();
         return view('ppdb::backend.dataMurid.index', compact('murid'));
     }
 
@@ -50,7 +50,8 @@ class DataMuridController extends Controller
      */
     public function show($id)
     {
-        $murid = User::with('muridDetail','dataOrtu')->where('role','Guest')->find($id);
+        $murid = User::with('muridDetail','dataOrtu','berkas')->where('role','Guest')->find($id);
+        // return $murid;
         return view('ppdb::backend.dataMurid.show',compact('murid'));
 
     }
