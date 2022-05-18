@@ -9,9 +9,8 @@ use ErrorException;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Routing\Controller;
-use DB;
-use Session;
-
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 class DataMuridController extends Controller
 {
     /**
@@ -51,7 +50,10 @@ class DataMuridController extends Controller
     public function show($id)
     {
         $murid = User::with('muridDetail','dataOrtu','berkas')->where('role','Guest')->find($id);
-        // return $murid;
+        if (!$murid->muridDetail->agama || !$murid->dataOrtu->nama_ayah || !$murid->berkas->kartu_keluarga) {
+            Session::flash('error','Calon Siswa Belum Input Biodata Diri !');
+            return redirect('/ppdb/data-murid');
+        }
         return view('ppdb::backend.dataMurid.show',compact('murid'));
 
     }
