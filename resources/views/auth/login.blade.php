@@ -103,7 +103,7 @@
                                     @csrf
                                     <div class="form-group">
                                         <label class="form-label" for="login-email">Email</label>
-                                        <input class="form-control @error('email') is-invalid @enderror" id="login-email" type="text" name="email" placeholder="Masukan Email" aria-describedby="login-email" autofocus="" tabindex="1" />
+                                        <input class="form-control @error('email') is-invalid @enderror" id="login-email" type="text" name="email" value=" {{old('email')}} " placeholder="Masukan Email" aria-describedby="login-email" autofocus="" tabindex="1" />
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
