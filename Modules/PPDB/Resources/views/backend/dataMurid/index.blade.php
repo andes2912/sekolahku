@@ -50,7 +50,7 @@
                                                 <th>Nama</th>
                                                 <th>Email</th>
                                                 <th>Status</th>
-                                                <th>Role</th>
+                                                <th>Hak Akses</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>    
@@ -61,7 +61,7 @@
                                                     <td> {{$key+1}} </td>
                                                     <td> {{$murids->name}} </td>
                                                     <td> {{$murids->email}} </td>
-                                                    <td> {{$murids->status}} </td>
+                                                    <td> {{$murids->muridDetail->proses}} </td>
                                                     <td> {{$murids->role}} </td>
                                                     <td>
                                                         <a href=" {{route('data-murid.show', $murids->id)}} " class="btn btn-success btn-sm">Detail</a>
