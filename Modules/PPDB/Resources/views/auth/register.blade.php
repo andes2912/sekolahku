@@ -143,7 +143,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input class="form-control form-control-merge @error('confirm_password') is-invalid @enderror" type="confirm_password" name="confirm_password" placeholder="············" tabindex="2" />
+                                            <input class="form-control form-control-merge @error('confirm_password') is-invalid @enderror" type="password" name="confirm_password" placeholder="············" tabindex="2" />
                                             <div class="input-group-append"><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span></div>
                                             @error('confirm_password')
                                                 <span class="invalid-feedback" role="alert">
