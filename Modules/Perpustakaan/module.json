@@ -1,0 +1,13 @@
+{
+    "name": "Perpustakaan",
+    "alias": "perpustakaan",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Perpustakaan\\Providers\\PerpustakaanServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
