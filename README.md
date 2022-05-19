@@ -4,7 +4,7 @@ Sekolahku adalah aplikasi manajemen sekolah berbasis website yang di bangun dan 
 
 - Website Sekolah (progress)
 - PPDB (progress)
-- Perpustakaan
+- Perpustakaan (progress)
 - Alumni
 
 Aplikasi masih dalam tahap pengembangan.

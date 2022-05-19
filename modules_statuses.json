@@ -1,5 +1,6 @@
 {
     "Frontend": true,
     "Pendaftaran": true,
-    "PPDB": true
+    "PPDB": true,
+    "Perpustakaan": true
 }
