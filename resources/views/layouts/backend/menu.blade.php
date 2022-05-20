@@ -114,22 +114,27 @@
                         <a class="d-flex align-items-center" href=" {{route('backend-pengguna-pengajar.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">Pengajar</span>
                         </a>
-                    </li>    
+                    </li>
                     <li class="nav-item {{ (request()->is('backend-pengguna-staf')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('backend-pengguna-staf.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">Staf</span>
                         </a>
-                    </li>    
+                    </li>
                     <li class="nav-item {{ (request()->is('backend-pengguna-murid')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('backend-pengguna-murid.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">Murid</span>
                         </a>
-                    </li>  
+                    </li>
                     <li class="nav-item {{ (request()->is('backend-pengguna-ppdb')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('backend-pengguna-ppdb.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">PPDB</span>
                         </a>
-                    </li>                   
+                    </li>
+                    <li class="nav-item {{ (request()->is('backend-pengguna-perpus')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-pengguna-perpus.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Perpustakaan</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
