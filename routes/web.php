@@ -85,7 +85,9 @@ Route::middleware('auth')->group(function () {
             /// MURID \\\
             'backend-pengguna-murid' => Backend\Pengguna\MuridController::class,
             /// PPDB \\\
-            'backend-pengguna-ppdb' => Backend\Pengguna\PPDBController::class
+            'backend-pengguna-ppdb' => Backend\Pengguna\PPDBController::class,
+            /// PERPUSTAKAAN \\\
+            'backend-pengguna-perpus' => Backend\Pengguna\PerpusController::class
         ]);
     });
 });
