@@ -178,6 +178,39 @@
                     <span class="menu-title text-truncate" data-i18n="Data Calon Murid">Data Calon Murid</span>
                 </a>
             </li>
+
+            {{-- MENU PERPUSTAKAAN --}}
+             @elseif(Auth::user()->role == 'Perpustakaan')
+              <li class="nav-item {{ (request()->is('perpus/books')) ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href=" {{route('books.index')}} "><i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Books">Books</span>
+                </a>
+              </li>
+              <li class="nav-item {{ (request()->is('perpus/kategori')) ? 'active' : '' }}">
+                 <a class="d-flex align-items-center" href=" {{route('kategori.index')}} "><i data-feather="list"></i>
+                    <span class="menu-title text-truncate" data-i18n="Category">Category</span>
+                </a>
+              </li>
+              <li class="nav-item {{ (request()->is('perpus/member')) ? 'active' : '' }}">
+                 <a class="d-flex align-items-center" href=" {{route('member.index')}} "><i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Members">Members</span>
+                </a>
+              </li>
+              <li class="nav-item {{ (request()->is('perpus/publisher')) ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href="{{route('publisher.index')}}"><i data-feather="user"></i>
+                    <span class="menu-title text-truncate" data-i18n="Publisher">Publisher</span>
+                </a>
+              </li>
+              <li class="nav-item {{ (request()->is('books/author')) ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href="{{route('author.index')}}"><i data-feather="user-check"></i>
+                    <span class="menu-title text-truncate" data-i18n="Authors">Authors</span>
+                </a>
+              </li>
+              <li class="nav-item {{ (request()->is('perpus/peminjam')) ? 'active' : '' }}">
+                 <a class="d-flex align-items-center" href="{{route('peminjam.index')}}"><i data-feather="briefcase"></i>
+                    <span class="menu-title text-truncate" data-i18n="Members">Peminjam</span>
+                </a>
+              </li>
             @endif
         </ul>
     </div>
