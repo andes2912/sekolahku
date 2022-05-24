@@ -1,5 +1,9 @@
  <!-- BEGIN: Vendor CSS-->
  <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/vendors/css/vendors.min.css')}}">
+ <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/vendors/css/forms/select/select2.min.css')}}">
+
+ <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/vendors/css/pickers/pickadate/pickadate.css')}}">
+ <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/vendors/css/pickers/flatpickr/flatpickr.min.css')}}">
  <!-- END: Vendor CSS-->
 
  <!-- BEGIN: Theme CSS-->
@@ -17,6 +21,8 @@
  <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/vendors/css/tables/datatable/responsive.bootstrap4.min.css')}}">
  <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/vendors/css/tables/datatable/buttons.bootstrap4.min.css')}}">
 
+ <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/plugins/forms/pickers/form-flat-pickr.css')}}">
+ <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/plugins/forms/pickers/form-pickadate.css')}}">
  <!-- END: Page CSS-->
 
  <!-- BEGIN: Custom CSS-->

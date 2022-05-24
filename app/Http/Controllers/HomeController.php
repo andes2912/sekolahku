@@ -24,12 +24,11 @@ class HomeController extends Controller
     public function index()
     {
         $role = Auth::user()->role;
-        
+
         if (Auth::check()) {
-            if ($role == 'Admin' || $role == 'Guru' || $role == 'Murid' || $role == 'Staf') {
+            if ($role == 'Admin' || $role == 'Guru' || $role == 'Murid' || $role == 'Staf' || $role == 'Perpustakaan') {
                 return view('backend.website.home');
             } elseif($role == 'Guest' || $role == 'PPDB') {
-
                 return view('ppdb::backend.index');
             }
         }

@@ -50,6 +50,7 @@
 
 
     @include('layouts.backend.scripts')
+    @yield('scripts')
 </body>
 <!-- END: Body-->
 

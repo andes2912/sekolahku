@@ -9,6 +9,12 @@
 <script src="{{asset('Assets/backend/vendors/js/tables/datatable/responsive.bootstrap4.js')}}"></script>
 <script src="{{asset('Assets/backend/vendors/js/tables/datatable/datatables.checkboxes.min.js')}}"></script>
 <script src="{{asset('Assets/backend/vendors/js/tables/datatable/datatables.buttons.min.js')}}"></script>
+<script src="{{asset('Assets/backend/vendors/js/forms/select/select2.full.min.js')}}"></script>
+<script src="{{asset('Assets/backend/vendors/js/pickers/pickadate/picker.js')}}"></script>
+<script src="{{asset('Assets/backend/vendors/js/pickers/pickadate/picker.date.js')}}"></script>
+<script src="{{asset('Assets/backend/vendors/js/pickers/pickadate/picker.time.js')}}"></script>
+<script src="{{asset('Assets/backend/vendors/js/pickers/pickadate/legacy.js')}}"></script>
+<script src="{{asset('Assets/backend/vendors/js/pickers/flatpickr/flatpickr.min.js')}}"></script>
 <!-- END: Page Vendor JS-->
 
 <!-- BEGIN: Theme JS-->
@@ -18,7 +24,9 @@
 
 <!-- BEGIN: Page JS-->
 <script src="{{asset('Assets/backend/js/scripts/tables/table-datatables-advanced.js')}}"></script>
-
+<script src="{{asset('Assets/backend/js/scripts/forms/form-select2.js')}}"></script>
+<script src="{{asset('Assets/backend/js/scripts/forms/pickers/form-pickers.js')}}"></script>
+<script src="{{asset('Assets/backend/js/scripts/components/components-modals.js')}}"></script>
 <!-- END: Page JS-->
 
 <script>
