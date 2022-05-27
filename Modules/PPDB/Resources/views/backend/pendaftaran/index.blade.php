@@ -27,7 +27,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Nama Lengkap</label>
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value=" {{$user->name}} " placeholder="Nama Lengkap" />                                       
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value=" {{$user->name}} " placeholder="Nama Lengkap" />
                                         @error('name')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -38,7 +38,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Email Address</label>
-                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value=" {{$user->email}}" placeholder="Email Address" />                                       
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value=" {{$user->email}}" placeholder="Email Address" />
                                         @error('email')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -49,7 +49,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">NIS</label>
-                                        <input type="text" class="form-control @error('nis') is-invalid @enderror" name="nis" value=" {{$user->muridDetail->nis}} " disabled/>                                       
+                                        <input type="text" class="form-control @error('nis') is-invalid @enderror" name="nis" value=" {{$user->muridDetail->nis}} " disabled/>
                                         @error('nis')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -61,7 +61,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">NISN</label>
-                                        <input type="text" class="form-control @error('nisn') is-invalid @enderror" name="nisn" value=" {{$user->muridDetail->nisn}} " disabled/>                                       
+                                        <input type="text" class="form-control @error('nisn') is-invalid @enderror" name="nisn" value=" {{$user->muridDetail->nisn}} " disabled/>
                                         @error('nisn')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -73,7 +73,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Tempat Lahir</label>
-                                        <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value=" {{$user->muridDetail->tempat_lahir}} "/>                                       
+                                        <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" name="tempat_lahir" value=" {{$user->muridDetail->tempat_lahir}} "/>
                                         @error('tempat_lahir')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -85,7 +85,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Tanggal Lahir</label>
-                                        <input type="date" class="form-control @error('tgl_lahir') is-invalid @enderror" name="tgl_lahir" value=" {{$user->muridDetail->tgl_lahir}} "/>                                       
+                                        <input type="date" class="form-control flatpickr-basic @error('tgl_lahir') is-invalid @enderror" id="fp-default" name="tgl_lahir" value=" {{$user->muridDetail->tgl_lahir}} "/>
                                         @error('tgl_lahir')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -97,7 +97,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">No Telp</label>
-                                        <input type="text" class="form-control @error('telp') is-invalid @enderror" name="telp" value=" {{$user->muridDetail->telp}} "/>                                       
+                                        <input type="text" class="form-control @error('telp') is-invalid @enderror" name="telp" value=" {{$user->muridDetail->telp}} "/>
                                         @error('telp')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -109,7 +109,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">No WhatsApp</label>
-                                        <input type="text" class="form-control @error('whatsapp') is-invalid @enderror" name="whatsapp" value=" {{$user->muridDetail->whatsapp}} "/>                                       
+                                        <input type="text" class="form-control @error('whatsapp') is-invalid @enderror" name="whatsapp" value=" {{$user->muridDetail->whatsapp}} "/>
                                         @error('whatsapp')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -141,7 +141,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="basicInput">Asal Sekolah</label>
-                                        <input type="text" class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" value=" {{$user->muridDetail->asal_sekolah}} "/>                                       
+                                        <input type="text" class="form-control @error('asal_sekolah') is-invalid @enderror" name="asal_sekolah" value=" {{$user->muridDetail->asal_sekolah}} "/>
                                         @error('asal_sekolah')
                                             <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
