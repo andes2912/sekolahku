@@ -14,7 +14,7 @@ class PublisherRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'    => 'required|unique:publisher',
+            'name'    => 'required|unique:publishers',
             'address' => 'required',
             'phone'   => 'required|numeric'
         ];
