@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('murid')->middleware('role:Murid')->group(function() {
+Route::prefix('murid')->middleware('role:Murid','auth')->group(function() {
     Route::get('/', 'MuridController@index');
 
     Route::resources([
