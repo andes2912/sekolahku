@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Events;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
@@ -27,7 +28,10 @@ class HomeController extends Controller
 
         if (Auth::check()) {
             if ($role == 'Admin' || $role == 'Guru' || $role == 'Murid' || $role == 'Staf' || $role == 'Perpustakaan') {
-                return view('backend.website.home');
+
+              $event = Events::where('is_active','0')->first();
+
+              return view('backend.website.home', compact('event'));
             } elseif($role == 'Guest' || $role == 'PPDB') {
                 return view('ppdb::backend.index');
             }
