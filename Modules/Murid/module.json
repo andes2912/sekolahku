@@ -1,0 +1,13 @@
+{
+    "name": "Murid",
+    "alias": "murid",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Murid\\Providers\\MuridServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

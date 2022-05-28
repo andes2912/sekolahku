@@ -2,5 +2,6 @@
     "Frontend": true,
     "Pendaftaran": true,
     "PPDB": true,
-    "Perpustakaan": true
+    "Perpustakaan": true,
+    "Murid": true
 }
