@@ -44,7 +44,7 @@
                                     <li><a href=" {{route('visimisi.sekolah')}} ">Visi dan Misi</a></li>
                                 </ul>
                             </li>
-                           
+
                             <li><a href="#">Program</a>
                                 <ul>
                                     <li class="has-child-menu"><a href="#">Program Studi</a>
@@ -65,10 +65,10 @@
                             </li>
                             <li class="{{ (request()->is('berita')) ? 'active' : '' }}"><a href=" {{route('berita')}} ">Berita</a></li>
                             <li><a href="{{url('ppdb')}}" target="_blank">PPDB</a></li>
-                            
+
                             <li><a href="#">Lainnya</a>
                                 <ul>
-                                    <li><a href="">Perpustakaan</a></li>
+                                    <li><a href=" {{url('murid/perpustakaan')}} ">Perpustakaan</a></li>
                                     <li><a href="">Alumni</a></li>
                                 </ul>
                             </li>
@@ -94,7 +94,7 @@
                                     <li><a href=" {{route('visimisi.sekolah')}} ">Visi dan Misi</a></li>
                                 </ul>
                             </li>
-                           
+
                             <li><a href="#">Program</a>
                                 <ul>
                                     <li class="has-child-menu"><a href="#">Program Studi</a>
@@ -115,7 +115,7 @@
                             </li>
                             <li class="{{ (request()->is('berita')) ? 'active' : '' }}"><a href=" {{route('berita')}} ">Berita</a></li>
                             <li><a href="{{url('ppdb')}}" target="_blank">PPDB</a></li>
-                            
+
                             <li><a href="#">Lainnya</a>
                                 <ul>
                                     <li><a href="">Perpustakaan</a></li>
