@@ -23,6 +23,7 @@
 
  <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/plugins/forms/pickers/form-flat-pickr.css')}}">
  <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/plugins/forms/pickers/form-pickadate.css')}}">
+ <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css-rtl/pages/page-blog.css')}}">
  <!-- END: Page CSS-->
 
  <!-- BEGIN: Custom CSS-->

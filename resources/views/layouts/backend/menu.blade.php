@@ -211,6 +211,12 @@
                     <span class="menu-title text-truncate" data-i18n="Members">Peminjam</span>
                 </a>
               </li>
+            @elseif(Auth::user()->role == 'Murid')
+              <li class="nav-item {{ (request()->is('murid/perpustakaan')) ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href=" {{route('perpustakaan.index')}} "><i data-feather="book"></i>
+                    <span class="menu-title text-truncate" data-i18n="Books">Perpustakaan</span>
+                </a>
+              </li>
             @endif
         </ul>
     </div>
