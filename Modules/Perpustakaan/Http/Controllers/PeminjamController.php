@@ -108,7 +108,7 @@ class PeminjamController extends Controller
 
         // Rubah availabe menjadi 0 jika stock lebih dari 0
         $available = Book::where('id', $update->book_id)->first();
-        $available->is_available = $stock->stock == 1 ? 0 : 1;
+        $available->is_available = $stock->stock >= 0 ? 0 : 1;
         $available->update();
 
         DB::commit();
