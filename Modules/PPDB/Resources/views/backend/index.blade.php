@@ -43,7 +43,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-sm-6 col-12">
+           @if (Auth::user()->role == 'PPDB')
+             <div class="col-lg-3 col-sm-6 col-12">
               <div class="row">
                 <div class="col-12">
                   <div class="card">
@@ -81,6 +82,7 @@
                 </div>
               </div>
             </div>
+           @endif
         </div>
     </div>
 </div>
