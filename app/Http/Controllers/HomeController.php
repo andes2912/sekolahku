@@ -52,17 +52,34 @@ class HomeController extends Controller
             }
             // DASHBOARD MURID \\
             elseif ($role == 'Murid') {
+              $auth = Auth::id();
 
               $event = Events::where('is_active','0')->first();
-              $lateness = Borrowing::with(['members' => function($q){
-                $q->where('user_id', Auth::id());
-              }])
+              $lateness = Borrowing::with('members')
+              ->when(isset($auth), function($q) use($auth){
+                $q->whereHas('members', function($a) use($auth){
+                  switch ($auth) {
+                    case $auth:
+                     $a->where('user_id', Auth::id());
+                      break;
+                  }
+                });
+              })
               ->whereNull('lateness')
               ->count();
 
-              $pinjam = Borrowing::with(['members' => function($q){
-                $q->where('user_id', Auth::id());
-              }])->count();
+
+              $pinjam = Borrowing::with('members')
+              ->when(isset($auth), function($q) use($auth){
+                $q->whereHas('members', function($a) use($auth){
+                  switch ($auth) {
+                    case $auth:
+                     $a->where('user_id', Auth::id());
+                      break;
+                  }
+                });
+              })
+              ->count();
 
               return view('murid::index', compact('event','lateness','pinjam'));
 
