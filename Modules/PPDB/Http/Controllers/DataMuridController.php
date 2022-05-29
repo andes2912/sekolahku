@@ -106,6 +106,7 @@ class DataMuridController extends Controller
                 $data = dataMurid::where('user_id', $id)->first();
                 $data->nis      = $request->nis;
                 $data->nisn     = $request->nisn;
+                $data->proses   = $murid->role;
                 $data->update();
             }
 
