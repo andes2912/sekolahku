@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dataMurid;
 use App\Models\Events;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Modules\Perpustakaan\Entities\Book;
@@ -36,8 +38,13 @@ class HomeController extends Controller
               $event = Events::where('is_active','0')->first();
 
               return view('backend.website.home', compact('event'));
+
+            // DASHBOARD PPDB & PENDAFTAR
             } elseif($role == 'Guest' || $role == 'PPDB') {
-                return view('ppdb::backend.index');
+
+              $register = dataMurid::whereNotIn('proses',['Murid','Ditolak'])->whereYear('created_at', Carbon::now())->count();
+              $needVerif = dataMurid::whereNotNull(['tempat_lahir','tgl_lahir','agama'])->whereNull('nisn')->count();
+              return view('ppdb::backend.index', compact('register','needVerif'));
 
             // DASHBOARD PERPUSTAKAAN \\
             } elseif ($role == 'Perpustakaan') {
