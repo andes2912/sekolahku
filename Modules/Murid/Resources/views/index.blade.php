@@ -50,12 +50,12 @@
                     <div class="card-body">
                         <div class="meetup-header d-flex align-items-center">
                             <div class="meetup-day">
-                                <h6 class="mb-0">{{Carbon\Carbon::parse($event->acara)->format('l')}}</h6>
-                                <h3 class="mb-0">{{Carbon\Carbon::parse($event->acara)->format('d')}}</h3>
+                                <h6 class="mb-0">{{Carbon\Carbon::parse($event->acara ?? 0)->format('l')}}</h6>
+                                <h3 class="mb-0">{{Carbon\Carbon::parse($event->acara ?? 0)->format('d')}}</h3>
                             </div>
                             <div class="my-auto">
-                                <h4 class="card-title mb-25">{{$event->title}}</h4>
-                                <p class="card-text mb-0">{{$event->desc}}</p>
+                                <h4 class="card-title mb-25">{{$event->title ?? 'Belum Ada Acara'}}</h4>
+                                <p class="card-text mb-0">{{$event->desc ?? 'Belum Ada Acara'}}</p>
                             </div>
                         </div>
                         <div class="media">
@@ -65,8 +65,8 @@
                                 </div>
                             </div>
                             <div class="media-body">
-                                <h6 class="mb-0">{{Carbon\Carbon::parse($event->acara)->format('d F, Y')}}</h6>
-                                <small>{{Carbon\Carbon::parse($event->acara)->format('H:i:s')}}</small>
+                                <h6 class="mb-0">{{Carbon\Carbon::parse($event->acara ?? 0)->format('d F, Y')}}</h6>
+                                <small>{{Carbon\Carbon::parse($event->acara ?? 0)->format('H:i:s')}}</small>
                             </div>
                         </div>
                         <div class="media">
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="media-body">
-                                <h6 class="mb-0">{{$event->lokasi}}</h6>
+                                <h6 class="mb-0">{{$event->lokasi ?? 'Belum Ada Acara'}}</h6>
                                 <small>Manhattan, New york City</small>
                             </div>
                         </div>
@@ -106,7 +106,11 @@
                                         </div>
                                         <div class="media-body my-auto">
                                             <h4 class="font-weight-bolder mb-0">{{strtoupper(Auth::user()->username)}}</h4>
-                                            <p class="card-text font-small-1 mb-0">Member sejak {{Carbon\carbon::parse(Auth::user()->member->created_at)->format('d F Y')}} </p>
+                                            @if (Auth::user()->member)
+                                              <p class="card-text font-small-1 mb-0">Member sejak {{Carbon\carbon::parse(Auth::user()->member->created_at)->format('d F Y')}} </p>
+                                            @else
+                                              <p class="card-text font-small-1 mb-0 text-warning"> Belum menjadi member Perpustakaan</p>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
