@@ -8,7 +8,7 @@
 <div class="content-wrapper container-xxl p-0">
     <div class="content-body">
         <div class="row">
-            <div class="col-lg-7 col-md-12 col-sm-12">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card card-congratulations">
                     <div class="card-body text-center">
                         <img src="{{asset('Assets/backend/images/pages/decore-left.png')}}" class="congratulations-img-left" alt="card-img-left" />
@@ -26,6 +26,75 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card">
+                      <div class="card-header">
+                          <div>
+                              <h2 class="font-weight-bolder mb-0">{{$guru}}</h2>
+                              <p class="card-text">Guru</p>
+                          </div>
+                          <div class="avatar bg-light-primary p-50 m-0">
+                              <div class="avatar-content">
+                                  <i data-feather="users" class="font-medium-5"></i>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="font-weight-bolder mb-0">{{$acara}}</h2>
+                                <p class="card-text">Acara</p>
+                            </div>
+                            <div class="avatar bg-light-danger p-50 m-0">
+                                <div class="avatar-content">
+                                    <i data-feather="calendar" class="font-medium-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card">
+                      <div class="card-header">
+                          <div>
+                              <h2 class="font-weight-bolder mb-0">{{$murid}}</h2>
+                              <p class="card-text">Murid</p>
+                          </div>
+                          <div class="avatar bg-light-warning p-50 m-0">
+                              <div class="avatar-content">
+                                  <i data-feather="user-check" class="font-medium-5"></i>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="font-weight-bolder mb-0">{{$alumni}}</h2>
+                                <p class="card-text">Alumni</p>
+                            </div>
+                            <div class="avatar bg-light-success p-50 m-0">
+                                <div class="avatar-content">
+                                    <i data-feather="user" class="font-medium-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
             </div>
 
             @if (Auth::user()->role == 'Murid')
@@ -86,6 +155,81 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-xl-8 col-md-6 col-12">
+              <div class="row">
+                <div class="col-12">
+                    <div class="card card-statistics">
+                        <div class="card-header">
+                            <h4 class="card-title">Statistik Perpustakaan</h4>
+                            <div class="d-flex align-items-center">
+                                <p class="card-text font-small-2 mr-25 mb-0">Updated 1 day ago</p>
+                            </div>
+                        </div>
+                        <div class="card-body statistics-body">
+                            <div class="row">
+                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                    <div class="media">
+                                        <div class="avatar bg-light-primary mr-2">
+                                            <div class="avatar-content">
+                                                <i data-feather="trending-up" class="avatar-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body my-auto">
+                                            <h4 class="font-weight-bolder mb-0">30</h4>
+                                            <p class="card-text font-small-3 mb-0">Pengunjung</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
+                                    <div class="media">
+                                        <div class="avatar bg-light-info mr-2">
+                                            <div class="avatar-content">
+                                                <i data-feather="user" class="avatar-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body my-auto">
+                                            <h4 class="font-weight-bolder mb-0">{{$borrow}}</h4>
+                                            <p class="card-text font-small-3 mb-0">Peminjam</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
+                                    <div class="media">
+                                        <div class="avatar bg-light-danger mr-2">
+                                            <div class="avatar-content">
+                                                <i data-feather="users" class="avatar-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body my-auto">
+                                            <h4 class="font-weight-bolder mb-0">{{$member}}</h4>
+                                            <p class="card-text font-small-3 mb-0">Members</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="media">
+                                        <div class="avatar bg-light-success mr-2">
+                                            <div class="avatar-content">
+                                                <i data-feather="book" class="avatar-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="media-body my-auto">
+                                            <h4 class="font-weight-bolder mb-0">{{$book}}</h4>
+                                            <p class="card-text font-small-3 mb-0">Buku</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+
+
+
         </div>
     </div>
 </div>
