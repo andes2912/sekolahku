@@ -48,21 +48,45 @@ class HomeController extends Controller
 
               return view('backend.website.home', compact('guru','murid','alumni','event','acara','book','borrow','member'));
 
-            } elseif ($role == 'Guru' || $role == 'Murid' || $role == 'Staf') {
+
+            }
+            // DASHBOARD MURID \\
+            elseif ($role == 'Murid') {
+
+              $event = Events::where('is_active','0')->first();
+              $lateness = Borrowing::with(['members' => function($q){
+                $q->where('user_id', Auth::id());
+              }])
+              ->whereNull('lateness')
+              ->count();
+
+              $pinjam = Borrowing::with(['members' => function($q){
+                $q->where('user_id', Auth::id());
+              }])->count();
+
+              return view('murid::index', compact('event','lateness','pinjam'));
+
+            }
+
+            elseif ($role == 'Guru' || $role == 'Staf') {
 
               $event = Events::where('is_active','0')->first();
 
               return view('backend.website.home', compact('event'));
 
-            // DASHBOARD PPDB & PENDAFTAR
-            } elseif($role == 'Guest' || $role == 'PPDB') {
+
+            }
+            // DASHBOARD PPDB & PENDAFTAR \\
+            elseif($role == 'Guest' || $role == 'PPDB') {
 
               $register = dataMurid::whereNotIn('proses',['Murid','Ditolak'])->whereYear('created_at', Carbon::now())->count();
               $needVerif = dataMurid::whereNotNull(['tempat_lahir','tgl_lahir','agama'])->whereNull('nisn')->count();
               return view('ppdb::backend.index', compact('register','needVerif'));
 
+
+            }
             // DASHBOARD PERPUSTAKAAN \\
-            } elseif ($role == 'Perpustakaan') {
+            elseif ($role == 'Perpustakaan') {
 
               $book = Book::sum('stock');
               $borrow = Borrowing::whereNull('lateness')->count();
