@@ -11,6 +11,8 @@ use Validator;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Modules\SPP\Entities\PaymentSpp;
+
 class DataMuridController extends Controller
 {
     /**
@@ -108,6 +110,9 @@ class DataMuridController extends Controller
                 $data->nisn     = $request->nisn;
                 $data->proses   = $murid->role;
                 $data->update();
+
+                // create data payment
+                $this->payment($murid->id);
             }
 
             DB::table('model_has_roles')->where('model_id',$id)->delete();
@@ -131,5 +136,15 @@ class DataMuridController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // Create Data Payment
+    public function payment($murid)
+    {
+      PaymentSpp::create([
+        'user_id'   => $murid,
+        'year'      => date('Y'),
+        'is_active' =>  1
+      ]);
     }
 }

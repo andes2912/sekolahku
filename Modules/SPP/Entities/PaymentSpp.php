@@ -9,10 +9,5 @@ class PaymentSpp extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
-    
-    protected static function newFactory()
-    {
-        return \Modules\SPP\Database\factories\PaymentSppFactory::new();
-    }
+    protected $guarded = '';
 }
