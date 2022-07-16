@@ -135,6 +135,11 @@
                             <span class="menu-item text-truncate" data-i18n="Basic">Perpustakaan</span>
                         </a>
                     </li>
+                    <li class="nav-item {{ (request()->is('backend-pengguna-bendahara')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-pengguna-bendahara.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Bendahara</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 

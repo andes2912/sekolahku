@@ -111,6 +111,11 @@ class HomeController extends Controller
               $members = Member::count();
               return view('perpustakaan::index', compact('book','borrow','member','members'));
             }
+
+            // DASHBOARD BENDAHARA \\
+            elseif ($role == 'Bendahara') {
+              return view('spp::index');
+            }
         }
     }
 }
