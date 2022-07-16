@@ -87,7 +87,9 @@ Route::middleware('auth')->group(function () {
             /// PPDB \\\
             'backend-pengguna-ppdb' => Backend\Pengguna\PPDBController::class,
             /// PERPUSTAKAAN \\\
-            'backend-pengguna-perpus' => Backend\Pengguna\PerpusController::class
+            'backend-pengguna-perpus' => Backend\Pengguna\PerpusController::class,
+            /// BENDAHARA \\\
+            'backend-pengguna-bendahara'  => Backend\Pengguna\BendaharaController::class
         ]);
     });
 });
