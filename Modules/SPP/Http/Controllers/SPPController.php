@@ -39,7 +39,7 @@ class SPPController extends Controller
     // Detail Pembayaran
     public function detail($id)
     {
-      $payment = PaymentSpp::with('detailPayment','user.muridDetail')->findOrFail($id);
+      $payment = PaymentSpp::with('detailPayment.aprroveBy','user.muridDetail')->findOrFail($id);
       return view('spp::murid.show', compact('payment'));
     }
 
