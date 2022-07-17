@@ -216,10 +216,25 @@
                     <span class="menu-title text-truncate" data-i18n="Members">Peminjam</span>
                 </a>
               </li>
+
+            {{-- MENU MURID --}}
             @elseif(Auth::user()->role == 'Murid')
               <li class="nav-item {{ (request()->is('murid/perpustakaan')) ? 'active' : '' }}">
                 <a class="d-flex align-items-center" href=" {{route('perpustakaan.index')}} "><i data-feather="book"></i>
                     <span class="menu-title text-truncate" data-i18n="Books">Perpustakaan</span>
+                </a>
+              </li>
+              <li class="nav-item {{ (request()->is('murid/pembayaran')) ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href=" {{route('pembayaran.index')}} "><i data-feather="dollar-sign"></i>
+                    <span class="menu-title text-truncate" data-i18n="Books">Pembayaran</span>
+                </a>
+              </li>
+
+            {{-- MENU BENDAHARA --}}
+            @elseif(Auth::user()->role == 'Bendahara')
+              <li class="nav-item {{ (request()->is('spp/murid')) ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href=" {{route('spp.murid.index')}} "><i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Books">Pembayaran</span>
                 </a>
               </li>
             @endif

@@ -17,11 +17,13 @@ class CreateDetailPaymentSppsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('payment_id');
             $table->unsignedBigInteger('user_id');
+            $table->string('month');
             $table->BigInteger('amount');
             $table->enum('status',['paid','unpaid']);
-            $table->string('file');
-            $table->unsignedBigInteger('approve_by');
-            $table->date('approve_date');
+            $table->string('file')->nullable();
+            $table->date('date_file')->nullable();
+            $table->unsignedBigInteger('approve_by')->nullable();
+            $table->date('approve_date')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
