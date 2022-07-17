@@ -67,7 +67,7 @@
                                                     <td> {{$payments->status}} </td>
                                                     <td> {{$payments->date_file}} </td>
                                                     <td>
-                                                        <a href="{{route('pembayaran.edit', $payments->id)}}" class="btn btn-success btn-sm">{{$payments->file != null ? 'Pembayaran Diproses' : ''}}</a>
+                                                        <a href="{{route('pembayaran.edit', $payments->id)}}" class="btn btn-success btn-sm">{{$payments->file != null ? 'Pembayaran Diproses' : 'Bayar'}}</a>
                                                     </td>
                                                 </tr>
                                             @endforeach

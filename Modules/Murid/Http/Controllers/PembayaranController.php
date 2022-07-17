@@ -76,7 +76,7 @@ class PembayaranController extends Controller
         DB::beginTransaction();
 
         $file = $request->file('file');
-        $file_payment = 'payment-'.time().Auth::id();
+        $file_payment = 'payment-'.time().Auth::id().".".$file->getClientOriginalExtension();
         // isi dengan nama folder tempat kemana file diupload
         $tujuan_upload = 'public/images/bukti_payment';
         $file->storeAs($tujuan_upload,$file_payment);
