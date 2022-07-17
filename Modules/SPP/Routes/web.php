@@ -11,6 +11,11 @@
 |
 */
 
-Route::prefix('spp')->group(function() {
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('spp')->middleware('role:Bendahara')->group(function() {
     Route::get('/', 'SPPController@index');
+
+    Route::get('murid','SPPController@murid')->name('spp.murid.index');
+    Route::get('murid/detail/{id}','SPPController@detail')->name('spp.murid.detail');
 });

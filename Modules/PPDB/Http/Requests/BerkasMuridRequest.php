@@ -4,7 +4,7 @@ namespace Modules\PPDB\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class berkasMuridRequest extends FormRequest
+class BerkasMuridRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.

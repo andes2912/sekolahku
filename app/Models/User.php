@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Modules\Perpustakaan\Entities\Member;
 use Modules\PPDB\Entities\BerkasMurid;
 use Modules\PPDB\Entities\DataOrangTua;
+use Modules\SPP\Entities\PaymentSpp;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -72,5 +74,10 @@ class User extends Authenticatable
     public function member()
     {
       return $this->hasOne(Member::class,'user_id');
+    }
+
+    public function payment()
+    {
+      return $this->hasOne(PaymentSpp::class,'user_id');
     }
 }

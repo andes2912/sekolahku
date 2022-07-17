@@ -2,78 +2,37 @@
 
 namespace Modules\SPP\Http\Controllers;
 
+use App\Helpers\GlobalHelpers;
+use App\Models\User;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Date;
+use Modules\SPP\Entities\PaymentSpp;
 
 class SPPController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
+    use GlobalHelpers;
     public function index()
     {
         return view('spp::index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
+    // Murid
+    public function murid()
     {
-        return view('spp::create');
+      $payment = User::with('payment')
+      ->whereHas('payment',function($a) {
+        $a->where('year',date('Y'));
+      })
+      ->where('role','Murid')->get();
+      return view('spp::murid.index', compact('payment'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
+    // Detail Pembayaran
+    public function detail($id)
     {
-        //
-    }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('spp::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('spp::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
+      $payment = PaymentSpp::with('detailPayment','user.muridDetail')->findOrFail($id);
+      return view('spp::murid.show', compact('payment'));
     }
 }
