@@ -61,6 +61,10 @@ class PembayaranController extends Controller
     public function edit($id)
     {
         $payment = DetailPaymentSpp::with('user.muridDetail')->where('user_id', Auth::id())->findOrFail($id);
+        if ($payment->status == 'paid') {
+          Session::flash('error','Pembayaran Sudah Diterima.');
+          return redirect('murid/pembayaran');
+        }
         return view('murid::pembayaran.edit', compact('payment'));
     }
 
