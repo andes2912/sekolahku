@@ -224,6 +224,11 @@
                     <span class="menu-title text-truncate" data-i18n="Books">Perpustakaan</span>
                 </a>
               </li>
+              <li class="nav-item {{ (request()->is('murid/pembayaran')) ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href=" {{route('pembayaran.index')}} "><i data-feather="dollar-sign"></i>
+                    <span class="menu-title text-truncate" data-i18n="Books">Pembayaran</span>
+                </a>
+              </li>
 
             {{-- MENU BENDAHARA --}}
             @elseif(Auth::user()->role == 'Bendahara')

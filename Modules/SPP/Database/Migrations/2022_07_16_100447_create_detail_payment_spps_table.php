@@ -21,6 +21,7 @@ class CreateDetailPaymentSppsTable extends Migration
             $table->BigInteger('amount');
             $table->enum('status',['paid','unpaid']);
             $table->string('file')->nullable();
+            $table->date('date_file')->nullable();
             $table->unsignedBigInteger('approve_by')->nullable();
             $table->date('approve_date')->nullable();
             $table->timestamps();
