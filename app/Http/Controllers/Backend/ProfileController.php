@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProfileSettingsRequest;
 use App\Http\Requests\ChangePasswordRequest;
 use ErrorException;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class ProfileController extends Controller
 {
@@ -110,7 +110,7 @@ class ProfileController extends Controller
             $profile = User::find($id);
             $profile->password   = bcrypt($request->password);
             $profile->save();
-            
+
             Session::flash('success','Password Berhasil diudate !');
             return back();
 

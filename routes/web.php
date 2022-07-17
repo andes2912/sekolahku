@@ -44,8 +44,17 @@ Auth::routes(['register' => false]);
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    /// PROFILE SETTINGS \\\
+     /// PROFILE \\\
     Route::resource('profile-settings',Backend\ProfileController::class);
+    /// SETTINGS \\\
+      Route::prefix('settings')->group( function(){
+        // BANK
+        Route::get('/',[App\Http\Controllers\Backend\SettingController::class,'index'])->name('settings');
+        // TAMBAH BANK
+        Route::post('add-bank',[App\Http\Controllers\Backend\SettingController::class,'addBank'])->name('settings.add.bank');
+      });
+
+
     /// CHANGE PASSWORD
     Route::put('profile-settings/change-password/{id}',[App\Http\Controllers\Backend\ProfileController::class, 'changePassword'])->name('profile.change-password');
 

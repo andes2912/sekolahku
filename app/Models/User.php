@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Modules\Perpustakaan\Entities\Member;
 use Modules\PPDB\Entities\BerkasMurid;
 use Modules\PPDB\Entities\DataOrangTua;
+use Modules\SPP\Entities\BankAccount;
 use Modules\SPP\Entities\PaymentSpp;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -79,5 +80,14 @@ class User extends Authenticatable
     public function payment()
     {
       return $this->hasOne(PaymentSpp::class,'user_id');
+    }
+
+    public function bank()
+    {
+      return $this->hasOne(BankAccount::class,'user_id');
+    }
+    public function banks()
+    {
+      return $this->hasMany(BankAccount::class,'user_id');
     }
 }
