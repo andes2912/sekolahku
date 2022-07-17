@@ -9,10 +9,5 @@ class BankAccount extends Model
 {
     use HasFactory;
 
-    protected $fillable = [];
-    
-    protected static function newFactory()
-    {
-        return \Modules\SPP\Database\factories\BankAccountFactory::new();
-    }
+    protected $guarded = [];
 }
