@@ -65,34 +65,33 @@
                                                     <td> {{$payments->email}} </td>
                                                     <td>
                                                       @if (Date('m') == 1)
-                                                        {{strtoupper($payments->payment->jan)}}
+                                                        {{strtoupper($payments->payment->January)}}
                                                       @elseif(Date('m') == 2)
-                                                        {{strtoupper($payments->payment->feb)}}
+                                                        {{strtoupper($payments->payment->Febuary)}}
                                                       @elseif(Date('m') == 3)
-                                                        {{strtoupper($payments->payment->mar)}}
+                                                        {{strtoupper($payments->payment->March)}}
                                                       @elseif(Date('m') == 4)
-                                                        {{strtoupper($payments->payment->apr)}}
+                                                        {{strtoupper($payments->payment->April)}}
                                                       @elseif(Date('m') == 5)
-                                                        {{strtoupper($payments->payment->mei)}}
+                                                        {{strtoupper($payments->payment->Mey)}}
                                                       @elseif(Date('m') == 6)
-                                                        {{strtoupper($payments->payment->jun)}}
+                                                        {{strtoupper($payments->payment->Juny)}}
                                                       @elseif(Date('m') == 7)
-                                                        {{ strtoupper($payments->payment->jul) }}
+                                                        {{ strtoupper($payments->payment->July) }}
                                                       @elseif(Date('m') == 8)
-                                                        {{strtoupper($payments->payment->ags)}}
+                                                        {{strtoupper($payments->payment->August)}}
                                                       @elseif(Date('m') == 9)
-                                                        {{strtoupper($payments->payment->sep)}}
+                                                        {{strtoupper($payments->payment->September)}}
                                                       @elseif(Date('m') == 10)
-                                                        {{strtoupper($payments->payment->oct)}}
+                                                        {{strtoupper($payments->payment->October)}}
                                                       @elseif(Date('m') == 11)
-                                                        {{strtoupper($payments->payment->nov)}}
+                                                        {{strtoupper($payments->payment->November)}}
                                                       @elseif(Date('m') == 12)
-                                                        {{strtoupper($payments->payment->dec)}}
+                                                        {{strtoupper($payments->payment->December)}}
                                                       @endif
                                                     </td>
                                                     <td> {{$payments->payment->is_active == 1 ? 'ACTIVE' : 'SUSPEND'}} </td>
                                                     <td>
-                                                        <a href="{{route('spp.murid.detail', $payments->payment->id)}}" class="btn btn-primary btn-sm">Update</a>
                                                         <a href="{{route('spp.murid.detail', $payments->payment->id)}}" class="btn btn-success btn-sm">Detail</a>
                                                     </td>
                                                 </tr>

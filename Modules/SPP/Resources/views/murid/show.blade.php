@@ -66,8 +66,17 @@
                                               <td>{{$detail->approve_by ?? '-'}}</td>
                                               <td>{{$detail->approve_date ?? '-'}}</td>
                                               <td>
-                                                @if ($detail->file != null)
-                                                  <a href="" class="btn btn-success btn-sm">Proses</a>
+                                                @if ($detail->file != null && $detail->statua == 'unpaid')
+                                                  <a href="" class="btn btn-success btn-sm" data-toggle="modal" id="klikModal" data-target="#modalPembayaran"
+                                                  data-id="{{$detail->id}}"
+                                                  data-name="{{$detail->user->name}}"
+                                                  data-nisn="{{$detail->user->muridDetail->nisn}}"
+                                                  data-month="{{$detail->month}}"
+                                                  data-amount="Rp {{number_format($detail->amount)}}"
+                                                  >Proses</a>
+                                                  <a href="{{$detail->url_file}}" target="_blank" class="btn btn-info btn-sm">Bukti Bayar</a>
+                                                @elseif($detail->status == 'paid')
+                                                  <a href="{{$detail->url_file}}" target="_blank" class="btn btn-info btn-sm">Bukti Bayar</a>
                                                 @endif
                                               </td>
                                             </tr>
@@ -82,5 +91,33 @@
             </div>
         </div>
     </div>
+     @include('spp::murid.update')
 </div>
+@endsection
+
+@section('scripts')
+  <script>
+    // Tampilkan Data Pada Modal
+    $(document).on('click','#klikModal', function(){
+        var id = $(this).attr('data-id');
+        var nisn = $(this).attr('data-nisn');
+        var name = $(this).attr('data-name');
+        var month = $(this).attr('data-month');
+        var amount = $(this).attr('data-amount');
+        $("#id_payment").val(id)
+        $("#nisn").val(nisn)
+        $("#name").val(name)
+        $("#month").val(month)
+        $("#amount").val(amount)
+    });
+
+    // Proses Update Data Peminjam
+    $(document).on('click','#konfirmasiPembayaran', function(){
+        var id_payment = $("#id_payment").val();
+        $.get('{{Url("spp/murid/update-pembayaran")}}',{'_token': $('meta[name=csrf-token]').attr('content'),id_payment:id_payment}, function(resp){
+          $("#id_payment").val('');
+          location.reload();
+        });
+    });
+  </script>
 @endsection

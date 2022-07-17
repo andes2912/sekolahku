@@ -18,4 +18,5 @@ Route::prefix('spp')->middleware('role:Bendahara')->group(function() {
 
     Route::get('murid','SPPController@murid')->name('spp.murid.index');
     Route::get('murid/detail/{id}','SPPController@detail')->name('spp.murid.detail');
+    Route::get('murid/update-pembayaran','SPPController@updatePembayaran')->name('spp.murid.update.pembayaran');
 });
