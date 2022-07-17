@@ -65,32 +65,32 @@
                                                     <td> {{$payments->email}} </td>
                                                     <td>
                                                       @if (Date('m') == 1)
-                                                        {{strtoupper($payments->payment->January)}}
+                                                        <span class="badge badge-{{$payments->payment->January == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->January)}}</span>
                                                       @elseif(Date('m') == 2)
-                                                        {{strtoupper($payments->payment->Febuary)}}
+                                                        <span class="badge badge-{{$payments->payment->Febuary == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->Febuary)}}</span>
                                                       @elseif(Date('m') == 3)
-                                                        {{strtoupper($payments->payment->March)}}
+                                                       <span class="badge badge-{{$payments->payment->March == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->March)}}</span>
                                                       @elseif(Date('m') == 4)
-                                                        {{strtoupper($payments->payment->April)}}
+                                                       <span class="badge badge-{{$payments->payment->April == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->April)}}</span>
                                                       @elseif(Date('m') == 5)
-                                                        {{strtoupper($payments->payment->Mey)}}
+                                                        <span class="badge badge-{{$payments->payment->Mey == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->Mey)}}</span>
                                                       @elseif(Date('m') == 6)
-                                                        {{strtoupper($payments->payment->Juny)}}
+                                                        <span class="badge badge-{{$payments->payment->Juny == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->Juny)}}</span>
                                                       @elseif(Date('m') == 7)
-                                                        {{ strtoupper($payments->payment->July) }}
+                                                        <span class="badge badge-{{$payments->payment->July == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->July)}}</span>
                                                       @elseif(Date('m') == 8)
-                                                        {{strtoupper($payments->payment->August)}}
+                                                        <span class="badge badge-{{$payments->payment->August == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->August)}}</span>
                                                       @elseif(Date('m') == 9)
-                                                        {{strtoupper($payments->payment->September)}}
+                                                        <span class="badge badge-{{$payments->payment->September == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->September)}}</span>
                                                       @elseif(Date('m') == 10)
-                                                        {{strtoupper($payments->payment->October)}}
+                                                        <span class="badge badge-{{$payments->payment->October == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->October)}}</span>
                                                       @elseif(Date('m') == 11)
-                                                        {{strtoupper($payments->payment->November)}}
+                                                        <span class="badge badge-{{$payments->payment->November == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->November)}}</span>
                                                       @elseif(Date('m') == 12)
-                                                        {{strtoupper($payments->payment->December)}}
+                                                        <span class="badge badge-{{$payments->payment->December == 'paid' ? 'info' : 'warning'}}">{{strtoupper($payments->payment->December)}}</span>
                                                       @endif
                                                     </td>
-                                                    <td> {{$payments->payment->is_active == 1 ? 'ACTIVE' : 'SUSPEND'}} </td>
+                                                    <td> <span class="badge badge-info">{{$payments->payment->is_active == 1 ? 'ACTIVE' : 'SUSPEND'}}</span></td>
                                                     <td>
                                                         <a href="{{route('spp.murid.detail', $payments->payment->id)}}" class="btn btn-success btn-sm">Detail</a>
                                                     </td>

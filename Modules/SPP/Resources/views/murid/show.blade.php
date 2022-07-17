@@ -62,11 +62,11 @@
                                               <td> {{$key+1}} </td>
                                               <td>{{$detail->month}}</td>
                                               <td>Rp {{number_format($detail->amount)}}</td>
-                                              <td>{{$detail->status}}</td>
-                                              <td>{{$detail->approve_by ?? '-'}}</td>
+                                              <td><span class="badge badge-{{$detail->status == 'paid' ? 'info' : 'warning'}}">{{$detail->status}}</span></td>
+                                              <td>{{$detail->aprroveBy->name ?? '-'}}</td>
                                               <td>{{$detail->approve_date ?? '-'}}</td>
                                               <td>
-                                                @if ($detail->file != null && $detail->statua == 'unpaid')
+                                                @if ($detail->file != null && $detail->status == 'unpaid')
                                                   <a href="" class="btn btn-success btn-sm" data-toggle="modal" id="klikModal" data-target="#modalPembayaran"
                                                   data-id="{{$detail->id}}"
                                                   data-name="{{$detail->user->name}}"

@@ -32,4 +32,9 @@ class DetailPaymentSpp extends Model
     {
       return $this->belongsTo(User::class,'user_id');
     }
+
+    public function aprroveBy()
+    {
+      return $this->belongsTo(User::class, 'approve_by');
+    }
 }

@@ -64,10 +64,14 @@
                                                     <td> {{$payments->payment->year}} </td>
                                                     <td> {{$payments->month}} </td>
                                                     <td>Rp {{number_format($payments->amount)}} </td>
-                                                    <td> {{$payments->status}} </td>
+                                                    <td> <span class="badge badge-{{$payments->status == 'paid' ? 'info' : 'warning'}}">{{$payments->status}}</span> </td>
                                                     <td> {{$payments->date_file}} </td>
                                                     <td>
-                                                        <a href="{{route('pembayaran.edit', $payments->id)}}" class="btn btn-success btn-sm">{{$payments->file != null ? 'Pembayaran Diproses' : 'Bayar'}}</a>
+                                                        @if ($payments->status == 'paid')
+                                                          <span class="badge badge-info">Pembayaran Diterima</span>
+                                                        @else
+                                                          <a href="{{route('pembayaran.edit', $payments->id)}}" class="btn btn-success btn-sm">{{$payments->file != null ? 'Pembayaran Diproses' : 'Bayar'}}</a>
+                                                        @endif
                                                     </td>
                                                 </tr>
                                             @endforeach
