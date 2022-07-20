@@ -17,6 +17,10 @@ Sekolahku adalah aplikasi manajemen sekolah berbasis website yang di bangun dan 
 * Run `php artisan migrate --seed` for migration database
 * Run `php artisan storage:link` for create folder storage
 
+## Penggunaan
+* Login sebagai Admin email: kepsek@sch.id & pw: bismillah
+* Login sebagai PPDB, Perpustakaan, Staf, Pengajar semua dengan password 12345678
+
 Note : Aplikasi ini akan terus saya update.<br>
 Jika ada pertanyaan bisa kontak aku di email ini <b>andridesmana29@outlook.com</b>
 </p>
