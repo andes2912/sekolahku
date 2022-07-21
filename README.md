@@ -21,6 +21,9 @@ Sekolahku adalah aplikasi manajemen sekolah berbasis website yang di bangun dan 
 * Login sebagai Admin email: kepsek@sch.id & pw: bismillah
 * Login sebagai PPDB, Perpustakaan, Staf, Pengajar semua dengan password 12345678
 
+## Package
+- [IndoBank](https://github.com/andes2912/indobank) package Laravel untuk menyimpan data Nama Bank yang ada di Indonesia
+
 Note : Aplikasi ini akan terus saya update.<br>
 Jika ada pertanyaan bisa kontak aku di email ini <b>andridesmana29@outlook.com</b>
 </p>
