@@ -73,6 +73,10 @@
                                                   data-nisn="{{$detail->user->muridDetail->nisn}}"
                                                   data-month="{{$detail->month}}"
                                                   data-amount="Rp {{number_format($detail->amount)}}"
+                                                  data-sender="{{$detail->sender}}"
+                                                  data-banksender="{{$detail->bank_sender}}"
+                                                  data-datefile="{{$detail->date_file}}"
+                                                  data-destinationbank="{{$detail->destination_bank}}"
                                                   >Proses</a>
                                                   <a href="{{$detail->url_file}}" target="_blank" class="btn btn-info btn-sm">Bukti Bayar</a>
                                                 @elseif($detail->status == 'paid')
@@ -104,11 +108,19 @@
         var name = $(this).attr('data-name');
         var month = $(this).attr('data-month');
         var amount = $(this).attr('data-amount');
+        var sender = $(this).attr('data-sender');
+        var banksender = $(this).attr('data-banksender');
+        var datefile = $(this).attr('data-datefile');
+        var destinationbank = $(this).attr('data-destinationbank');
         $("#id_payment").val(id)
         $("#nisn").val(nisn)
         $("#name").val(name)
         $("#month").val(month)
         $("#amount").val(amount)
+        $("#sender").val(sender)
+        $("#banksender").val(banksender)
+        $("#datefile").val(datefile)
+        $("#destinationbank").val(destinationbank)
     });
 
     // Proses Update Data Peminjam

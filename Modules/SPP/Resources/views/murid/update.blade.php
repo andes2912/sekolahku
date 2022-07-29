@@ -36,6 +36,34 @@
                           <input type="text" class="form-control" id="amount" readonly>
                       </div>
                   </div>
+
+                   <div class="col-12">
+                     <h5>Detail Pembayaran</h5>
+                   </div>
+                    <div div class="col-6">
+                      <div class="form-group">
+                          <label for="basicInput">Nama Pengirim</label>
+                          <input type="text" class="form-control" id="sender" readonly>
+                      </div>
+                    </div>
+                    <div div class="col-6">
+                      <div class="form-group">
+                          <label for="basicInput">Bank Pengirim</label>
+                          <input type="text" class="form-control" id="banksender" readonly>
+                      </div>
+                    </div>
+                    <div div class="col-6">
+                      <div class="form-group">
+                          <label for="basicInput">Tanggal Transfer</label>
+                          <input type="text" class="form-control" id="datefile" readonly>
+                      </div>
+                    </div>
+                    <div div class="col-6">
+                      <div class="form-group">
+                          <label for="basicInput">Bank Tujuan</label>
+                          <input type="text" class="form-control" id="destinationbank" readonly>
+                      </div>
+                    </div>
                 </div>
               </div>
               <div class="modal-footer">
