@@ -151,14 +151,15 @@ class DataMuridController extends Controller
         ]);
 
         if ($payment) {
-          DetailPaymentSpp::create([
-            'payment_id'  => $payment->id,
-            'user_id'     => $murid,
-            'month'       => date('F'),
-            'amount'      => 300000,
-            'status'      => 'unpaid',
-            'file'         => null,
-          ]);
+            $generate = rand(10,100);
+            DetailPaymentSpp::create([
+                'payment_id'  => $payment->id,
+                'user_id'     => $murid,
+                'month'       => date('F'),
+                'amount'      => 300 .$murid .$generate,
+                'status'      => 'unpaid',
+                'file'        => null,
+            ]);
         }
         DB::commit();
       } catch (\ErrorException $e) {

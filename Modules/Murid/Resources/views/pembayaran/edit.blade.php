@@ -126,9 +126,14 @@
                 <div class="card shadow">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
+                        @php
+                            $p = new NumberFormatter("id", NumberFormatter::SPELLOUT);
+                            $result = preg_replace("/\..+/", "", $payment->amount);
+                        @endphp
                     <span>
                         Jumlah :
                         <span style="font-weight: bold">Rp {{number_format($payment->amount)}}</span>
+                        <small style="font-style: italic; font-size:10px; color:brown">{{ ucwords($p->format($result))}} Rupiah</small>
                     </span>
                     <span style="font-size: 21px">
                         <i class="feather icon-credit-card"></i>
