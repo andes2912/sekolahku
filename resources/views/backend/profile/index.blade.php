@@ -62,7 +62,7 @@
                                     <span class="font-weight-bold">Change Password</span>
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </div>
                     <!--/ left menu section -->
@@ -77,7 +77,11 @@
                                         <!-- header media -->
                                         <div class="media">
                                             <a href="javascript:void(0);" class="mr-25">
-                                                <img src="{{asset('storage/images/profile/' .$profile->foto_profile)}}" id="account-upload-img" class="rounded mr-50" alt="profile image" height="80" width="80" />
+                                                @if (Auth::user()->foto_profile == NULL)
+                                                    <img class="round" src="{{asset('Assets/Backend/images/user.png')}}" alt="avatar" height="80" width="80">
+                                                @else
+                                                    <img src="{{asset('storage/images/profile/' .$profile->foto_profile)}}" id="account-upload-img" class="rounded mr-50" alt="profile image" height="80" width="80" />
+                                                @endif
                                             </a>
                                         </div>
                                         <!--/ header media -->
@@ -99,7 +103,7 @@
                                                         <input type="text" class="form-control" name="username" placeholder="Username" value="{{$profile->username}}" />
                                                     </div>
                                                 </div>
-                                               
+
                                                 <div class="col-12 col-sm-6">
                                                     <div class="form-group">
                                                         <label for="account-e-mail">E-mail</label>
