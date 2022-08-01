@@ -18,7 +18,7 @@ Sekolahku adalah aplikasi manajemen sekolah berbasis website yang di bangun dan 
 * Run `php artisan storage:link` for create folder storage
 
 ## Penggunaan
-* Login sebagai Admin email: kepsek@sch.id & pw: bismillah
+* Login sebagai Admin email: kepsek@sch.id & pw: Bismillah
 * Login sebagai PPDB, Perpustakaan, Staf, Pengajar semua dengan password 12345678
 
 ## Package
