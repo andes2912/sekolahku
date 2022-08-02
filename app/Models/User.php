@@ -90,4 +90,9 @@ class User extends Authenticatable
     {
       return $this->hasMany(BankAccount::class,'user_id');
     }
+
+    public function setting()
+    {
+        return $this->hasOne(Setting::class);
+    }
 }

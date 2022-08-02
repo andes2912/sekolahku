@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\SettingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -52,6 +53,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/',[App\Http\Controllers\Backend\SettingController::class,'index'])->name('settings');
         // TAMBAH BANK
         Route::post('add-bank',[App\Http\Controllers\Backend\SettingController::class,'addBank'])->name('settings.add.bank');
+        // NOTIFICATIONS
+        Route::put('notifications/{id}',[SettingController::class,'notifications']);
       });
 
 
