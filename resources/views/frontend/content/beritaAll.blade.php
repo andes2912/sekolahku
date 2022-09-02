@@ -1,4 +1,4 @@
-@extends('layouts.frontend.app')
+@extends('layouts.Frontend.app')
 
 @section('title')
     Berita
@@ -26,14 +26,14 @@
                                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span>By</span> {{$beritas->user->name}}</a></li>
                                         <li><a href="#"><i class="fa fa-tags" aria-hidden="true"></i>{{$beritas->kategori->nama}}</a></li>
                                     </ul>
-                                    
+
                                 </div>
                             </div>
                         @endforeach
                         @if ($berita == NULL)
                             <img src="{{asset('Assets/Frontend/img/empty.svg')}}" class="img-responsive" style="object-fit:cover; margin-top:5% !important; display: block; margin: 0 auto;">
                         @endif
-                      
+
                         {{ $berita->links('frontend.content.paginate') }}
 
                     </div>

@@ -1,4 +1,4 @@
-@extends('layouts.frontend.app')
+@extends('layouts.Frontend.app')
 
 @section('title')
     {{$berita->title}}
@@ -33,7 +33,7 @@
                                 <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                             </ul>
-                            
+
                         </div>
                     </div>
                 </div>
