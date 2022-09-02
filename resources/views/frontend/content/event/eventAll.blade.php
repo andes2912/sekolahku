@@ -1,4 +1,4 @@
-@extends('layouts.frontend.app')
+@extends('layouts.Frontend.app')
 @section('title')
     Events
 @endsection
@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
                         <div class="row event-inner-wrapper">
-                            
+
                             @foreach ($event as $events)
                                 <div class="col-lg-12 col-md-6 col-sm-12 col-xs-6">
                                     <div class="single-item">
