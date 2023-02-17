@@ -37,7 +37,7 @@
                           <a href="javascript:void(0);">Rangking 1</a>
                       </h3>
                       <button type="button" class="btn btn-primary">Lihat Semua Peringkat</button>
-                      <img src="{{asset('Assets/Backend/images/illustration/badge.svg')}}" class="congratulation-medal" alt="Medal Pic" />
+                      <img src="{{asset('Assets/backend/images/illustration/badge.svg')}}" class="congratulation-medal" alt="Medal Pic" />
                   </div>
               </div>
             </div>

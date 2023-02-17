@@ -5,7 +5,7 @@
                 <div class="footer-box">
                     <a href="/">
                         @if (@$footer->logo == NULL)
-                            <img class="img-responsive" src="{{asset('Assets/Frontend/img/logo-footer.png')}}" alt="logo">
+                            <img class="img-responsive" src="{{asset('Assets/frontend/img/logo-footer.png')}}" alt="logo">
                         @else
                             <img class="img-responsive" src="{{asset('storage/images/logo/' .$footer->logo)}}" alt="logo">
                         @endif
@@ -35,7 +35,7 @@
                             <span class="input-group-addon">
                                     <button type="submit">
                                         <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                    </button>  
+                                    </button>
                                 </span>
                         </div>
                     </div>
