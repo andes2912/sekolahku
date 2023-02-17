@@ -11,8 +11,8 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card card-congratulations">
                     <div class="card-body text-center">
-                        <img src="{{asset('Assets/backend/images/pages/decore-left.png')}}" class="congratulations-img-left" alt="card-img-left" />
-                        <img src="{{asset('Assets/backend/images/pages/decore-right.png')}}" class="congratulations-img-right" alt="card-img-right" />
+                        <img src="{{asset('Assets/Backend/images/pages/decore-left.png')}}" class="congratulations-img-left" alt="card-img-left" />
+                        <img src="{{asset('Assets/Backend/images/pages/decore-right.png')}}" class="congratulations-img-right" alt="card-img-right" />
                         <div class="avatar avatar-xl bg-primary shadow">
                             <div class="avatar-content">
                                 <i data-feather="award" class="font-large-1"></i>

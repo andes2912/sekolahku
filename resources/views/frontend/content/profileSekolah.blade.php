@@ -14,7 +14,7 @@
                 <h2 class="title-center">{{$profile->title}}</h2>
                 <p class="sub-title-full-width">{{$profile->content}}</p>
             @else
-                <img src="{{asset('Assets/frontend/img/empty.svg')}}" class="img-responsive" style="object-fit:cover; margin-top:5% !important; display: block;
+                <img src="{{asset('Assets/Frontend/img/empty.svg')}}" class="img-responsive" style="object-fit:cover; margin-top:5% !important; display: block;
             margin: 0 auto;">
             @endif
         </div>

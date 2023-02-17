@@ -5,7 +5,7 @@
                 <div class="footer-box">
                     <a href="/">
                         @if (@$footer->logo == NULL)
-                            <img class="img-responsive" src="{{asset('Assets/frontend/img/logo-footer.png')}}" alt="logo">
+                            <img class="img-responsive" src="{{asset('Assets/Frontend/img/logo-footer.png')}}" alt="logo">
                         @else
                             <img class="img-responsive" src="{{asset('storage/images/logo/' .$footer->logo)}}" alt="logo">
                         @endif
@@ -46,22 +46,22 @@
                     <h3>Photos</h3>
                     <ul class="flickr-photos">
                         <li>
-                            <a href="#"><img class="img-responsive" src="{{asset('Assets/frontend/img/footer/1.jpg')}}" alt="flickr"></a>
+                            <a href="#"><img class="img-responsive" src="{{asset('Assets/Frontend/img/footer/1.jpg')}}" alt="flickr"></a>
                         </li>
                         <li>
-                            <a href="#"><img class="img-responsive" src="{{asset('Assets/frontend/img/footer/2.jpg')}}" alt="flickr"></a>
+                            <a href="#"><img class="img-responsive" src="{{asset('Assets/Frontend/img/footer/2.jpg')}}" alt="flickr"></a>
                         </li>
                         <li>
-                            <a href="#"><img class="img-responsive" src="{{asset('Assets/frontend/img/footer/3.jpg')}}" alt="flickr"></a>
+                            <a href="#"><img class="img-responsive" src="{{asset('Assets/Frontend/img/footer/3.jpg')}}" alt="flickr"></a>
                         </li>
                         <li>
-                            <a href="#"><img class="img-responsive" src="{{asset('Assets/frontend/img/footer/4.jpg')}}" alt="flickr"></a>
+                            <a href="#"><img class="img-responsive" src="{{asset('Assets/Frontend/img/footer/4.jpg')}}" alt="flickr"></a>
                         </li>
                         <li>
-                            <a href="#"><img class="img-responsive" src="{{asset('Assets/frontend/img/footer/5.jpg')}}" alt="flickr"></a>
+                            <a href="#"><img class="img-responsive" src="{{asset('Assets/Frontend/img/footer/5.jpg')}}" alt="flickr"></a>
                         </li>
                         <li>
-                            <a href="#"><img class="img-responsive" src="{{asset('Assets/frontend/img/footer/6.jpg')}}" alt="flickr"></a>
+                            <a href="#"><img class="img-responsive" src="{{asset('Assets/Frontend/img/footer/6.jpg')}}" alt="flickr"></a>
                         </li>
                     </ul>
                 </div>
