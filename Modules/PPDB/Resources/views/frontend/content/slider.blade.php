@@ -1,8 +1,8 @@
 <div class="slider1-area overlay-default">
     <div class="bend niceties preview-1">
         <div id="ensign-nivoslider-3" class="slides" style="max-height: 550px; object-fit: cover;">
-            <img src="{{asset('Assets/Frontend/img/slider/1.jpg')}}" alt="slider" title="#slider-direction-1" style="max-height: 550px; object-fit: cover;" />
-            <img src="{{asset('Assets/Frontend/img/slider/2.jpg')}}" alt="slider" title="#slider-direction-2" style="max-height: 550px; object-fit: cover;"  />
+            <img src="{{asset('Assets/frontend/img/slider/1.jpg')}}" alt="slider" title="#slider-direction-1" style="max-height: 550px; object-fit: cover;" />
+            <img src="{{asset('Assets/frontend/img/slider/2.jpg')}}" alt="slider" title="#slider-direction-2" style="max-height: 550px; object-fit: cover;"  />
         </div>
         <div id="slider-direction-1" class="t-cn slider-direction">
             <div class="slider-content s-tb slide-1">
