@@ -13,22 +13,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/vendors/css/vendors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/vendors/css/vendors.min.css')}}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/themes/bordered-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/themes/semi-dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/bootstrap-extended.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/colors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/themes/dark-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/themes/bordered-layout.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/themes/semi-dark-layout.css')}}">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/plugins/forms/form-validation.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('Assets/backend/css/pages/page-auth.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/plugins/forms/form-validation.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('Assets/Backend/css/pages/page-auth.css')}}">
     <!-- END: Page CSS-->
 
 </head>
@@ -76,7 +76,7 @@
                         <!-- /Brand logo-->
                         <!-- Left Text-->
                         <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
-                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{asset('Assets/backend/images/illustration/login-v2.svg')}}" alt="Login V2" /></div>
+                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5"><img class="img-fluid" src="{{asset('Assets/Backend/images/illustration/login-v2.svg')}}" alt="Login V2" /></div>
                         </div>
                         <!-- /Left Text-->
                         <!-- Login-->
@@ -144,20 +144,20 @@
 
 
     <!-- BEGIN: Vendor JS-->
-    <script src="{{asset('Assets/backend/vendors/js/vendors.min.js')}}"></script>
+    <script src="{{asset('Assets/Backend/vendors/js/vendors.min.js')}}"></script>
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="{{asset('Assets/backend/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('Assets/Backend/vendors/js/forms/validation/jquery.validate.min.js')}}"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="{{asset('Assets/backend/js/core/app-menu.js')}}"></script>
-    <script src="{{asset('Assets/backend/js/core/app.js')}}"></script>
+    <script src="{{asset('Assets/Backend/js/core/app-menu.js')}}"></script>
+    <script src="{{asset('Assets/Backend/js/core/app.js')}}"></script>
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="{{asset('Assets/backend/js/scripts/pages/page-auth-login.js')}}"></script>
+    <script src="{{asset('Assets/Backend/js/scripts/pages/page-auth-login.js')}}"></script>
     <!-- END: Page JS-->
 
     <script>

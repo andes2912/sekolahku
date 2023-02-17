@@ -11,8 +11,8 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card card-congratulations">
                     <div class="card-body text-center">
-                        <img src="{{asset('Assets/backend/images/pages/decore-left.png')}}" class="congratulations-img-left" alt="card-img-left" />
-                        <img src="{{asset('Assets/backend/images/pages/decore-right.png')}}" class="congratulations-img-right" alt="card-img-right" />
+                        <img src="{{asset('Assets/Backend/images/pages/decore-left.png')}}" class="congratulations-img-left" alt="card-img-left" />
+                        <img src="{{asset('Assets/Backend/images/pages/decore-right.png')}}" class="congratulations-img-right" alt="card-img-right" />
                         <div class="avatar avatar-xl bg-primary shadow">
                             <div class="avatar-content">
                                 <i data-feather="award" class="font-large-1"></i>
@@ -102,7 +102,7 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="card card-developer-meetup">
                     <div class="meetup-img-wrapper rounded-top text-center">
-                        <img src="{{asset('Assets/backend/images/illustration/email.svg')}}" alt="Meeting Pic" height="170" />
+                        <img src="{{asset('Assets/Backend/images/illustration/email.svg')}}" alt="Meeting Pic" height="170" />
                     </div>
                     <div class="card-body">
                         <div class="meetup-header d-flex align-items-center">

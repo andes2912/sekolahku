@@ -1,4 +1,4 @@
-<div class="counter-area bg-primary-deep" style="background-image: url({{asset('Assets/frontend/img/banner/4.jpg')}});">
+<div class="counter-area bg-primary-deep" style="background-image: url({{asset('Assets/Frontend/img/banner/4.jpg')}});">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 counter1-box wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".20s">
