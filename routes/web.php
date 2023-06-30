@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/','Frontend\IndexController@index');
 
     ///// MENU \\\\\
-        //// PROFILE SEKOLAJ \\\\
+        //// PROFILE SEKOLAH \\\\
         Route::get('profile-sekolah',[App\Http\Controllers\Frontend\IndexController::class,'profileSekolah'])->name('profile.sekolah');
 
         //// VISI dan MISI
