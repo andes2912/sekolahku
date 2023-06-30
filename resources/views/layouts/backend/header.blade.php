@@ -15,7 +15,7 @@
                         @if (Auth::user()->foto_profile == NULL)
                             <img class="round" src="{{asset('Assets/Backend/images/user.png')}}" alt="avatar" height="40" width="40">
                         @else
-                            <img class="round" src="{{asset('storage/images/PROFILE/' .Auth::user()->foto_profile)}}" alt="avatar" height="40" width="40">
+                            <img class="round" src="{{asset('storage/images/profile/' .Auth::user()->foto_profile)}}" alt="avatar" height="40" width="40">
                         @endif
                         <span class="avatar-status-online"></span>
                     </span>
