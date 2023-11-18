@@ -2,16 +2,16 @@
 
 namespace Modules\PPDB\Http\Controllers;
 
-use App\Models\dataMurid;
-use App\Models\User;
 use ErrorException;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\dataMurid;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Modules\PPDB\Entities\paymentRegistration;
 use Modules\PPDB\Http\Requests\RegisterRequest;
-use Session;
-use DB;
 
 class AuthController extends Controller
 {
@@ -41,9 +41,9 @@ class AuthController extends Controller
         try {
             DB::beginTransaction();
 
-           // Pilih kalimat
-           $kalimatKe  = "1";
-           $username   = implode(" ", array_slice(explode(" ", $request->name), 0, $kalimatKe)); // ambil kalimat
+            // Pilih kalimat
+            $kalimatKe  = "1";
+            $username   = implode(" ", array_slice(explode(" ", $request->name), 0, $kalimatKe)); // ambil kalimat
 
             $register = new User();
             $register->name      = $request->name;
@@ -56,15 +56,22 @@ class AuthController extends Controller
             if ($register) {
                 $murid = new dataMurid();
                 $murid->user_id         =   $register->id;
+                $murid->jenjang         =   $request->jenjang;
                 $murid->whatsapp        =   $request->whatsapp;
                 $murid->asal_sekolah    =   $request->asal_sekolah;
                 $murid->save();
             }
 
+            $payment = new paymentRegistration();
+            $payment->user_id   = $register->id;
+            $payment->jenjang   = $request->jenjang;
+            $payment->amount    = 300000;
+            $payment->save();
+
             $register->assignRole($register->role);
 
             DB::commit();
-            Session::flash('success','Success, Data Berhasil dikirim !');
+            Session::flash('success', 'Success, Data Berhasil dikirim !');
             return redirect()->route('login');
         } catch (ErrorException $e) {
             DB::rollback();

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,36 +14,41 @@
 */
 
 
-Route::prefix('ppdb')->group(function() {
+Route::prefix('ppdb')->group(function () {
     Route::get('/', 'PPDBController@index');
 
     /// REGISTER \\\
-    Route::get('/register','AuthController@registerView')->name('register');
-    Route::post('/register','AuthController@registerStore')->name('register.store');
+    Route::get('/register', 'AuthController@registerView')->name('register');
+    Route::post('/register', 'AuthController@registerStore')->name('register.store');
 });
 
 //// ROLE GUEST \\\\
-Route::prefix('/ppdb')->middleware('role:Guest')->group( function (){
+Route::prefix('/ppdb')->middleware('role:Guest')->group(function () {
+
+    // PAYMENT PENDAFTARAN
+    Route::get('payment-pendaftaran/{id}', 'PendaftaranController@paymentPage');
+    Route::put('payment-pendaftaran/{id}', 'PendaftaranController@paymentStore');
 
     /// DATA MURID \\\
-    Route::get('form-pendaftaran','PendaftaranController@index')->name('ppdb.form-pendaftaran');
-    Route::put('form-pendaftaran/{id}','PendaftaranController@update');
+    Route::get('form-pendaftaran', 'PendaftaranController@index')->name('ppdb.form-pendaftaran');
+    Route::put('form-pendaftaran/{id}', 'PendaftaranController@update');
 
 
     /// DATA ORANG TUA \\\
-    Route::get('form-data-orangtua','PendaftaranController@dataOrtuView');
-    Route::put('form-data-orangtua/{id}','PendaftaranController@updateOrtu');
+    Route::get('form-data-orangtua', 'PendaftaranController@dataOrtuView');
+    Route::put('form-data-orangtua/{id}', 'PendaftaranController@updateOrtu');
 
     /// BERKAS MURID \\\
-    Route::get('form-berkas','PendaftaranController@berkasView');
-    Route::put('form-berkas/{id}','PendaftaranController@berkasStore');
+    Route::get('form-berkas', 'PendaftaranController@berkasView');
+    Route::put('form-berkas/{id}', 'PendaftaranController@berkasStore');
 });
 
 
 //// ROLE PPDB \\\\
-Route::prefix('/ppdb')->middleware('role:PPDB')->group( function (){
+Route::prefix('/ppdb')->middleware('role:PPDB')->group(function () {
 
 
     /// DATA MURID \\\
-    Route::resource('data-murid','DataMuridController');
+    Route::resource('data-murid', 'DataMuridController');
+    Route::get('konfirm-payment-regis', 'DataMuridController@confirmPayment');
 });

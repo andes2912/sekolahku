@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div class="content-wrapper container-xxl p-0">
     @if ($message = Session::get('success'))
         <div class="alert alert-success" role="alert">
             <div class="alert-body">
@@ -20,7 +21,6 @@
             </div>
         </div>
     @endif
-<div class="content-wrapper container-xxl p-0">
     <div class="content-body">
         <div class="row">
            <div class="col-lg-6 col-md-12 col-sm-12">

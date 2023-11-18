@@ -2,17 +2,19 @@
 
 namespace Modules\PPDB\Http\Controllers;
 
+use App\Models\Bank;
 use App\Models\dataMurid;
 use App\Models\User;
 use ErrorException;
-use Illuminate\Http\Request;
-use Modules\PPDB\Http\Requests\{BerkasMuridRequest, DataMuridRequest,DataOrtuRequest};
+use Modules\PPDB\Http\Requests\{BerkasMuridRequest, DataMuridRequest, DataOrtuRequest};
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Modules\PPDB\Entities\BerkasMurid;
 use Modules\PPDB\Entities\DataOrangTua;
 use Illuminate\Support\Facades\Session;
+use Modules\PPDB\Entities\paymentRegistration;
+use Illuminate\Http\Request;
 
 class PendaftaranController extends Controller
 {
@@ -20,11 +22,14 @@ class PendaftaranController extends Controller
     // Data Murid
     public function index()
     {
-        $user = User::with('muridDetail','dataOrtu')->where('status','Aktif')->where('id',Auth::id())->first();
+        $user = User::with('paymentRegis', 'muridDetail', 'dataOrtu')->where('status', 'Aktif')->where('id', Auth::id())->first();
 
+        if ($user->paymentRegis->file == null || $user->paymentRegis->status == 'Unpaid') {
+            return redirect('ppdb/payment-pendaftaran/' . $user->paymentRegis->id);
+        }
         // Jika data murid sudah lengkap
         if ($user->muridDetail->agama) {
-           return redirect('ppdb/form-data-orangtua');
+            return redirect('ppdb/form-data-orangtua');
         }
         return view('ppdb::backend.pendaftaran.index', compact('user'));
     }
@@ -34,13 +39,13 @@ class PendaftaranController extends Controller
     {
         try {
             DB::beginTransaction();
-            $user = User::with('muridDetail')->where('id',$id)->first();
+            $user = User::with('muridDetail')->where('id', $id)->first();
             $user->name     = $request->name;
             $user->email     = $request->email;
             $user->update();
 
             if ($user) {
-                $murid = dataMurid::where('user_id',$id)->first();
+                $murid = dataMurid::where('user_id', $id)->first();
                 $murid->tempat_lahir    = $request->tempat_lahir;
                 $murid->tgl_lahir       = $request->tgl_lahir;
                 $murid->agama           = $request->agama;
@@ -57,7 +62,7 @@ class PendaftaranController extends Controller
                 }
             }
             DB::commit();
-            Session::flash('success','Success, Data Berhasil dikirim !');
+            Session::flash('success', 'Success, Data Berhasil dikirim !');
             return redirect('ppdb/form-data-orangtua');
         } catch (ErrorException $e) {
             DB::rollback();
@@ -72,13 +77,13 @@ class PendaftaranController extends Controller
 
         // Jika data orang tua masih empty
         if (!$ortu) {
-            Session::flash('error','Data kamu belum lengkap !');
+            Session::flash('error', 'Data kamu belum lengkap !');
             return redirect('ppdb/form-pendaftaran');
         }
 
         // jika data orang tua sudah terisi
         if ($ortu->telp_ayah) {
-            Session::flash('success','Data kamu sudah lengkap !');
+            Session::flash('success', 'Data kamu sudah lengkap !');
             return redirect('ppdb/form-berkas');
         }
         return view('ppdb::backend.pendaftaran.dataOrtu');
@@ -112,7 +117,7 @@ class PendaftaranController extends Controller
             }
 
             DB::commit();
-            Session::flash('success','Success, Data Berhasil dikirim !');
+            Session::flash('success', 'Success, Data Berhasil dikirim !');
             return redirect('/ppdb/form-berkas');
         } catch (ErrorException $e) {
             DB::rollback();
@@ -126,65 +131,65 @@ class PendaftaranController extends Controller
         $berkas = BerkasMurid::where('user_id', Auth::id())->first();
         // Jika data berkas sudah terisi
         if ($berkas->rapor) {
-            Session::flash('error','Data kamu sudah lengkap !');
+            Session::flash('error', 'Data kamu sudah lengkap !');
             return redirect('/home');
         }
         return view('ppdb::backend.pendaftaran.berkas', compact('berkas'));
     }
 
     // Berkas Store
-    public function berkasStore(BerkasMuridRequest $request,$id)
+    public function berkasStore(BerkasMuridRequest $request, $id)
     {
         try {
-          DB::beginTransaction();
+            DB::beginTransaction();
             $imageKk = $request->file('kartu_keluarga');
-            $kartuKeluarga = time()."_".$imageKk->getClientOriginalName();
+            $kartuKeluarga = time() . "_" . $imageKk->getClientOriginalName();
             // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'public/images/berkas_murid';
-            $imageKk->storeAs($tujuan_upload,$kartuKeluarga);
+            $imageKk->storeAs($tujuan_upload, $kartuKeluarga);
 
             $imageakte = $request->file('kartu_keluarga');
-            $akteKelahiran = time()."_".$imageakte->getClientOriginalName();
+            $akteKelahiran = time() . "_" . $imageakte->getClientOriginalName();
             // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'public/images/berkas_murid';
-            $imageakte->storeAs($tujuan_upload,$akteKelahiran);
+            $imageakte->storeAs($tujuan_upload, $akteKelahiran);
 
             $imageskbaik = $request->file('surat_kelakuan_baik');
-            $suratbaik = time()."_".$imageskbaik->getClientOriginalName();
+            $suratbaik = time() . "_" . $imageskbaik->getClientOriginalName();
             // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'public/images/berkas_murid';
-            $imageskbaik->storeAs($tujuan_upload,$suratbaik);
+            $imageskbaik->storeAs($tujuan_upload, $suratbaik);
 
             $imagesehat = $request->file('surat_sehat');
-            $suratsehat = time()."_".$imagesehat->getClientOriginalName();
+            $suratsehat = time() . "_" . $imagesehat->getClientOriginalName();
             // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'public/images/berkas_murid';
-            $imagesehat->storeAs($tujuan_upload,$suratsehat);
+            $imagesehat->storeAs($tujuan_upload, $suratsehat);
 
             $imagemata = $request->file('surat_tidak_buta_warna');
-            $surattidakbutawarna = time()."_".$imagemata->getClientOriginalName();
+            $surattidakbutawarna = time() . "_" . $imagemata->getClientOriginalName();
             // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'public/images/berkas_murid';
-            $imagemata->storeAs($tujuan_upload,$surattidakbutawarna);
+            $imagemata->storeAs($tujuan_upload, $surattidakbutawarna);
 
             $imagerapor = $request->file('rapor');
-            $rapor = time()."_".$imagerapor->getClientOriginalName();
+            $rapor = time() . "_" . $imagerapor->getClientOriginalName();
             // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'public/images/berkas_murid';
-            $imagerapor->storeAs($tujuan_upload,$rapor);
+            $imagerapor->storeAs($tujuan_upload, $rapor);
 
             $imagefoto = $request->file('foto');
-            $foto = time()."_".$imagefoto->getClientOriginalName();
+            $foto = time() . "_" . $imagefoto->getClientOriginalName();
             // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'public/images/berkas_murid';
-            $imagefoto->storeAs($tujuan_upload,$foto);
+            $imagefoto->storeAs($tujuan_upload, $foto);
 
             if ($request->ijazah) {
-              $imageijazah = $request->file('ijazah');
-              $ijazah = time()."_".$imageijazah->getClientOriginalName();
-              // isi dengan nama folder tempat kemana file diupload
-              $tujuan_upload = 'public/images/berkas_murid';
-              $imageijazah->storeAs($tujuan_upload,$ijazah);
+                $imageijazah = $request->file('ijazah');
+                $ijazah = time() . "_" . $imageijazah->getClientOriginalName();
+                // isi dengan nama folder tempat kemana file diupload
+                $tujuan_upload = 'public/images/berkas_murid';
+                $imageijazah->storeAs($tujuan_upload, $ijazah);
             }
 
             $berkas = BerkasMurid::find($id);
@@ -199,11 +204,40 @@ class PendaftaranController extends Controller
             $berkas->save();
 
             DB::commit();
-            Session::flash('success','Success, Data Berhasil dikirim !');
+            Session::flash('success', 'Success, Data Berhasil dikirim !');
             return redirect('/home');
         } catch (ErrorException $e) {
             DB::rollback();
             throw new ErrorException($e->getMessage());
         }
+    }
+
+    public function paymentPage()
+    {
+        $accountbanks = User::with('banks')->first();
+        $user = User::with('paymentRegis')->where('status', 'Aktif')->where('id', Auth::id())->first();
+        if ($user->paymentRegis->file != null) {
+            Session::flash('success', 'Pembayaran kamu sedang di proses.');
+            return redirect('/home');
+        }
+        return view('ppdb::backend.pendaftaran.paymentRegis', compact('accountbanks', 'user'));
+    }
+
+    public function paymentStore(Request $request)
+    {
+        $imagePayment = $request->file('file');
+        $payments = time() . "_" . $imagePayment->getClientOriginalName();
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'public/images/payment_pendaftaran';
+        $imagePayment->storeAs($tujuan_upload, $payments);
+
+        $payment = paymentRegistration::whereId($request->id)->first();
+        $payment->sender            = $request->sender;
+        $payment->destination_bank  = $request->destination_bank;
+        $payment->file              = $payments;
+        $payment->update();
+
+        Session::flash('success', 'Success, Data Berhasil dikirim !');
+        return redirect('/home');
     }
 }

@@ -130,6 +130,21 @@
                                             </span>
                                         @enderror
                                     </div>
+                                     <div class="form-group">
+                                        <label class="form-label">Jenjang Pendaftaran</label>
+                                        <select name="jenjang" class="form-control">
+                                            <option>-- Pilih --</option>
+                                            <option value="SD">SD</option>
+                                            <option value="SMP">SMP</option>
+                                            <option value="SMA">SMA</option>
+                                            <option value="SMK">SMK</option>
+                                        </select>
+                                        @error('jenjang')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                     <div class="form-group">
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge @error('password') is-invalid @enderror" type="password" name="password" placeholder="············" tabindex="2" />

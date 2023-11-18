@@ -178,10 +178,32 @@
 
             {{-- MENU PPDB --}}
             @elseif(Auth::user()->role == 'PPDB')
-            <li class="nav-item {{ (request()->is('ppdb/data-murid')) ? 'active' : '' }}">
-                <a class="d-flex align-items-center" href="{{route('data-murid.index')}}"><i data-feather="book"></i>
-                    <span class="menu-title text-truncate" data-i18n="Data Calon Murid">Data Calon Murid</span>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#"><i data-feather="users"></i>
+                    <span class="menu-title text-truncate" data-i18n="Card">Calon Murid</span>
                 </a>
+                <ul class="menu-content">
+                    <li class="nav-item {{ (request()->is('ppdb/data-murid?jenjang=SD')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{url('ppdb/data-murid?jenjang=SD')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">SD</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('ppdb/data-murid?jenjang=SMP')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{url('ppdb/data-murid?jenjang=SMP')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">SMP</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('ppdb/data-murid?jenjang=SMA')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{url('ppdb/data-murid?jenjang=SMA')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">SMA</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('ppdb/data-murid?jenjang=SMK')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{url('ppdb/data-murid?jenjang=SMK')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">SMK</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             {{-- MENU PERPUSTAKAAN --}}
