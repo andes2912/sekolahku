@@ -43,53 +43,18 @@
             {{-- MENU ADMIN --}}
             @if (Auth::user()->role == 'Admin')
             <li class=" nav-item">
-                <a class="d-flex align-items-center" href="#"><i data-feather="credit-card"></i>
-                    <span class="menu-title text-truncate" data-i18n="Card">Website</span>
+                <a class="d-flex align-items-center" href="#"><i data-feather="database"></i>
+                    <span class="menu-title text-truncate" data-i18n="Data Sekolah">Data Sekolah</span>
                 </a>
                 <ul class="menu-content">
                     <li class="nav-item {{ (request()->is('program-studi')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('program-studi.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Program</span>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Program Studi</span>
                         </a>
                     </li>
                     <li class="nav-item {{ (request()->is('backend-kegiatan')) ? 'active' : '' }}">
                         <a class="d-flex align-items-center" href=" {{route('backend-kegiatan.index')}} "><i data-feather="circle"></i>
                             <span class="menu-item text-truncate" data-i18n="Basic">Kegiatan</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ (request()->is('backend-imageslider')) ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href=" {{route('backend-imageslider.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Gambar Slider</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ (request()->is('backend-about')) ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href=" {{route('backend-about.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">About</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ (request()->is('backend-video')) ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href=" {{route('backend-video.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Video</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ (request()->is('backend-kategori-berita')) ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href=" {{route('backend-kategori-berita.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Kategori Berita</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ (request()->is('backend-berita')) ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href=" {{route('backend-berita.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Berita</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ (request()->is('backend-event')) ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href=" {{route('backend-event.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Event</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ (request()->is('backend-footer')) ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href=" {{route('backend-footer.index')}} "><i data-feather="circle"></i>
-                            <span class="menu-item text-truncate" data-i18n="Basic">Footer</span>
                         </a>
                     </li>
                     <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Tentang</span></a>
@@ -102,6 +67,57 @@
                             </li>
                         </ul>
                     </li>
+                </ul>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i>
+                    <span class="menu-title text-truncate" data-i18n="Card">Berita</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="nav-item {{ (request()->is('backend-berita')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-berita.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Data Berita</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('backend-kategori-berita')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-kategori-berita.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Kategori Berita</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('backend-event')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-event.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Event</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item">
+                <a class="d-flex align-items-center" href="#"><i data-feather="globe"></i>
+                    <span class="menu-title text-truncate" data-i18n="Card">Website</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="nav-item {{ (request()->is('backend-about')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-about.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('backend-imageslider')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-imageslider.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Gambar Slider</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ (request()->is('backend-video')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-video.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Video</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item {{ (request()->is('backend-footer')) ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href=" {{route('backend-footer.index')}} "><i data-feather="circle"></i>
+                            <span class="menu-item text-truncate" data-i18n="Basic">Footer</span>
+                        </a>
+                    </li>
+
                 </ul>
             </li>
 
