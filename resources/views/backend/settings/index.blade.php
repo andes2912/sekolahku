@@ -168,7 +168,7 @@
                                                 <h5 class="m-1">Email</h5>
                                                 <div class="col-12 mb-1">
                                                     <div class="custom-control custom-switch custom-control-inline">
-                                                        <input type="checkbox" class="custom-control-input" name="isEmail" {{Auth::user()->setting->isEmail == 1 ? 'checked' : 0}} value="1" id="email">
+                                                        <input type="checkbox" class="custom-control-input" name="isEmail" {{ auth()->user()->setting->isEmail == 1 ? 'checked' : 0 }} value="1" id="email">
                                                         <label class="custom-control-label mr-1" for="email"></label>
                                                         <span class="switch-label w-100">Aktifkan Jika Ingin Menggunakan Email Notification</span>
                                                     </div>
