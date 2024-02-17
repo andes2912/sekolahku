@@ -57,6 +57,13 @@
                             </li>
 
                             <li class="nav-item">
+                                <a class="nav-link" id="spp-setting" data-toggle="pill" href="#sppsetting" aria-expanded="true">
+                                    <i data-feather="credit-card" class="font-medium-3 mr-1"></i>
+                                    <span class="font-weight-bold">Setting SPP</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
                                     <a class="nav-link" id="settings" data-toggle="pill" href="#account-setting" aria-expanded="false">
                                         <i data-feather="bell" class="font-medium-3 mr-1"></i>
                                         <span class="font-weight-bold">Notifications</span>
@@ -148,15 +155,25 @@
                                                   <div class="card-title text-white text-center">
                                                     Tambah Akun Bank<i data-feather='plus'></i>
                                                   </div>
-                                                  <div class="text-center text-white">
-                                                    <i data-feather='plus'></i>
-                                                  </div> <br>
                                                 </div>
                                               </div>
                                             </a>
                                           </div>
                                         </div>
                                       @endif
+                                    </div>
+
+                                    {{-- form setting SPP --}}
+                                    <div class="tab-pane fade" id="sppsetting" role="tabpanel" aria-labelledby="spp-settings" aria-expanded="false">
+                                        <form action="{{ route('spp.update') }}" method="POST">
+                                            @csrf
+                                            <label for="amount">Biaya SPP</label>
+                                            <input type="number" name="amount" id="rupiahInput" value="{{ $spp->amount ?? 0 }}" class="form-control mb-2" style="width: 50%;">
+                                            @error('amount')
+                                                <div class="alert alert-danger p-1">{{ $message }}</div>
+                                            @enderror
+                                            <input type="submit" value="Update" class="btn btn-primary">
+                                        </form>
                                     </div>
 
                                     {{-- Notifications --}}
