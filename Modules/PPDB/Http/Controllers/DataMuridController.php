@@ -11,8 +11,10 @@ use Validator;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator as FacadesValidator;
 use Modules\SPP\Entities\DetailPaymentSpp;
 use Modules\SPP\Entities\PaymentSpp;
+use Modules\SPP\Entities\SppSetting;
 
 class DataMuridController extends Controller
 {
@@ -81,7 +83,7 @@ class DataMuridController extends Controller
     {
         try {
             DB::beginTransaction();
-            $validator = Validator::make($request->all(), [
+            $validator = FacadesValidator::make($request->all(), [
                 'nis'   => 'required|numeric|unique:data_murids',
                 'nisn'  => 'required|numeric|unique:data_murids',
             ],
@@ -151,12 +153,12 @@ class DataMuridController extends Controller
         ]);
 
         if ($payment) {
-            $generate = rand(10,100);
+            $spp = SppSetting::first();
             DetailPaymentSpp::create([
                 'payment_id'  => $payment->id,
                 'user_id'     => $murid,
                 'month'       => date('F'),
-                'amount'      => 300 .$murid .$generate,
+                'amount'      => $spp->amount,
                 'status'      => 'unpaid',
                 'file'        => null,
             ]);

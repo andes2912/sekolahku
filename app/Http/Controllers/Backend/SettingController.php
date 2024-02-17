@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Modules\SPP\Entities\BankAccount;
+use Modules\SPP\Entities\SppSetting;
 
 class SettingController extends Controller
 {
@@ -18,7 +19,8 @@ class SettingController extends Controller
     public function index()
     {
       $bank = Bank::all();
-      return view('backend.settings.index', compact('bank'));
+      $spp  = SppSetting::first();
+      return view('backend.settings.index', compact('bank', 'spp'));
     }
 
     // Tambah Bank

@@ -131,6 +131,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        <label class="form-label">Password Login</label>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge @error('password') is-invalid @enderror" type="password" name="password" placeholder="············" tabindex="2" />
                                             <div class="input-group-append"><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span></div>
@@ -142,6 +143,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label class="form-label">Konfirmasi Password</label>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge @error('confirm_password') is-invalid @enderror" type="password" name="confirm_password" placeholder="············" tabindex="2" />
                                             <div class="input-group-append"><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span></div>

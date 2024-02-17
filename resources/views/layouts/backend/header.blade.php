@@ -22,7 +22,9 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
                     <a class="dropdown-item" href="{{route('profile-settings.index')}}"><i class="mr-50" data-feather="user"></i> Profile</a>
+                    @role('Admin')
                     <a class="dropdown-item" href="{{route('settings')}}"><i class="mr-50" data-feather="settings"></i> Settings</a>
+                    @endrole
                     <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
